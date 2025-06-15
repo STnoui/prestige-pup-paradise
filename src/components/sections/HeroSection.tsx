@@ -30,7 +30,7 @@ const HeroSection = () => {
         </h1>
         
         <h2 className="text-2xl md:text-4xl lg:text-5xl font-medium mb-8 animate-fade-in" style={{ animationDelay: '0.2s' }}>
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600">
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-gray-300 to-gray-100">
             {t('heroSubtitle')}
           </span>
         </h2>
@@ -42,7 +42,7 @@ const HeroSection = () => {
         <div className="flex flex-col sm:flex-row gap-6 justify-center animate-fade-in" style={{ animationDelay: '0.6s' }}>
           <Button 
             onClick={handleScrollToBreeds}
-            className="bg-blue-600 hover:bg-blue-700 text-white text-lg px-10 py-4 h-auto rounded-2xl font-semibold transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-105"
+            className="bg-gray-600 hover:bg-gray-700 text-white text-lg px-10 py-4 h-auto rounded-2xl font-semibold transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-105"
           >
             {t('meetOurBreeds')}
           </Button>

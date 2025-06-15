@@ -26,8 +26,7 @@ const KerryBlueTerrier = () => {
 
       <main className="pt-16">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          {/* Breed Header */}
-          <div className="liquid-glass p-16 text-center mb-12">
+          <Card className="liquid-glass p-16 text-center">
             <div className="mb-8">
               <img 
                 src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
@@ -37,37 +36,35 @@ const KerryBlueTerrier = () => {
             </div>
             
             <h1 className="text-5xl font-bold text-gray-900 dark:text-white mb-6">
-              Kerry Blue <span className="gradient-text">Terrier</span>
+              Kerry Blue <span className="bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">Terrier</span>
             </h1>
             
             <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto">
               The Kerry Blue Terrier is an alert, determined, and adaptable breed. Originally bred in Ireland for hunting and farm work, they make excellent family companions with proper training and socialization.
             </p>
 
-            <div className="flex flex-wrap gap-3 justify-center mb-6">
-              <span className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-4 py-2 rounded-full text-sm font-semibold">
-                Alert
-              </span>
-              <span className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-4 py-2 rounded-full text-sm font-semibold">
-                Determined
-              </span>
-              <span className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-4 py-2 rounded-full text-sm font-semibold">
-                Adaptable
-              </span>
-              <span className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-4 py-2 rounded-full text-sm font-semibold">
-                Loyal
-              </span>
+            <div className="bg-gray-50 dark:bg-gray-900 rounded-2xl p-8 mb-8 border border-gray-200 dark:border-gray-700">
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Contact Us for Availability</h2>
+              <p className="text-gray-700 dark:text-gray-300 mb-6">
+                We're developing our Kerry Blue Terrier program with carefully selected champion lines. 
+                Contact us on Facebook to discuss our current and upcoming Kerry Blue Terrier litters.
+              </p>
+              <div className="flex flex-wrap gap-3 justify-center mb-6">
+                <span className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-4 py-2 rounded-full text-sm font-semibold">
+                  Alert
+                </span>
+                <span className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-4 py-2 rounded-full text-sm font-semibold">
+                  Determined
+                </span>
+                <span className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-4 py-2 rounded-full text-sm font-semibold">
+                  Adaptable
+                </span>
+                <span className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-4 py-2 rounded-full text-sm font-semibold">
+                  Loyal
+                </span>
+              </div>
             </div>
-          </div>
 
-          {/* Facebook Contact CTA */}
-          <div className="liquid-glass p-12 text-center">
-            <h3 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
-              Interested in a Kerry Blue Terrier?
-            </h3>
-            <p className="text-lg text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
-              Contact us on Facebook to discuss availability, payment options, and to learn more about our Kerry Blue Terrier breeding program.
-            </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a 
                 href="https://facebook.com/sholo.breeding" 
@@ -82,11 +79,11 @@ const KerryBlueTerrier = () => {
               </a>
               <Link to="/">
                 <Button variant="outline" className="btn-secondary px-8 py-3">
-                  View Other Breeds
+                  View Available Breeds
                 </Button>
               </Link>
             </div>
-          </div>
+          </Card>
         </div>
       </main>
 
@@ -98,7 +95,7 @@ const KerryBlueTerrier = () => {
               alt="SHOLO Logo" 
               className="h-8 w-8 logo-circular object-cover"
             />
-            <span className="text-xl font-bold gradient-text">SHOLO</span>
+            <span className="text-xl font-bold bg-gradient-to-r from-gray-300 to-white bg-clip-text text-transparent">SHOLO</span>
           </Link>
           <p className="text-gray-400 text-sm">
             © {new Date().getFullYear()} SHOLO. All rights reserved.

@@ -26,8 +26,7 @@ const SouthAfricanBoerboel = () => {
 
       <main className="pt-16">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          {/* Breed Header */}
-          <div className="liquid-glass p-16 text-center mb-12">
+          <Card className="liquid-glass p-16 text-center">
             <div className="mb-8">
               <img 
                 src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
@@ -37,37 +36,35 @@ const SouthAfricanBoerboel = () => {
             </div>
             
             <h1 className="text-5xl font-bold text-gray-900 dark:text-white mb-6">
-              South African <span className="gradient-text">Boerboel</span>
+              South African <span className="bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">Boerboel</span>
             </h1>
             
             <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto">
               The South African Boerboel is a confident, intelligent, and calm breed. Originally developed as a farm guardian, they are known for their loyalty, protective nature, and gentle demeanor with family.
             </p>
 
-            <div className="flex flex-wrap gap-3 justify-center mb-6">
-              <span className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-4 py-2 rounded-full text-sm font-semibold">
-                Confident
-              </span>
-              <span className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-4 py-2 rounded-full text-sm font-semibold">
-                Intelligent
-              </span>
-              <span className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-4 py-2 rounded-full text-sm font-semibold">
-                Calm
-              </span>
-              <span className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-4 py-2 rounded-full text-sm font-semibold">
-                Protective
-              </span>
+            <div className="bg-gray-50 dark:bg-gray-900 rounded-2xl p-8 mb-8 border border-gray-200 dark:border-gray-700">
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Contact Us for Availability</h2>
+              <p className="text-gray-700 dark:text-gray-300 mb-6">
+                We're developing our South African Boerboel program with carefully selected champion lines. 
+                Contact us on Facebook to discuss our current and upcoming South African Boerboel litters.
+              </p>
+              <div className="flex flex-wrap gap-3 justify-center mb-6">
+                <span className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-4 py-2 rounded-full text-sm font-semibold">
+                  Confident
+                </span>
+                <span className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-4 py-2 rounded-full text-sm font-semibold">
+                  Intelligent
+                </span>
+                <span className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-4 py-2 rounded-full text-sm font-semibold">
+                  Calm
+                </span>
+                <span className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-4 py-2 rounded-full text-sm font-semibold">
+                  Protective
+                </span>
+              </div>
             </div>
-          </div>
 
-          {/* Facebook Contact CTA */}
-          <div className="liquid-glass p-12 text-center">
-            <h3 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
-              Interested in a South African Boerboel?
-            </h3>
-            <p className="text-lg text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
-              Contact us on Facebook to discuss availability, payment options, and to learn more about our South African Boerboel breeding program.
-            </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a 
                 href="https://facebook.com/sholo.breeding" 
@@ -82,11 +79,11 @@ const SouthAfricanBoerboel = () => {
               </a>
               <Link to="/">
                 <Button variant="outline" className="btn-secondary px-8 py-3">
-                  View Other Breeds
+                  View Available Breeds
                 </Button>
               </Link>
             </div>
-          </div>
+          </Card>
         </div>
       </main>
 
@@ -98,7 +95,7 @@ const SouthAfricanBoerboel = () => {
               alt="SHOLO Logo" 
               className="h-8 w-8 logo-circular object-cover"
             />
-            <span className="text-xl font-bold gradient-text">SHOLO</span>
+            <span className="text-xl font-bold bg-gradient-to-r from-gray-300 to-white bg-clip-text text-transparent">SHOLO</span>
           </Link>
           <p className="text-gray-400 text-sm">
             © {new Date().getFullYear()} SHOLO. All rights reserved.

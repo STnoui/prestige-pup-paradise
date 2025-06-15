@@ -5,10 +5,10 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
-import GoldenRetriever from "./pages/breeds/GoldenRetriever";
-import LabradorRetriever from "./pages/breeds/LabradorRetriever";
-import FrenchBulldog from "./pages/breeds/FrenchBulldog";
-import GermanShepherd from "./pages/breeds/GermanShepherd";
+import AmericanAkita from "./pages/breeds/AmericanAkita";
+import SouthAfricanBoerboel from "./pages/breeds/SouthAfricanBoerboel";
+import MiniatureSchnauzer from "./pages/breeds/MiniatureSchnauzer";
+import KerryBlueTerrier from "./pages/breeds/KerryBlueTerrier";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -21,10 +21,10 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
-          <Route path="/breeds/golden-retriever" element={<GoldenRetriever />} />
-          <Route path="/breeds/labrador-retriever" element={<LabradorRetriever />} />
-          <Route path="/breeds/french-bulldog" element={<FrenchBulldog />} />
-          <Route path="/breeds/german-shepherd" element={<GermanShepherd />} />
+          <Route path="/breeds/american-akita" element={<AmericanAkita />} />
+          <Route path="/breeds/south-african-boerboel" element={<SouthAfricanBoerboel />} />
+          <Route path="/breeds/miniature-schnauzer" element={<MiniatureSchnauzer />} />
+          <Route path="/breeds/kerry-blue-terrier" element={<KerryBlueTerrier />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

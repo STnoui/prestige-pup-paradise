@@ -15,10 +15,10 @@ const HeroSection = () => {
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: `url('https://images.unsplash.com/photo-1586671267731-da2cf3ceeb80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2089&q=80')`
+          backgroundImage: `url('https://images.unsplash.com/photo-1586671267731-da2cf3ceeb80?ixlib=rb-4.0.3&auto=format&fit=crop&w=2089&q=80')`
         }}
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-slate-900/20 via-slate-900/40 to-slate-900/60" />
+      <div className="absolute inset-0 bg-gradient-to-b from-gray-900/20 via-gray-900/40 to-gray-900/60" />
       
       {/* Floating Elements */}
       <div className="absolute top-20 left-10 text-4xl animate-float opacity-20">🦴</div>
@@ -27,14 +27,17 @@ const HeroSection = () => {
 
       {/* Content */}
       <div className="relative z-10 text-center text-white px-6 max-w-5xl mx-auto">
-        <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-8 animate-fade-in">
-          Excellence in Every
-          <span className="block gradient-text text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-blue-600">
-            Pawprint
-          </span>
+        <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-4 animate-fade-in">
+          SHOLO
         </h1>
         
-        <p className="text-xl md:text-2xl mb-12 max-w-3xl mx-auto leading-relaxed opacity-90 animate-fade-in" style={{ animationDelay: '0.3s' }}>
+        <h2 className="text-2xl md:text-4xl lg:text-5xl font-medium mb-8 animate-fade-in" style={{ animationDelay: '0.2s' }}>
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600">
+            Brave Dogs
+          </span>
+        </h2>
+        
+        <p className="text-xl md:text-2xl mb-12 max-w-3xl mx-auto leading-relaxed opacity-90 animate-fade-in" style={{ animationDelay: '0.4s' }}>
           Discover meticulously bred companions, raised with passion and expertise for discerning families who deserve nothing but the finest.
         </p>
         

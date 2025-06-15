@@ -44,7 +44,7 @@ const Header = ({ onNavigateToSection }: HeaderProps) => {
     <header 
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
         scrolled 
-          ? 'glass backdrop-blur-xl shadow-lg' 
+          ? 'liquid-glass backdrop-blur-xl shadow-lg' 
           : 'bg-transparent'
       }`}
     >
@@ -56,8 +56,8 @@ const Header = ({ onNavigateToSection }: HeaderProps) => {
             className="flex items-center space-x-3 group"
           >
             <div className="text-3xl animate-float">🐾</div>
-            <span className="text-2xl font-bold gradient-text group-hover:scale-105 transition-transform duration-200">
-              Prestige Pups
+            <span className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent group-hover:scale-105 transition-transform duration-200">
+              SHOLO
             </span>
           </button>
 
@@ -67,7 +67,7 @@ const Header = ({ onNavigateToSection }: HeaderProps) => {
               <button
                 key={item.id}
                 onClick={() => handleNavigation(item.id)}
-                className="px-4 py-2 rounded-xl text-sm font-medium text-slate-700 hover:text-blue-600 hover:bg-slate-100/50 transition-all duration-200"
+                className="px-4 py-2 rounded-xl text-sm font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-100/50 transition-all duration-200"
               >
                 {item.label}
               </button>
@@ -77,7 +77,7 @@ const Header = ({ onNavigateToSection }: HeaderProps) => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-2 rounded-xl text-slate-600 hover:text-blue-600 hover:bg-slate-100/50 transition-all duration-200"
+            className="md:hidden p-2 rounded-xl text-gray-600 hover:text-blue-600 hover:bg-gray-100/50 transition-all duration-200"
           >
             <svg 
               className={`w-6 h-6 transition-transform duration-200 ${isMenuOpen ? 'rotate-90' : ''}`} 
@@ -97,13 +97,13 @@ const Header = ({ onNavigateToSection }: HeaderProps) => {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="md:hidden glass rounded-2xl shadow-xl border border-white/20 mb-4 animate-scale-in">
+          <div className="md:hidden liquid-glass rounded-2xl shadow-xl border border-white/20 mb-4 animate-scale-in">
             <nav className="px-6 py-4 space-y-1">
               {navItems.map((item) => (
                 <button
                   key={item.id}
                   onClick={() => handleNavigation(item.id)}
-                  className="block w-full text-left px-4 py-3 rounded-xl text-slate-700 hover:text-blue-600 hover:bg-slate-100/50 transition-all duration-200"
+                  className="block w-full text-left px-4 py-3 rounded-xl text-gray-700 hover:text-blue-600 hover:bg-gray-100/50 transition-all duration-200"
                 >
                   {item.label}
                 </button>

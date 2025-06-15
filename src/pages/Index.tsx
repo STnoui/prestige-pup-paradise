@@ -36,7 +36,7 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
+    <div className="min-h-screen bg-gray-50 dark:bg-black">
       <Header onNavigateToSection={handleNavigateToSection} />
       
       <main>
@@ -48,11 +48,11 @@ const Index = () => {
           <AboutSection />
         </section>
         
-        <section ref={setSectionRef('our-dogs')} id="our-dogs" className="py-24 bg-white dark:bg-gray-800">
+        <section ref={setSectionRef('our-dogs')} id="our-dogs" className="py-24 bg-white dark:bg-gray-900">
           <OurDogsSection />
         </section>
         
-        <section ref={setSectionRef('contact')} id="contact" className="py-24 bg-white dark:bg-gray-800">
+        <section ref={setSectionRef('contact')} id="contact" className="py-24 bg-white dark:bg-gray-900">
           <ContactSection />
         </section>
       </main>

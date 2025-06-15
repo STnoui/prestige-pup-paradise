@@ -60,7 +60,7 @@ const Header = ({ onNavigateToSection }: HeaderProps) => {
             <img 
               src="/lovable-uploads/4fc6ff94-b7a7-4209-83d2-aa6063da5978.png" 
               alt="SHOLO Logo" 
-              className="h-12 w-auto group-hover:scale-105 transition-transform duration-200"
+              className="h-12 w-12 logo-circular group-hover:scale-105 transition-transform duration-200 object-cover"
             />
           </button>
 
@@ -70,7 +70,7 @@ const Header = ({ onNavigateToSection }: HeaderProps) => {
               <button
                 key={item.id}
                 onClick={() => handleNavigation(item.id)}
-                className="px-4 py-2 rounded-xl text-sm font-medium text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100/50 dark:hover:bg-gray-800/50 transition-all duration-200"
+                className="px-4 py-2 rounded-xl text-sm font-medium text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-100/50 dark:hover:bg-gray-800/50 transition-all duration-200"
               >
                 {item.label}
               </button>
@@ -85,7 +85,7 @@ const Header = ({ onNavigateToSection }: HeaderProps) => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-2 rounded-xl text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100/50 dark:hover:bg-gray-800/50 transition-all duration-200"
+            className="md:hidden p-2 rounded-xl text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-100/50 dark:hover:bg-gray-800/50 transition-all duration-200"
           >
             <svg 
               className={`w-6 h-6 transition-transform duration-200 ${isMenuOpen ? 'rotate-90' : ''}`} 
@@ -111,7 +111,7 @@ const Header = ({ onNavigateToSection }: HeaderProps) => {
                 <button
                   key={item.id}
                   onClick={() => handleNavigation(item.id)}
-                  className="block w-full text-left px-4 py-3 rounded-xl text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100/50 dark:hover:bg-gray-800/50 transition-all duration-200"
+                  className="block w-full text-left px-4 py-3 rounded-xl text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-100/50 dark:hover:bg-gray-800/50 transition-all duration-200"
                 >
                   {item.label}
                 </button>

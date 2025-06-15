@@ -1,4 +1,3 @@
-
 import { Link } from 'react-router-dom';
 import { Card } from '@/components/ui/card';
 
@@ -82,7 +81,7 @@ const OurDogsSection = () => {
       </div>
 
       {/* Call to Action */}
-      <div className="liquid-glass p-12 text-center bg-gradient-to-r from-blue-50/50 to-gray-50/50 dark:from-blue-950/20 dark:to-gray-950/20">
+      <div className="liquid-glass p-12 text-center bg-gradient-to-r from-gray-50/50 to-gray-100/50 dark:from-gray-950/20 dark:to-gray-900/20">
         <h3 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
           Ready to Find Your Perfect Companion?
         </h3>

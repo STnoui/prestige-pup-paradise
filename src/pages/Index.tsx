@@ -5,7 +5,6 @@ import Header from '@/components/Header';
 import HeroSection from '@/components/sections/HeroSection';
 import AboutSection from '@/components/sections/AboutSection';
 import OurDogsSection from '@/components/sections/OurDogsSection';
-import InfoSection from '@/components/sections/InfoSection';
 import ContactSection from '@/components/sections/ContactSection';
 import Footer from '@/components/Footer';
 
@@ -37,7 +36,7 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
       <Header onNavigateToSection={handleNavigateToSection} />
       
       <main>
@@ -49,15 +48,11 @@ const Index = () => {
           <AboutSection />
         </section>
         
-        <section ref={setSectionRef('our-dogs')} id="our-dogs" className="py-24 bg-white">
+        <section ref={setSectionRef('our-dogs')} id="our-dogs" className="py-24 bg-white dark:bg-gray-800">
           <OurDogsSection />
         </section>
         
-        <section ref={setSectionRef('info')} id="info" className="py-24">
-          <InfoSection />
-        </section>
-        
-        <section ref={setSectionRef('contact')} id="contact" className="py-24 bg-white">
+        <section ref={setSectionRef('contact')} id="contact" className="py-24 bg-white dark:bg-gray-800">
           <ContactSection />
         </section>
       </main>

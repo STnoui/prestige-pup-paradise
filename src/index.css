@@ -89,7 +89,7 @@
 
 @layer base {
   * {
-    @apply border-border;
+    border-color: transparent !important;
   }
 
   body {
@@ -104,18 +104,18 @@
     overflow-x: hidden; /* Prevent horizontal scrolling */
   }
 
-  /* Clean button styles with blue accent */
+  /* Clean button styles with blue accent and shadows */
   .btn-primary {
     @apply bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-2xl font-semibold transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-105;
   }
 
   .btn-secondary {
-    @apply bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300 px-8 py-4 rounded-2xl font-semibold transition-all duration-200 hover:scale-105;
+    @apply bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300 px-8 py-4 rounded-2xl font-semibold transition-all duration-200 hover:scale-105 shadow-md hover:shadow-lg;
   }
 
-  /* Clean card style - no yellow borders */
+  /* Clean card style with shadows instead of borders */
   .liquid-glass {
-    @apply bg-white/80 dark:bg-black/80 rounded-3xl shadow-sm border border-gray-200/50 dark:border-gray-700/50 hover:shadow-lg transition-all duration-300;
+    @apply bg-white/80 dark:bg-black/80 rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
   }
@@ -125,9 +125,9 @@
     @apply bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent;
   }
 
-  /* Circular logo */
+  /* Circular logo with shadow instead of border */
   .logo-circular {
-    @apply rounded-full border-2 border-blue-600 p-1;
+    @apply rounded-full shadow-md p-1;
   }
 }
 
@@ -150,59 +150,65 @@
   @apply bg-gray-400 dark:bg-gray-500;
 }
 
-/* Ensure no yellow elements appear anywhere */
+/* Remove all borders and replace with shadows */
 * {
-  border-color: inherit !important;
+  border-color: transparent !important;
 }
 
-/* Override any potential yellow focus states */
+/* Override focus states to use shadows */
 *:focus {
-  outline-color: rgb(37 99 235) !important; /* Blue focus */
-  border-color: rgb(37 99 235) !important; /* Blue border on focus */
+  outline: none !important;
+  box-shadow: 0 0 0 2px rgb(37 99 235) !important; /* Blue focus shadow */
 }
 
-/* Override any yellow hover states */
-*:hover {
-  border-color: inherit !important;
-}
-
-/* Specifically target dropdown and radix components */
-[data-radix-popper-content-wrapper] {
-  z-index: 60 !important;
-}
-
-/* Override any potential amber/yellow colors in Radix components */
-[data-state="open"] {
-  background-color: inherit !important;
-}
-
-[data-highlighted] {
-  background-color: rgb(243 244 246) !important; /* gray-100 */
-}
-
-.dark [data-highlighted] {
-  background-color: rgb(55 65 81) !important; /* gray-700 */
-}
-
-/* Ensure dropdown menus have proper styling */
+/* Ensure dropdown menus have proper solid backgrounds and shadows */
 [role="menu"] {
   background-color: white !important;
-  border: 1px solid rgb(229 231 235) !important; /* gray-200 */
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1) !important;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04) !important;
+  border: none !important;
 }
 
 .dark [role="menu"] {
   background-color: rgb(31 41 55) !important; /* gray-800 */
-  border: 1px solid rgb(55 65 81) !important; /* gray-700 */
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2) !important;
 }
 
-/* Override any potential yellow/amber accent colors */
-[data-accent-color="amber"], 
-[data-accent-color="yellow"] {
-  --accent-color: rgb(37 99 235) !important; /* blue-600 */
-}
-
-/* Prevent any yellow sidebars or overlays */
+/* Prevent any sidebar-related overlays */
 [data-state="open"][data-side] {
-  background-color: transparent !important;
+  display: none !important;
+}
+
+/* Force dropdown content to have solid backgrounds */
+[data-radix-popper-content-wrapper] {
+  z-index: 100 !important;
+}
+
+[data-radix-popper-content-wrapper] > * {
+  background-color: white !important;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1) !important;
+}
+
+.dark [data-radix-popper-content-wrapper] > * {
+  background-color: rgb(31 41 55) !important;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Override any potential transparent dropdowns */
+[data-state="open"] {
+  background-color: white !important;
+}
+
+.dark [data-state="open"] {
+  background-color: rgb(31 41 55) !important;
+}
+
+/* Remove all sidebar components completely */
+[data-sidebar] {
+  display: none !important;
+}
+
+/* Ensure cards and components use shadows instead of borders */
+.card, .border {
+  border: none !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06) !important;
 }

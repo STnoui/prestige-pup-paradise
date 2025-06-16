@@ -46,7 +46,7 @@ const OurDogsSection = () => {
       <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
         {breeds.map((breed, index) => (
           <Link key={breed.name} to={breed.path}>
-            <Card className="liquid-glass overflow-hidden group hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 hover:border-blue-500 dark:hover:border-blue-400">
+            <Card className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 overflow-hidden group hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 hover:border-blue-500 dark:hover:border-blue-400 rounded-3xl">
               <div className="relative overflow-hidden">
                 <img 
                   src={breed.image}
@@ -82,7 +82,7 @@ const OurDogsSection = () => {
       </div>
 
       {/* Call to Action */}
-      <div className="liquid-glass p-12 text-center bg-gradient-to-r from-gray-50/50 to-gray-100/50 dark:from-gray-950/20 dark:to-gray-900/20">
+      <div className="bg-white/50 dark:bg-black/50 rounded-3xl border border-gray-200/50 dark:border-gray-700/50 p-12 text-center backdrop-blur-sm">
         <h3 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
           Ready to Find Your Perfect Companion?
         </h3>

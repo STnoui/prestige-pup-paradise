@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -94,11 +95,13 @@
   body {
     @apply bg-background text-foreground font-inter antialiased;
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    overflow-x: hidden; /* Prevent horizontal scrolling that could cause sidebar issues */
   }
 
   /* Smooth scrolling */
   html {
     scroll-behavior: smooth;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
   }
 
   /* Clean button styles with blue accent */
@@ -110,7 +113,7 @@
     @apply bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300 px-8 py-4 rounded-2xl font-semibold transition-all duration-200 hover:scale-105;
   }
 
-  /* Clean card style */
+  /* Clean card style - no yellow borders */
   .liquid-glass {
     @apply bg-white/80 dark:bg-black/80 rounded-3xl shadow-sm border border-gray-200/50 dark:border-gray-700/50 hover:shadow-lg transition-all duration-300;
     backdrop-filter: blur(10px);
@@ -145,4 +148,20 @@
 
 ::-webkit-scrollbar-thumb:hover {
   @apply bg-gray-400 dark:bg-gray-500;
+}
+
+/* Ensure no yellow elements appear anywhere */
+* {
+  border-color: inherit !important;
+}
+
+/* Override any potential yellow focus states */
+*:focus {
+  outline-color: rgb(37 99 235) !important; /* Blue focus */
+  border-color: rgb(37 99 235) !important; /* Blue border on focus */
+}
+
+/* Override any yellow hover states */
+*:hover {
+  border-color: inherit !important;
 }

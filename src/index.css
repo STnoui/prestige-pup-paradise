@@ -165,3 +165,44 @@
 *:hover {
   border-color: inherit !important;
 }
+
+/* Specifically target dropdown and radix components */
+[data-radix-popper-content-wrapper] {
+  z-index: 60 !important;
+}
+
+/* Override any potential amber/yellow colors in Radix components */
+[data-state="open"] {
+  background-color: inherit !important;
+}
+
+[data-highlighted] {
+  background-color: rgb(243 244 246) !important; /* gray-100 */
+}
+
+.dark [data-highlighted] {
+  background-color: rgb(55 65 81) !important; /* gray-700 */
+}
+
+/* Ensure dropdown menus have proper styling */
+[role="menu"] {
+  background-color: white !important;
+  border: 1px solid rgb(229 231 235) !important; /* gray-200 */
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1) !important;
+}
+
+.dark [role="menu"] {
+  background-color: rgb(31 41 55) !important; /* gray-800 */
+  border: 1px solid rgb(55 65 81) !important; /* gray-700 */
+}
+
+/* Override any potential yellow/amber accent colors */
+[data-accent-color="amber"], 
+[data-accent-color="yellow"] {
+  --accent-color: rgb(37 99 235) !important; /* blue-600 */
+}
+
+/* Prevent any yellow sidebars or overlays */
+[data-state="open"][data-side] {
+  background-color: transparent !important;
+}

@@ -34,18 +34,18 @@ const SettingsDropdown = () => {
           <Settings className="h-4 w-4" />
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="end" className="w-48">
-        <DropdownMenuLabel>Settings</DropdownMenuLabel>
-        <DropdownMenuSeparator />
+      <DropdownMenuContent align="end" className="w-48 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
+        <DropdownMenuLabel className="text-gray-900 dark:text-white">Settings</DropdownMenuLabel>
+        <DropdownMenuSeparator className="bg-gray-200 dark:bg-gray-700" />
         
         <DropdownMenuLabel className="text-xs text-gray-500 dark:text-gray-400">
           Theme
         </DropdownMenuLabel>
-        <DropdownMenuItem onClick={toggleTheme}>
+        <DropdownMenuItem onClick={toggleTheme} className="text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">
           {isDark ? '☀️ Light Mode' : '🌙 Dark Mode'}
         </DropdownMenuItem>
         
-        <DropdownMenuSeparator />
+        <DropdownMenuSeparator className="bg-gray-200 dark:bg-gray-700" />
         
         <DropdownMenuLabel className="text-xs text-gray-500 dark:text-gray-400">
           Language
@@ -54,10 +54,12 @@ const SettingsDropdown = () => {
           <DropdownMenuItem
             key={lang.code}
             onClick={() => setLanguage(lang.code)}
-            className={language === lang.code ? 'bg-gray-100 dark:bg-gray-800' : ''}
+            className={`text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 ${
+              language === lang.code ? 'bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300' : ''
+            }`}
           >
             {lang.name}
-            {language === lang.code && <span className="ml-auto">✓</span>}
+            {language === lang.code && <span className="ml-auto text-blue-600 dark:text-blue-400">✓</span>}
           </DropdownMenuItem>
         ))}
       </DropdownMenuContent>

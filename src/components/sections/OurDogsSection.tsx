@@ -1,3 +1,4 @@
+
 import { Link } from 'react-router-dom';
 import { Card } from '@/components/ui/card';
 
@@ -62,7 +63,7 @@ const OurDogsSection = () => {
                 </div>
               </div>
               
-              <div className="p-6">
+              <div className="p-6 bg-white dark:bg-gray-900">
                 <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                   {breed.name}
                 </h3>

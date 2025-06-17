@@ -29,39 +29,18 @@
   display: none !important;
 }
 
-/* Ensure no yellow backgrounds anywhere */
-* {
-  background-color: inherit;
-}
-
-/* Force remove any yellow colors */
+/* Targeted yellow color removal - only for specific classes */
 .bg-yellow-500,
 .bg-yellow-400,
 .bg-yellow-300,
 .bg-yellow-200,
-.bg-yellow-100,
+.bg-yellow-100 {
+  background-color: transparent !important;
+}
+
+/* Remove yellow from specific style attributes */
 [style*="background-color: yellow"],
 [style*="background: yellow"] {
   background-color: transparent !important;
   background: transparent !important;
-}
-
-/* Remove yellow from any elements */
-body * {
-  background-color: inherit !important;
-}
-
-/* Specific override for any lingering yellow */
-html,
-body,
-#root,
-* {
-  background-color: white;
-}
-
-.dark html,
-.dark body,
-.dark #root,
-.dark * {
-  background-color: black;
 }

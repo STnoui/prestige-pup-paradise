@@ -103,17 +103,3 @@
     overflow-x: hidden;
   }
 }
-
-/* Remove any yellow backgrounds */
-* {
-  background-color: inherit;
-}
-
-/* Ensure no yellow colors appear anywhere */
-.bg-yellow-500,
-.bg-yellow-400,
-.bg-yellow-300,
-.bg-yellow-200,
-.bg-yellow-100 {
-  background-color: transparent !important;
-}

@@ -88,20 +88,15 @@
 }
 
 @layer base {
-  * {
-    border-color: transparent !important;
-  }
-
   body {
     @apply bg-background text-foreground font-inter antialiased;
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
-    overflow-x: hidden; /* Prevent horizontal scrolling that could cause sidebar issues */
+    overflow-x: hidden;
   }
 
-  /* Smooth scrolling */
   html {
     scroll-behavior: smooth;
-    overflow-x: hidden; /* Prevent horizontal scrolling */
+    overflow-x: hidden;
   }
 
   /* Clean button styles with blue accent and shadows */
@@ -129,6 +124,26 @@
   .logo-circular {
     @apply rounded-full shadow-md p-1;
   }
+
+  /* Animation keyframes */
+  @keyframes fade-in {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes scale-in {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.6s ease-out forwards;
+    opacity: 0;
+  }
+
+  .animate-scale-in {
+    animation: scale-in 0.2s ease-out forwards;
+  }
 }
 
 /* Custom scrollbar */
@@ -150,56 +165,10 @@
   @apply bg-gray-400 dark:bg-gray-500;
 }
 
-/* Remove all borders and replace with shadows */
-* {
-  border-color: transparent !important;
-}
-
 /* Override focus states to use shadows */
-*:focus {
+*:focus-visible {
   outline: none !important;
-  box-shadow: 0 0 0 2px rgb(37 99 235) !important; /* Blue focus shadow */
-}
-
-/* Ensure dropdown menus have proper solid backgrounds and shadows */
-[role="menu"] {
-  background-color: white !important;
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04) !important;
-  border: none !important;
-}
-
-.dark [role="menu"] {
-  background-color: rgb(31 41 55) !important; /* gray-800 */
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2) !important;
-}
-
-/* Prevent any sidebar-related overlays */
-[data-state="open"][data-side] {
-  display: none !important;
-}
-
-/* Force dropdown content to have solid backgrounds */
-[data-radix-popper-content-wrapper] {
-  z-index: 100 !important;
-}
-
-[data-radix-popper-content-wrapper] > * {
-  background-color: white !important;
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1) !important;
-}
-
-.dark [data-radix-popper-content-wrapper] > * {
-  background-color: rgb(31 41 55) !important;
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3) !important;
-}
-
-/* Override any potential transparent dropdowns */
-[data-state="open"] {
-  background-color: white !important;
-}
-
-.dark [data-state="open"] {
-  background-color: rgb(31 41 55) !important;
+  box-shadow: 0 0 0 2px rgb(37 99 235) !important;
 }
 
 /* Remove all sidebar components completely */
@@ -208,7 +177,8 @@
 }
 
 /* Ensure cards and components use shadows instead of borders */
-.card, .border {
+.card {
   border: none !important;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06) !important;
 }
+

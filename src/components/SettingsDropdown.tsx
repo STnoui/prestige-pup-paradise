@@ -29,14 +29,14 @@ const SettingsDropdown = () => {
         <Button
           variant="ghost"
           size="sm"
-          className="h-9 w-9 p-0 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 border-0 shadow-md hover:shadow-lg transition-shadow"
+          className="h-9 w-9 p-0 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 shadow-md hover:shadow-lg transition-shadow"
         >
           <Settings className="h-4 w-4" />
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent 
         align="end" 
-        className="w-48 bg-white dark:bg-gray-800 shadow-xl border-0 z-[100]"
+        className="w-48 bg-white dark:bg-gray-800 shadow-xl z-[100]"
         sideOffset={8}
       >
         <DropdownMenuLabel className="text-gray-900 dark:text-white">Settings</DropdownMenuLabel>
@@ -75,3 +75,4 @@ const SettingsDropdown = () => {
 };
 
 export default SettingsDropdown;
+

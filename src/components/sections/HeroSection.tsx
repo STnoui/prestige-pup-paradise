@@ -26,17 +26,17 @@ const HeroSection = () => {
       {/* Content */}
       <div className="relative z-10 text-center text-white px-6 max-w-5xl mx-auto">
         <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-4 animate-fade-in">
-          {t('heroTitle')}
+          SHOLO Brave Dogs
         </h1>
         
         <h2 className="text-2xl md:text-4xl lg:text-5xl font-medium mb-8 animate-fade-in" style={{ animationDelay: '0.2s' }}>
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-gray-300 to-gray-100">
-            {t('heroSubtitle')}
+            Premium Dog Breeding Excellence
           </span>
         </h2>
         
         <p className="text-xl md:text-2xl mb-12 max-w-3xl mx-auto leading-relaxed opacity-90 animate-fade-in" style={{ animationDelay: '0.4s' }}>
-          {t('heroDescription')}
+          Discover meticulously bred companions, raised with passion and expertise for discerning families who deserve nothing but the finest.
         </p>
         
         <div className="flex flex-col sm:flex-row gap-6 justify-center animate-fade-in" style={{ animationDelay: '0.6s' }}>
@@ -44,14 +44,14 @@ const HeroSection = () => {
             onClick={handleScrollToBreeds}
             className="bg-gray-600 hover:bg-gray-700 text-white text-lg px-10 py-4 h-auto rounded-2xl font-semibold transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-105"
           >
-            {t('meetOurBreeds')}
+            Meet Our Breeds
           </Button>
           <Button 
             variant="outline"
             className="bg-white/10 backdrop-blur-sm border-white/30 text-white hover:bg-white/20 text-lg px-10 py-4 h-auto rounded-2xl"
             onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
           >
-            {t('ourStory')}
+            Our Story
           </Button>
         </div>
       </div>

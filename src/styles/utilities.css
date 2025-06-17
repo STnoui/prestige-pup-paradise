@@ -1,0 +1,30 @@
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100 dark:bg-black;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-300 dark:bg-gray-600;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-400 dark:bg-gray-500;
+}
+
+/* Override focus states to use shadows */
+*:focus-visible {
+  outline: none !important;
+  box-shadow: 0 0 0 2px rgb(37 99 235) !important;
+}
+
+/* Remove all sidebar components completely */
+[data-sidebar] {
+  display: none !important;
+}

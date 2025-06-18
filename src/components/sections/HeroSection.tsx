@@ -16,15 +16,15 @@ const HeroSection = () => {
     <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image with Gradient Overlay */}
       <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
         style={{
           backgroundImage: `url('https://images.unsplash.com/photo-1586671267731-da2cf3ceeb80?ixlib=rb-4.0.3&auto=format&fit=crop&w=2089&q=80')`
         }}
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-gray-900/20 via-gray-900/40 to-gray-900/60" />
+      <div className="absolute inset-0 z-10 bg-gradient-to-b from-gray-900/20 via-gray-900/40 to-gray-900/60" />
 
       {/* Content */}
-      <div className="relative z-10 text-center text-white px-6 max-w-5xl mx-auto">
+      <div className="relative z-20 text-center text-white px-6 max-w-5xl mx-auto">
         <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-4 text-white animate-fade-in">
           SHOLO Brave Dogs
         </h1>
@@ -57,7 +57,7 @@ const HeroSection = () => {
       </div>
 
       {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce z-20">
         <div className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center">
           <div className="w-1 h-3 bg-white/70 rounded-full mt-2 animate-pulse"></div>
         </div>

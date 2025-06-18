@@ -25,21 +25,50 @@ const HeroSection = () => {
 
       {/* Content */}
       <div className="relative z-20 text-center px-6 max-w-5xl mx-auto">
-        <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-4 animate-fade-in" style={{ color: '#ffffff' }}>
+        <h1 
+          className="text-5xl md:text-7xl lg:text-8xl font-bold mb-4 animate-fade-in"
+          style={{ 
+            color: '#ffffff',
+            opacity: 1,
+            animationFillMode: 'forwards'
+          }}
+        >
           SHOLO Brave Dogs
         </h1>
         
-        <h2 className="text-2xl md:text-4xl lg:text-5xl font-medium mb-8 animate-fade-in" style={{ animationDelay: '0.2s' }}>
+        <h2 
+          className="text-2xl md:text-4xl lg:text-5xl font-medium mb-8 animate-fade-in" 
+          style={{ 
+            animationDelay: '0.2s',
+            opacity: 1,
+            animationFillMode: 'forwards'
+          }}
+        >
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-gray-300 to-gray-100">
             Premium Dog Breeding Excellence
           </span>
         </h2>
         
-        <p className="text-xl md:text-2xl mb-12 max-w-3xl mx-auto leading-relaxed opacity-90 animate-fade-in" style={{ animationDelay: '0.4s', color: '#ffffff' }}>
+        <p 
+          className="text-xl md:text-2xl mb-12 max-w-3xl mx-auto leading-relaxed animate-fade-in" 
+          style={{ 
+            animationDelay: '0.4s', 
+            color: '#ffffff',
+            opacity: 1,
+            animationFillMode: 'forwards'
+          }}
+        >
           Discover meticulously bred companions, raised with passion and expertise for discerning families who deserve nothing but the finest.
         </p>
         
-        <div className="flex flex-col sm:flex-row gap-6 justify-center animate-fade-in" style={{ animationDelay: '0.6s' }}>
+        <div 
+          className="flex flex-col sm:flex-row gap-6 justify-center animate-fade-in" 
+          style={{ 
+            animationDelay: '0.6s',
+            opacity: 1,
+            animationFillMode: 'forwards'
+          }}
+        >
           <Button 
             onClick={handleScrollToBreeds}
             className="bg-blue-600 hover:bg-blue-700 text-white text-lg px-10 py-4 h-auto rounded-2xl font-semibold transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-105"

@@ -24,8 +24,8 @@ const HeroSection = () => {
       <div className="absolute inset-0 z-10 bg-gradient-to-b from-gray-900/20 via-gray-900/40 to-gray-900/60" />
 
       {/* Content */}
-      <div className="relative z-20 text-center text-white px-6 max-w-5xl mx-auto">
-        <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-4 text-white animate-fade-in">
+      <div className="relative z-20 text-center px-6 max-w-5xl mx-auto">
+        <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-4 animate-fade-in" style={{ color: '#ffffff' }}>
           SHOLO Brave Dogs
         </h1>
         
@@ -35,7 +35,7 @@ const HeroSection = () => {
           </span>
         </h2>
         
-        <p className="text-xl md:text-2xl mb-12 max-w-3xl mx-auto leading-relaxed opacity-90 text-white animate-fade-in" style={{ animationDelay: '0.4s' }}>
+        <p className="text-xl md:text-2xl mb-12 max-w-3xl mx-auto leading-relaxed opacity-90 animate-fade-in" style={{ animationDelay: '0.4s', color: '#ffffff' }}>
           Discover meticulously bred companions, raised with passion and expertise for discerning families who deserve nothing but the finest.
         </p>
         
@@ -43,12 +43,14 @@ const HeroSection = () => {
           <Button 
             onClick={handleScrollToBreeds}
             className="bg-blue-600 hover:bg-blue-700 text-white text-lg px-10 py-4 h-auto rounded-2xl font-semibold transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-105"
+            style={{ backgroundColor: '#2563eb', color: '#ffffff' }}
           >
             Meet Our Breeds
           </Button>
           <Button 
             variant="outline"
-            className="bg-white/10 backdrop-blur-sm border-white/30 text-white hover:bg-white/20 text-lg px-10 py-4 h-auto rounded-2xl border-2"
+            className="bg-white/10 backdrop-blur-sm border-white/30 hover:bg-white/20 text-lg px-10 py-4 h-auto rounded-2xl border-2"
+            style={{ color: '#ffffff', borderColor: 'rgba(255,255,255,0.3)' }}
             onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
           >
             Our Story

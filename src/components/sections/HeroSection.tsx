@@ -25,7 +25,7 @@ const HeroSection = () => {
 
       {/* Content */}
       <div className="relative z-10 text-center text-white px-6 max-w-5xl mx-auto">
-        <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-4 animate-fade-in">
+        <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-4 text-white animate-fade-in">
           SHOLO Brave Dogs
         </h1>
         
@@ -35,20 +35,20 @@ const HeroSection = () => {
           </span>
         </h2>
         
-        <p className="text-xl md:text-2xl mb-12 max-w-3xl mx-auto leading-relaxed opacity-90 animate-fade-in" style={{ animationDelay: '0.4s' }}>
+        <p className="text-xl md:text-2xl mb-12 max-w-3xl mx-auto leading-relaxed opacity-90 text-white animate-fade-in" style={{ animationDelay: '0.4s' }}>
           Discover meticulously bred companions, raised with passion and expertise for discerning families who deserve nothing but the finest.
         </p>
         
         <div className="flex flex-col sm:flex-row gap-6 justify-center animate-fade-in" style={{ animationDelay: '0.6s' }}>
           <Button 
             onClick={handleScrollToBreeds}
-            className="bg-gray-600 hover:bg-gray-700 text-white text-lg px-10 py-4 h-auto rounded-2xl font-semibold transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-105"
+            className="bg-blue-600 hover:bg-blue-700 text-white text-lg px-10 py-4 h-auto rounded-2xl font-semibold transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-105"
           >
             Meet Our Breeds
           </Button>
           <Button 
             variant="outline"
-            className="bg-white/10 backdrop-blur-sm border-white/30 text-white hover:bg-white/20 text-lg px-10 py-4 h-auto rounded-2xl"
+            className="bg-white/10 backdrop-blur-sm border-white/30 text-white hover:bg-white/20 text-lg px-10 py-4 h-auto rounded-2xl border-2"
             onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
           >
             Our Story

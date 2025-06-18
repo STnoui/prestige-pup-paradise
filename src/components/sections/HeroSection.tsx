@@ -33,7 +33,7 @@ const HeroSection = () => {
             animationFillMode: 'forwards'
           }}
         >
-          SHOLO Brave Dogs
+          SHOLO
         </h1>
         
         <h2 
@@ -44,8 +44,8 @@ const HeroSection = () => {
             animationFillMode: 'forwards'
           }}
         >
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-gray-300 to-gray-100">
-            Premium Dog Breeding Excellence
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-blue-600">
+            Brave Dogs
           </span>
         </h2>
         
@@ -62,7 +62,7 @@ const HeroSection = () => {
         </p>
         
         <div 
-          className="flex flex-col sm:flex-row gap-6 justify-center animate-fade-in" 
+          className="flex justify-center animate-fade-in" 
           style={{ 
             animationDelay: '0.6s',
             opacity: 1,
@@ -75,14 +75,6 @@ const HeroSection = () => {
             style={{ backgroundColor: '#2563eb', color: '#ffffff' }}
           >
             Meet Our Breeds
-          </Button>
-          <Button 
-            variant="outline"
-            className="bg-white/10 backdrop-blur-sm border-white/30 hover:bg-white/20 text-lg px-10 py-4 h-auto rounded-2xl border-2"
-            style={{ color: '#ffffff', borderColor: 'rgba(255,255,255,0.3)' }}
-            onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
-          >
-            Our Story
           </Button>
         </div>
       </div>

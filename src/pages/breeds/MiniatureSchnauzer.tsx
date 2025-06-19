@@ -31,7 +31,7 @@ const MiniatureSchnauzer = () => {
             </h1>
             
             <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto">
-              The Miniature Schnauzer is a friendly, intelligent, and obedient breed. These small but sturdy dogs are known for their distinctive beard and eyebrows, alert nature, and excellent family companionship.
+              The Miniature Schnauzer packs a big, friendly personality into a small, distinctive package. Bright and fearless, these charming dogs are eager to please and form strong, joyful bonds with their people.
             </p>
 
             <div className="bg-gray-50 dark:bg-gray-800 rounded-2xl p-8 mb-8 border border-gray-200 dark:border-gray-700">
@@ -45,20 +45,20 @@ const MiniatureSchnauzer = () => {
                   Friendly
                 </span>
                 <span className="bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-4 py-2 rounded-full text-sm font-semibold">
-                  Intelligent
+                  Bright
                 </span>
                 <span className="bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-4 py-2 rounded-full text-sm font-semibold">
-                  Obedient
+                  Fearless
                 </span>
                 <span className="bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-4 py-2 rounded-full text-sm font-semibold">
-                  Alert
+                  Charming
                 </span>
               </div>
             </div>
 
             <div className="flex justify-center">
               <a 
-                href="https://facebook.com/sholo.breeding" 
+                href="https://www.facebook.com/profile.php?id=61574415806779" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-2xl font-semibold transition-colors duration-200 shadow-lg hover:shadow-xl hover:scale-105 inline-flex items-center justify-center"

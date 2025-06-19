@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
-const SouthAfricanBoerboel = () => {
+const SouthAfrican Boerboel = () => {
   const handleNavigateToSection = (sectionId: string) => {
     // Navigate to home page with section
     window.location.href = `/#${sectionId}`;
@@ -31,34 +31,34 @@ const SouthAfricanBoerboel = () => {
             </h1>
             
             <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto">
-             The South African Boerboel is a confident, intelligent, and calm breed. Originally developed as a farm guardian, they are known for their loyalty, protective nature, and gentle demeanor with family.
+              Bred as a capable protector, the Boerboel is a confident and surprisingly gentle companion for its family. This powerful yet calm dog thrives on being a loving and integrated member of the household.
             </p>
 
             <div className="bg-gray-50 dark:bg-gray-800 rounded-2xl p-8 mb-8 border border-gray-200 dark:border-gray-700">
               <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Contact Us for Availability</h2>
               <p className="text-gray-700 dark:text-gray-300 mb-6">
                 We're developing our South African Boerboel program with carefully selected champion lines.
-                Contact us on Facebook to discuss our current and upcoming Miniature Schnauzer litters.
+                Contact us on Facebook to discuss our current and upcoming South African Boerboel litters.
               </p>
               <div className="flex flex-wrap gap-3 justify-center mb-6">
                 <span className="bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-4 py-2 rounded-full text-sm font-semibold">
                   Confident
                 </span>
                 <span className="bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-4 py-2 rounded-full text-sm font-semibold">
-                  Intelligent
-                </span>
-                <span className="bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-4 py-2 rounded-full text-sm font-semibold">
-                  Calm
+                  Gentle
                 </span>
                 <span className="bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-4 py-2 rounded-full text-sm font-semibold">
                   Protective
+                </span>
+                <span className="bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-4 py-2 rounded-full text-sm font-semibold">
+                  Loving
                 </span>
               </div>
             </div>
 
             <div className="flex justify-center">
               <a 
-                href="https://facebook.com/sholo.breeding" 
+                href="https://www.facebook.com/profile.php?id=61574415806779" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-2xl font-semibold transition-colors duration-200 shadow-lg hover:shadow-xl hover:scale-105 inline-flex items-center justify-center"

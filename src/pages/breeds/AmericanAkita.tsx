@@ -31,7 +31,7 @@ const AmericanAkita = () => {
             </h1>
             
             <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto">
-              The American Akita is a dignified, courageous, and profoundly loyal breed. Originally from Japan, these large, powerful dogs are known for their devotion to family and their natural guardian instincts.
+              The American Akita is a dignified and courageous guardian with a calm and noble presence. Incredibly loyal, they form a profound, protective bond with their family and show a deeply affectionate nature.
             </p>
 
             <div className="bg-gray-50 dark:bg-gray-800 rounded-2xl p-8 mb-8 border border-gray-200 dark:border-gray-700">
@@ -51,14 +51,14 @@ const AmericanAkita = () => {
                   Loyal
                 </span>
                 <span className="bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-4 py-2 rounded-full text-sm font-semibold">
-                  Guardian
+                  Protective
                 </span>
               </div>
             </div>
 
             <div className="flex justify-center">
               <a 
-                href="https://facebook.com/sholo.breeding" 
+                href="https://www.facebook.com/profile.php?id=61574415806779" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-2xl font-semibold transition-colors duration-200 shadow-lg hover:shadow-xl hover:scale-105 inline-flex items-center justify-center"

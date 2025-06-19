@@ -31,7 +31,7 @@ const KerryBlueTerrier = () => {
             </h1>
             
             <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto">
-              The Kerry Blue Terrier is an alert, determined, and adaptable breed. Originally bred in Ireland for hunting and farm work, they make excellent family companions with proper training and socialization.
+              With its stunning, soft blue coat and playful Irish charm, the Kerry Blue is an intelligent and devoted family companion. They are spirited, affectionate, and bring a loyal, adventurous presence to any home.
             </p>
 
             <div className="bg-gray-50 dark:bg-gray-800 rounded-2xl p-8 mb-8 border border-gray-200 dark:border-gray-700">
@@ -42,23 +42,23 @@ const KerryBlueTerrier = () => {
               </p>
               <div className="flex flex-wrap gap-3 justify-center mb-6">
                 <span className="bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-4 py-2 rounded-full text-sm font-semibold">
-                  Alert
+                  Spirited
                 </span>
                 <span className="bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-4 py-2 rounded-full text-sm font-semibold">
-                  Determined
+                  Intelligent
                 </span>
                 <span className="bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-4 py-2 rounded-full text-sm font-semibold">
-                  Adaptable
+                  Affectionate
                 </span>
                 <span className="bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-4 py-2 rounded-full text-sm font-semibold">
-                  Loyal
+                  Adventurous
                 </span>
               </div>
             </div>
 
             <div className="flex justify-center">
               <a 
-                href="https://facebook.com/sholo.breeding" 
+                href="https://www.facebook.com/profile.php?id=61574415806779" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-2xl font-semibold transition-colors duration-200 shadow-lg hover:shadow-xl hover:scale-105 inline-flex items-center justify-center"

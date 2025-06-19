@@ -6,25 +6,25 @@ const OurDogsSection = () => {
   const breeds = [
     {
       name: 'American Akita',
-      description: 'Dignified, Courageous, Profoundly Loyal',
+      description: 'A majestic and powerful guardian, profoundly loyal and devoted to its family.',
       image: 'https://images.unsplash.com/photo-1605568427561-40dd23c2acea?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
       path: '/breeds/american-akita',
     },
     {
       name: 'South African Boerboel', 
-      description: 'Confident, Intelligent, Calm',
+      description: 'A confident, gentle giant that serves as a calm and loving family protector.',
       image: 'https://images.unsplash.com/photo-1587300003388-59208cc962cb?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
       path: '/breeds/south-african-boerboel',
     },
     {
       name: 'Miniature Schnauzer',
-      description: 'Friendly, Intelligent, Obedient',
+      description: 'A bright, friendly companion with a charming beard and a lively, fearless personality.',
       image: 'https://images.unsplash.com/photo-1605568427561-40dd23c2acea?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
       path: '/breeds/miniature-schnauzer',
     },
     {
       name: 'Kerry Blue Terrier',
-      description: 'Alert, Determined, Adaptable',
+      description: 'A spirited and elegant terrier with a beautiful blue coat and a deeply affectionate heart.',
       image: 'https://images.unsplash.com/photo-1583337130417-3346a1be7dee?ixlib=rb-4.0.3&auto=format&fit=crop&w=2064&q=80',
       path: '/breeds/kerry-blue-terrier',
     }
@@ -43,7 +43,7 @@ const OurDogsSection = () => {
         </p>
       </div>
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
         {breeds.map((breed, index) => (
           <Link key={breed.name} to={breed.path}>
             <Card className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 overflow-hidden group hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 hover:border-blue-500 dark:hover:border-blue-400 rounded-3xl">
@@ -79,25 +79,6 @@ const OurDogsSection = () => {
             </Card>
           </Link>
         ))}
-      </div>
-
-      {/* Call to Action */}
-      <div className="bg-white/50 dark:bg-black/50 rounded-3xl border border-gray-200/50 dark:border-gray-700/50 p-12 text-center backdrop-blur-sm">
-        <h3 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
-          Ready to Find Your Perfect Companion?
-        </h3>
-        <p className="text-lg text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
-          Each of our dogs comes with comprehensive health guarantees, detailed medical records, 
-          and our commitment to lifelong support.
-        </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <button 
-            onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-            className="btn-primary"
-          >
-            Start Your Journey
-          </button>
-        </div>
       </div>
     </div>
   );

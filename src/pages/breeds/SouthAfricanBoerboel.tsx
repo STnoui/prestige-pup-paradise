@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
-const SouthAfrican Boerboel = () => {
+const SouthAfricanBoerboel = () => {
   const handleNavigateToSection = (sectionId: string) => {
     // Navigate to home page with section
     window.location.href = `/#${sectionId}`;

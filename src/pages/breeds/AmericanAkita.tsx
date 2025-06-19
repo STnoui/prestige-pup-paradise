@@ -38,9 +38,9 @@ const AmericanAkita = () => {
               {t('americanAkitaDesc')}
             </p>
 
-            <div className="bg-gray-600 dark:bg-gray-600 rounded-2xl p-6 md:p-8 mb-8 border border-gray-200 dark:border-gray-700">
-              <h2 className="text-xl md:text-2xl font-bold text-white mb-4">{t('contactForAvailability')}</h2>
-              <p className="text-gray-200 mb-6">
+            <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 md:p-8 mb-8 border border-gray-200 dark:border-gray-700">
+              <h2 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-4">{t('contactForAvailability')}</h2>
+              <p className="text-gray-700 dark:text-gray-200 mb-6">
                 {t('breedProgramText1')} {t('americanAkita')} {t('breedProgramText2')} {t('breedProgramText3')} {t('americanAkita')} {t('breedProgramText4')}
               </p>
             </div>

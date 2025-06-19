@@ -40,20 +40,6 @@ const KerryBlueTerrier = () => {
                 We're developing our Kerry Blue Terrier program with carefully selected champion lines. 
                 Contact us on Facebook to discuss our current and upcoming Kerry Blue Terrier litters.
               </p>
-              <div className="flex flex-wrap gap-3 justify-center mb-6">
-                <span className="bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-4 py-2 rounded-full text-sm font-semibold">
-                  Spirited
-                </span>
-                <span className="bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-4 py-2 rounded-full text-sm font-semibold">
-                  Intelligent
-                </span>
-                <span className="bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-4 py-2 rounded-full text-sm font-semibold">
-                  Affectionate
-                </span>
-                <span className="bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-4 py-2 rounded-full text-sm font-semibold">
-                  Adventurous
-                </span>
-              </div>
             </div>
 
             <div className="flex justify-center">

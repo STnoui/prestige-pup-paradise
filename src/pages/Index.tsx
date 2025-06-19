@@ -48,11 +48,11 @@ const Index = () => {
           <AboutSection />
         </section>
         
-        <section ref={setSectionRef('our-dogs')} id="our-dogs" className="py-24 bg-white dark:bg-gray-900">
+        <section ref={setSectionRef('our-dogs')} id="our-dogs" className="py-24 bg-white dark:bg-black">
           <OurDogsSection />
         </section>
         
-        <section ref={setSectionRef('contact')} id="contact" className="py-24 bg-white dark:bg-gray-900">
+        <section ref={setSectionRef('contact')} id="contact" className="py-24 bg-white dark:bg-black">
           <ContactSection />
         </section>
       </main>

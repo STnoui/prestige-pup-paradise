@@ -1,7 +1,7 @@
 
 import React, { createContext, useContext, useState, ReactNode } from 'react';
 
-export type Language = 'en' | 'bg' | 'es';
+export type Language = 'en' | 'bg';
 
 interface LanguageContextType {
   language: Language;
@@ -93,7 +93,7 @@ const translations = {
     followJourney: 'Следвайте нашето пътуване',
     
     // Footer
-    footerDescription: 'Превъзходство в отглеждането, посветено на свързването на любящи семейства с изключителни кучешки спътници.',
+    footerDescription: 'Превъзходство в отглеждането, посветено на свързването на любещи семейства с изключителни кучешки спътници.',
     quickLinks: 'Бързи връзки',
     allRightsReserved: 'Всички права запазени.',
     designCredit: 'Дизайнът е вдъхновен от философията на Apple за елегантност и качество.',
@@ -107,50 +107,6 @@ const translations = {
     // Dark Mode
     darkMode: 'Тъмен режим',
     lightMode: 'Светъл режим'
-  },
-  es: {
-    // Navigation
-    home: 'Inicio',
-    about: 'Sobre nosotros',
-    ourDogs: 'Nuestros perros',
-    contact: 'Contacto',
-    
-    // Hero Section
-    heroTitle: 'SHOLO',
-    heroSubtitle: 'Perros valientes',
-    heroDescription: 'Descubre compañeros meticulosamente criados, criados con pasión y experiencia para familias exigentes que merecen solo lo mejor.',
-    meetOurBreeds: 'Conoce nuestras razas',
-    ourStory: 'Nuestra historia',
-    
-    // About Section
-    aboutTitle: 'Un legado de amor y dedicación',
-    aboutDescription: 'Fundada en 2025, SHOLO representa nuestra profunda conexión con prácticas de cría excepcionales, enfocándose en la salud, temperamento y adherencia a los estándares de raza.',
-    ourPhilosophy: 'Nuestra filosofía',
-    aboutText1: 'Con sede en Bulgaria y fundada en un profundo amor por la compañía canina y un compromiso con la cría ética, creemos en proporcionar un ambiente nutritivo donde nuestros perros y cachorros prosperen.',
-    aboutText2: 'En el corazón de nuestra filosofía está un profundo respeto por cada animal. Esto incluye áreas de vida espaciosas y limpias, nutrición premium, atención veterinaria regular y abundantes oportunidades para socialización y juego.',
-    
-    // Contact Section
-    contactTitle: 'Ponte en contacto',
-    contactDescription: '¿Listo para dar la bienvenida a un nuevo miembro de la familia? Conéctate con nosotros a través de Facebook para todas las consultas y selección de perros.',
-    facebookTitle: 'Facebook',
-    facebookDescription: 'Conéctate con nosotros en Facebook para todas las preguntas, consultas y selección de perros',
-    followJourney: 'Sigue nuestro viaje',
-    
-    // Footer
-    footerDescription: 'Excelencia en la cría, dedicada a conectar familias amorosas con compañeros caninos excepcionales.',
-    quickLinks: 'Enlaces rápidos',
-    allRightsReserved: 'Todos los derechos reservados.',
-    designCredit: 'Diseñado con inspiración en la filosofía de Apple de elegancia y calidad.',
-    
-    // Breeds
-    americanAkita: 'Akita Americano',
-    southAfricanBoerboel: 'Boerboel Sudafricano',
-    miniatureSchnauzer: 'Schnauzer Miniatura',
-    kerryBlueTerrier: 'Kerry Blue Terrier',
-    
-    // Dark Mode
-    darkMode: 'Modo oscuro',
-    lightMode: 'Modo claro'
   }
 };
 

@@ -40,20 +40,6 @@ const AmericanAkita = () => {
                 We're carefully establishing our American Akita breeding program with health-tested, champion-quality breeding stock. 
                 Contact us on Facebook to discuss our current and upcoming American Akita litters.
               </p>
-              <div className="flex flex-wrap gap-3 justify-center mb-6">
-                <span className="bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-4 py-2 rounded-full text-sm font-semibold">
-                  Dignified
-                </span>
-                <span className="bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-4 py-2 rounded-full text-sm font-semibold">
-                  Courageous
-                </span>
-                <span className="bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-4 py-2 rounded-full text-sm font-semibold">
-                  Loyal
-                </span>
-                <span className="bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-4 py-2 rounded-full text-sm font-semibold">
-                  Protective
-                </span>
-              </div>
             </div>
 
             <div className="flex justify-center">

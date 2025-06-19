@@ -18,7 +18,7 @@ const Footer = ({ onNavigateToSection }: FooterProps) => {
   ];
 
   return (
-    <footer className="bg-gray-900 dark:bg-black text-white py-6">
+    <footer className="bg-gray-900 text-white py-6">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="grid md:grid-cols-2 gap-6 mb-6">
           {/* Quick Links */}

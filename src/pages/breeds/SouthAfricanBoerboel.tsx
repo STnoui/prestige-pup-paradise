@@ -40,20 +40,6 @@ const SouthAfricanBoerboel = () => {
                 We're developing our South African Boerboel program with carefully selected champion lines.
                 Contact us on Facebook to discuss our current and upcoming South African Boerboel litters.
               </p>
-              <div className="flex flex-wrap gap-3 justify-center mb-6">
-                <span className="bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-4 py-2 rounded-full text-sm font-semibold">
-                  Confident
-                </span>
-                <span className="bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-4 py-2 rounded-full text-sm font-semibold">
-                  Gentle
-                </span>
-                <span className="bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-4 py-2 rounded-full text-sm font-semibold">
-                  Protective
-                </span>
-                <span className="bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-4 py-2 rounded-full text-sm font-semibold">
-                  Loving
-                </span>
-              </div>
             </div>
 
             <div className="flex justify-center">

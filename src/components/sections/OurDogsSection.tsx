@@ -46,7 +46,7 @@ const OurDogsSection = () => {
       <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
         {breeds.map((breed, index) => (
           <Link key={breed.name} to={breed.path}>
-            <Card className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 overflow-hidden group hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 hover:border-blue-500 dark:hover:border-blue-400 rounded-3xl">
+            <Card className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 overflow-hidden group hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 hover:border-blue-500 dark:hover:border-blue-400 rounded-3xl">
               <div className="relative overflow-hidden">
                 <img 
                   src={breed.image}
@@ -63,7 +63,7 @@ const OurDogsSection = () => {
                 </div>
               </div>
               
-              <div className="p-6 bg-white dark:bg-gray-900">
+              <div className="p-6 bg-white dark:bg-gray-800">
                 <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                   {breed.name}
                 </h3>

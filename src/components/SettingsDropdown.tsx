@@ -31,7 +31,7 @@ const SettingsDropdown = () => {
           size="sm"
           className="h-9 w-9 p-0 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 shadow-md hover:shadow-lg transition-shadow"
         >
-          <Settings className="h-4 w-4" />
+          <Settings className="h-4 w-4 text-blue-600 dark:text-white" />
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent 
@@ -75,4 +75,3 @@ const SettingsDropdown = () => {
 };
 
 export default SettingsDropdown;
-

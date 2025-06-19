@@ -56,7 +56,7 @@ const KerryBlueTerrier = () => {
               </div>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex justify-center">
               <a 
                 href="https://facebook.com/sholo.breeding" 
                 target="_blank" 
@@ -68,11 +68,6 @@ const KerryBlueTerrier = () => {
                 </svg>
                 Contact Us on Facebook
               </a>
-              <Link to="/">
-                <Button variant="outline" className="bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 px-8 py-3 rounded-2xl font-semibold">
-                  View Available Breeds
-                </Button>
-              </Link>
             </div>
           </Card>
         </div>

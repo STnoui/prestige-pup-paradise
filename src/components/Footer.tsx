@@ -18,16 +18,16 @@ const Footer = ({ onNavigateToSection }: FooterProps) => {
   ];
 
   return (
-    <footer className="bg-gray-900 dark:bg-black text-white py-16">
+    <footer className="bg-gray-900 dark:bg-black text-white py-8">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="grid md:grid-cols-3 gap-12 mb-12">
+        <div className="grid md:grid-cols-3 gap-8 mb-8">
           {/* Brand */}
           <div className="space-y-4">
             <div className="flex items-center space-x-3">
               <img 
                 src="/lovable-uploads/4fc6ff94-b7a7-4209-83d2-aa6063da5978.png" 
                 alt="SHOLO Logo" 
-                className="h-16 w-auto"
+                className="h-12 w-auto"
               />
             </div>
             <p className="text-gray-300 leading-relaxed">
@@ -49,8 +49,8 @@ const Footer = ({ onNavigateToSection }: FooterProps) => {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-lg font-semibold mb-6">{t('quickLinks')}</h3>
-            <ul className="space-y-3">
+            <h3 className="text-lg font-semibold mb-4">{t('quickLinks')}</h3>
+            <ul className="space-y-2">
               {quickLinks.map((link) => (
                 <li key={link.id}>
                   <button
@@ -66,8 +66,8 @@ const Footer = ({ onNavigateToSection }: FooterProps) => {
 
           {/* Contact Info */}
           <div>
-            <h3 className="text-lg font-semibold mb-6">{t('contact')}</h3>
-            <div className="space-y-3 text-gray-300">
+            <h3 className="text-lg font-semibold mb-4">{t('contact')}</h3>
+            <div className="space-y-2 text-gray-300">
               <div className="flex items-center space-x-3">
                 <span>Facebook:</span>
                 <a 
@@ -88,7 +88,7 @@ const Footer = ({ onNavigateToSection }: FooterProps) => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+        <div className="border-t border-gray-800 pt-6 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-400 text-sm">
             © {currentYear} SHOLO. {t('allRightsReserved')}
           </p>

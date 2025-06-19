@@ -38,34 +38,36 @@ const SettingsDropdown = () => {
         className="w-48 bg-white dark:bg-gray-800 shadow-xl z-[100]"
         sideOffset={8}
       >
-        <DropdownMenuLabel className="text-gray-900 dark:text-white text-center">Settings</DropdownMenuLabel>
+        <DropdownMenuLabel className="text-gray-900 dark:text-white text-center">{t('settings')}</DropdownMenuLabel>
         <DropdownMenuSeparator className="bg-gray-200 dark:bg-gray-700" />
         
         <DropdownMenuLabel className="text-xs text-gray-500 dark:text-gray-400 font-normal text-center">
-          Theme
+          {t('theme')}
         </DropdownMenuLabel>
         <DropdownMenuItem 
           onClick={toggleTheme} 
-          className="text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 focus:bg-gray-100 dark:focus:bg-gray-700 justify-center"
+          className="text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 focus:bg-gray-100 dark:focus:bg-gray-700 justify-center text-center"
         >
-          {isDark ? '☀️ Light Mode' : '🌙 Dark Mode'}
+          {isDark ? `☀️ ${t('lightMode')}` : `🌙 ${t('darkMode')}`}
         </DropdownMenuItem>
         
         <DropdownMenuSeparator className="bg-gray-200 dark:bg-gray-700" />
         
         <DropdownMenuLabel className="text-xs text-gray-500 dark:text-gray-400 font-normal text-center">
-          Language
+          {t('language')}
         </DropdownMenuLabel>
         {languages.map((lang) => (
           <DropdownMenuItem
             key={lang.code}
             onClick={() => setLanguage(lang.code)}
-            className={`text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 focus:bg-gray-100 dark:focus:bg-gray-700 justify-center ${
+            className={`text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 focus:bg-gray-100 dark:focus:bg-gray-700 justify-center text-center ${
               language === lang.code ? 'bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300' : ''
             }`}
           >
-            {lang.name}
-            {language === lang.code && <span className="ml-auto text-blue-600 dark:text-blue-400">✓</span>}
+            <div className="flex items-center justify-center w-full">
+              {lang.name}
+              {language === lang.code && <span className="ml-2 text-blue-600 dark:text-blue-400">✓</span>}
+            </div>
           </DropdownMenuItem>
         ))}
       </DropdownMenuContent>

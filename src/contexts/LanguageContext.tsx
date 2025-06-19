@@ -47,6 +47,7 @@ const translations = {
     facebookTitle: 'Facebook',
     facebookDescription: 'Connect with us on Facebook for all questions, inquiries, and dog selection',
     followJourney: 'Follow Our Journey',
+    connectOnFacebook: 'Connect on Facebook',
     
     // Footer
     footerDescription: 'Excellence in breeding, devoted to connecting loving families with exceptional canine companions.',
@@ -60,7 +61,29 @@ const translations = {
     miniatureSchnauzer: 'Miniature Schnauzer',
     kerryBlueTerrier: 'Kerry Blue Terrier',
     
-    // Dark Mode
+    // Breed descriptions
+    americanAkitaDesc: 'The American Akita is a dignified and courageous guardian with a calm and noble presence. Incredibly loyal, they form a profound, protective bond with their family and show a deeply affectionate nature.',
+    southAfricanBoerboelDesc: 'Bred as a capable protector, the Boerboel is a confident and surprisingly gentle companion for its family. This powerful yet calm dog thrives on being a loving and integrated member of the household.',
+    miniatureSchnauzermDesc: 'The Miniature Schnauzer packs a big, friendly personality into a small, distinctive package. Bright and fearless, these charming dogs are eager to please and form strong, joyful bonds with their people.',
+    kerryBlueTerrierDesc: 'With its stunning, soft blue coat and playful Irish charm, the Kerry Blue is an intelligent and devoted family companion. They are spirited, affectionate, and bring a loyal, adventurous presence to any home.',
+    
+    // Breed page common text
+    contactForAvailability: 'Contact Us for Availability',
+    contactUs: 'Contact Us',
+    breedProgramText1: 'We\'re carefully establishing our',
+    breedProgramText2: 'breeding program with health-tested, champion-quality breeding stock.',
+    breedProgramText3: 'Contact us on Facebook to discuss our current and upcoming',
+    breedProgramText4: 'litters.',
+    
+    // Our Dogs Section
+    meetDistinguishedBreeds: 'Meet Our Distinguished Breeds',
+    breedsSectionDesc: 'Each breed we raise is chosen for its unique qualities and cherished for its distinct personality. We are dedicated to preserving the integrity and promoting the best characteristics of these wonderful companions.',
+    learnMore: 'Learn More',
+    
+    // Settings
+    settings: 'Settings',
+    theme: 'Theme',
+    language: 'Language',
     darkMode: 'Dark Mode',
     lightMode: 'Light Mode'
   },
@@ -91,9 +114,10 @@ const translations = {
     facebookTitle: 'Facebook',
     facebookDescription: 'Свържете се с нас във Facebook за всички въпроси, запитвания и избор на куче',
     followJourney: 'Следвайте нашето пътуване',
+    connectOnFacebook: 'Свържете се във Facebook',
     
     // Footer
-    footerDescription: 'Превъзходство в отглеждането, посветено на свързването на любещи семейства с изключителни кучешки спътници.',
+    footerDescription: 'Превъзходство в отглеждането, посветено на свързването на любящи семейства с изключителни кучешки спътници.',
     quickLinks: 'Бързи връзки',
     allRightsReserved: 'Всички права запазени.',
     designCredit: 'Дизайнът е вдъхновен от философията на Apple за елегантност и качество.',
@@ -104,7 +128,29 @@ const translations = {
     miniatureSchnauzer: 'Миниатюрен Шнауцер',
     kerryBlueTerrier: 'Кери блу териер',
     
-    // Dark Mode
+    // Breed descriptions
+    americanAkitaDesc: 'Американската Акита е достойно и смело животно-пазител с спокойно и благородно присъствие. Невероятно лоялни, те създават дълбока, защитна връзка със семейството си и показват дълбоко обичаща природа.',
+    southAfricanBoerboelDesc: 'Отгледан като способен защитник, Боербъл е уверен и изненадващо нежен спътник за семейството си. Това мощно, но спокойно куче процъфтява като любящ и интегриран член на домакинството.',
+    miniatureSchnauzermDesc: 'Миниатюрният Шнауцер пакетира голяма, приятелска личност в малка, отличителна опаковка. Ярки и безстрашни, тези чаровни кучета са нетърпеливи да угодят и образуват силни, радостни връзки със своите хора.',
+    kerryBlueTerrierDesc: 'Със своята страхотна, мека синя козина и игрив ирландски чар, Кери блу е интелигентен и отдаден семеен спътник. Те са духовити, обичащи и носят лоялно, приключенско присъствие в всеки дом.',
+    
+    // Breed page common text
+    contactForAvailability: 'Свържете се с нас за наличност',
+    contactUs: 'Свържете се с нас',
+    breedProgramText1: 'Внимателно изграждаме нашата',
+    breedProgramText2: 'програма за развъждане с тествани за здраве, качествени развъдни животни.',
+    breedProgramText3: 'Свържете се с нас във Facebook, за да обсъдим нашите текущи и предстоящи',
+    breedProgramText4: 'легла.',
+    
+    // Our Dogs Section
+    meetDistinguishedBreeds: 'Запознайте се с нашите отличени породи',
+    breedsSectionDesc: 'Всяка порода, която отглеждаме, е избрана заради уникалните си качества и е ценена за отличителната си личност. Ние сме посветени на запазването на интегритета и насърчаването на най-добрите характеристики на тези прекрасни спътници.',
+    learnMore: 'Научете повече',
+    
+    // Settings
+    settings: 'Настройки',
+    theme: 'Тема',
+    language: 'Език',
     darkMode: 'Тъмен режим',
     lightMode: 'Светъл режим'
   }

@@ -1,4 +1,3 @@
-
 import { Link } from 'react-router-dom';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -30,17 +29,17 @@ const KerryBlueTerrier = () => {
               />
             </div>
             
-            <h1 className="text-3xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6" style={{ fontFamily: 'HonorSans, sans-serif' }}>
+            <h1 className="text-3xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
               <span className="bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">{t('kerryBlueTerrier')}</span>
             </h1>
             
-            <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto" style={{ fontFamily: 'HonorSans, sans-serif' }}>
+            <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto">
               {t('kerryBlueTerrierDesc')}
             </p>
 
             <div className="bg-white dark:bg-black rounded-2xl p-6 md:p-8 mb-8 shadow-lg shadow-blue-200/50 dark:shadow-blue-400/30 border border-blue-200/50 dark:border-blue-400/30 hover:scale-105 transition-transform duration-300">
-              <h2 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-4" style={{ fontFamily: 'HonorSans, sans-serif' }}>{t('contactForAvailability')}</h2>
-              <p className="text-gray-700 dark:text-gray-200 mb-6" style={{ fontFamily: 'HonorSans, sans-serif' }}>
+              <h2 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-4">{t('contactForAvailability')}</h2>
+              <p className="text-gray-700 dark:text-gray-200 mb-6">
                 {t('breedProgramText1')} {t('kerryBlueTerrier')} {t('breedProgramText2')} {t('breedProgramText3')} {t('kerryBlueTerrier')} {t('breedProgramText4')}
               </p>
             </div>

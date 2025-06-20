@@ -1,4 +1,3 @@
-
 import { useState, useEffect, useRef } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -45,12 +44,11 @@ const Header = ({ onNavigateToSection }: HeaderProps) => {
       navigate('/');
       setTimeout(() => {
         onNavigateToSection?.(sectionId);
-        setIsMenuOpen(false);
       }, 100);
     } else {
       onNavigateToSection?.(sectionId);
-      setIsMenuOpen(false);
     }
+    setIsMenuOpen(false);
   };
 
   const navItems = [
@@ -128,7 +126,7 @@ const Header = ({ onNavigateToSection }: HeaderProps) => {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="md:hidden backdrop-blur-xl bg-white/30 dark:bg-black/30 rounded-2xl shadow-xl mb-4 animate-scale-in">
+          <div className="md:hidden backdrop-blur-xl bg-white/30 dark:bg-black/30 rounded-2xl shadow-xl mb-4">
             <nav className="px-6 py-4 space-y-1">
               {navItems.map((item) => (
                 <button

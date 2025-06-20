@@ -25,13 +25,13 @@ const HeroSection = () => {
       {/* Content */}
       <div className="relative z-20 text-center px-6 max-w-6xl mx-auto">
         <div className="relative">
-          {/* Subtle background for readability */}
-          <div className="absolute inset-0 bg-black/20 dark:bg-black/40 rounded-3xl backdrop-blur-sm" />
+          {/* Theme-adaptive background for readability */}
+          <div className="absolute inset-0 bg-white/90 dark:bg-black/80 rounded-3xl backdrop-blur-md shadow-2xl border border-white/20 dark:border-black/20" />
           
           <div className="relative px-8 py-12 md:px-16 md:py-20 space-y-8">
             <div className="space-y-4">
               <h1 
-                className="text-7xl md:text-8xl lg:text-9xl xl:text-[10rem] font-black animate-fade-in tracking-tight font-playfair text-white"
+                className="text-7xl md:text-8xl lg:text-9xl xl:text-[10rem] font-black animate-fade-in tracking-tight font-playfair text-gray-900 dark:text-white"
                 style={{ 
                   opacity: 1,
                   animationFillMode: 'forwards',
@@ -49,7 +49,7 @@ const HeroSection = () => {
                   animationFillMode: 'forwards'
                 }}
               >
-                <span className="bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 bg-clip-text text-transparent">
                   Brave Dogs
                 </span>
               </h2>

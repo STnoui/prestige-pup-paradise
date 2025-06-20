@@ -23,53 +23,51 @@ const HeroSection = () => {
       />
       <div className="absolute inset-0 z-10 bg-gradient-to-b from-gray-900/20 via-gray-900/40 to-gray-900/60" />
       {/* Content */}
-      <div className="relative z-20 text-center px-6 max-w-7xl mx-auto">
-        {/* Gradient Rectangle Behind Text - matching header transparency and blur */}
-        <div className="relative">
-          <div className="absolute inset-0 bg-gradient-to-r from-white/10 via-white/20 to-white/10 dark:from-black/10 dark:via-black/20 dark:to-black/10 rounded-3xl blur-xl transform scale-110" />
-          <div className="relative backdrop-blur-xl bg-white/30 dark:bg-black/30 rounded-3xl p-12 md:p-16 lg:p-20 border border-gray-200/50 dark:border-gray-700/50 shadow-lg">
+      <div className="relative z-20 text-center px-6 max-w-6xl mx-auto">
+        <div className="space-y-8">
+          <div className="space-y-4">
             <h1 
-              className="text-6xl md:text-9xl lg:text-[12rem] font-bold mb-6 animate-fade-in tracking-wider font-playfair"
+              className="text-7xl md:text-8xl lg:text-9xl xl:text-[10rem] font-black animate-fade-in tracking-tight font-playfair"
               style={{ 
-                color: '#ffffff',
                 opacity: 1,
                 animationFillMode: 'forwards',
-                letterSpacing: '0.2em'
+                textShadow: '0 8px 32px rgba(0, 0, 0, 0.6), 0 4px 16px rgba(0, 0, 0, 0.4)'
               }}
             >
-              SHOLO
+              <span className="bg-gradient-to-b from-white via-white to-gray-200 bg-clip-text text-transparent">
+                SHOLO
+              </span>
             </h1>
             
             <h2 
-              className="text-3xl md:text-5xl lg:text-7xl font-medium mb-8 animate-fade-in tracking-wide font-playfair" 
+              className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-medium animate-fade-in tracking-wide font-playfair" 
               style={{ 
                 animationDelay: '0.2s',
                 opacity: 1,
                 animationFillMode: 'forwards',
-                letterSpacing: '0.1em'
+                textShadow: '0 4px 16px rgba(0, 0, 0, 0.5)'
               }}
             >
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-blue-600">
+              <span className="bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text text-transparent">
                 Brave Dogs
               </span>
             </h2>
-            
-            <div 
-              className="flex justify-center animate-fade-in" 
-              style={{ 
-                animationDelay: '0.4s',
-                opacity: 1,
-                animationFillMode: 'forwards'
-              }}
+          </div>
+          
+          <div 
+            className="flex justify-center animate-fade-in pt-4" 
+            style={{ 
+              animationDelay: '0.4s',
+              opacity: 1,
+              animationFillMode: 'forwards'
+            }}
+          >
+            <Button 
+              onClick={handleScrollToBreeds}
+              className="bg-blue-600 hover:bg-blue-700 text-white text-lg px-8 py-4 h-auto rounded-full font-semibold transition-all duration-300 shadow-2xl hover:shadow-blue-500/25 hover:scale-105 border-2 border-blue-500/20"
             >
-              <Button 
-                onClick={handleScrollToBreeds}
-                className="bg-blue-600 hover:bg-blue-700 text-white text-lg px-10 py-4 h-auto rounded-2xl font-semibold transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-105"
-                style={{ backgroundColor: '#2563eb', color: '#ffffff' }}
-              >
-                Meet Our Dogs
-              </Button>
-            </div>
+              Meet Our Dogs
+            </Button>
           </div>
         </div>
       </div>

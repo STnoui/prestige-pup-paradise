@@ -23,7 +23,7 @@ const ContactSection = () => {
 
       <div className="max-w-2xl mx-auto">
         {/* Facebook Contact Card with Light Blue Shadow */}
-        <Card className="bg-white dark:bg-gray-800 rounded-3xl border border-gray-200/50 dark:border-gray-700/50 hover:shadow-lg transition-all duration-300 p-8 text-center shadow-lg shadow-blue-200/50 dark:shadow-blue-400/30">
+        <Card className="bg-white dark:bg-black rounded-3xl border border-gray-200/50 dark:border-gray-700/50 hover:shadow-lg transition-all duration-300 p-8 text-center shadow-lg shadow-blue-200/50 dark:shadow-blue-400/30">
           <div className="mb-6">
             <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
               <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">

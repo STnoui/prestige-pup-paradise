@@ -67,8 +67,8 @@ const Header = ({ onNavigateToSection }: HeaderProps) => {
     <header 
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
         scrolled 
-          ? 'backdrop-blur-xl bg-white/60 dark:bg-black/60 border-b border-gray-200/50 dark:border-gray-700/50 shadow-lg' 
-          : 'backdrop-blur-xl bg-white/40 dark:bg-black/40'
+          ? 'backdrop-blur-xl bg-white/30 dark:bg-black/30 border-b border-gray-200/50 dark:border-gray-700/50 shadow-lg' 
+          : 'backdrop-blur-xl bg-white/30 dark:bg-black/30'
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -108,7 +108,9 @@ const Header = ({ onNavigateToSection }: HeaderProps) => {
             <SettingsDropdown />
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="p-2 rounded-xl text-gray-600 dark:text-blue-400 hover:text-blue-600 dark:hover:text-blue-300 hover:bg-gray-100/50 dark:hover:bg-gray-800/50 transition-all duration-200"
+              className={`p-2 rounded-xl transition-all duration-200 hover:bg-gray-100/50 dark:hover:bg-gray-800/50 ${
+                isMenuOpen ? 'text-blue-600 dark:text-blue-400' : 'text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400'
+              }`}
             >
               <svg 
                 className={`w-6 h-6 transition-transform duration-200 ${isMenuOpen ? 'rotate-90' : ''}`} 
@@ -129,7 +131,7 @@ const Header = ({ onNavigateToSection }: HeaderProps) => {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="md:hidden backdrop-blur-xl bg-white/40 dark:bg-black/40 rounded-2xl shadow-xl border border-gray-200/50 dark:border-gray-700/50 mb-4 animate-scale-in">
+          <div className="md:hidden backdrop-blur-xl bg-white/30 dark:bg-black/30 rounded-2xl shadow-xl border border-gray-200/50 dark:border-gray-700/50 mb-4 animate-scale-in">
             <nav className="px-6 py-4 space-y-1">
               {navItems.map((item) => (
                 <button

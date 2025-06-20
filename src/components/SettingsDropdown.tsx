@@ -15,6 +15,7 @@ import {
 const SettingsDropdown = () => {
   const { language, setLanguage, t } = useLanguage();
   const { isDark, toggleTheme } = useTheme();
+  const [isOpen, setIsOpen] = useState(false);
 
   const languages: { code: Language; name: string }[] = [
     { code: 'en', name: 'English' },
@@ -22,15 +23,17 @@ const SettingsDropdown = () => {
   ];
 
   return (
-    <DropdownMenu>
+    <DropdownMenu onOpenChange={setIsOpen}>
       <DropdownMenuTrigger asChild>
         <Button
           variant="ghost"
           size="sm"
-          className="h-9 w-9 p-0 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 shadow-md hover:shadow-lg transition-shadow"
+          className={`h-9 w-9 p-0 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-200 ${
+            isOpen ? 'text-blue-600 dark:text-blue-400' : 'text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400'
+          }`}
         >
           <svg 
-            className="h-4 w-4 text-gray-600 dark:text-blue-400" 
+            className="h-4 w-4" 
             fill="none" 
             viewBox="0 0 24 24" 
             stroke="currentColor"
@@ -47,21 +50,21 @@ const SettingsDropdown = () => {
       </DropdownMenuTrigger>
       <DropdownMenuContent 
         align="end" 
-        className="w-48 backdrop-blur-xl bg-white/60 dark:bg-black/60 shadow-xl z-[100] border border-gray-200 dark:border-gray-700"
+        className="w-48 backdrop-blur-xl bg-white/30 dark:bg-black/30 shadow-xl z-[100] border-0"
         sideOffset={8}
         alignOffset={-8}
         avoidCollisions={true}
         collisionPadding={8}
       >
         <DropdownMenuLabel className="text-gray-900 dark:text-white text-center">{t('settings')}</DropdownMenuLabel>
-        <DropdownMenuSeparator className="bg-gray-200 dark:bg-black" />
+        <DropdownMenuSeparator className="bg-gray-200 dark:bg-gray-700" />
         
         <DropdownMenuLabel className="text-xs text-gray-500 dark:text-gray-400 font-normal text-center">
           {t('theme')}
         </DropdownMenuLabel>
         <DropdownMenuItem 
           onClick={toggleTheme} 
-          className="text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-black focus:bg-gray-100 dark:focus:bg-black justify-center text-center"
+          className="text-gray-700 dark:text-gray-300 hover:bg-gray-100/50 dark:hover:bg-gray-800/50 focus:bg-gray-100/50 dark:focus:bg-gray-800/50 justify-center text-center"
         >
           <div className="flex items-center">
             {isDark ? (
@@ -82,7 +85,7 @@ const SettingsDropdown = () => {
           </div>
         </DropdownMenuItem>
         
-        <DropdownMenuSeparator className="bg-gray-200 dark:bg-black" />
+        <DropdownMenuSeparator className="bg-gray-200 dark:bg-gray-700" />
         
         <DropdownMenuLabel className="text-xs text-gray-500 dark:text-gray-400 font-normal text-center">
           {t('language')}
@@ -91,8 +94,8 @@ const SettingsDropdown = () => {
           <DropdownMenuItem
             key={lang.code}
             onClick={() => setLanguage(lang.code)}
-            className={`text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-black focus:bg-gray-100 dark:focus:bg-black justify-center text-center ${
-              language === lang.code ? 'bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300' : ''
+            className={`text-gray-700 dark:text-gray-300 hover:bg-gray-100/50 dark:hover:bg-gray-800/50 focus:bg-gray-100/50 dark:focus:bg-gray-800/50 justify-center text-center ${
+              language === lang.code ? 'bg-blue-50/50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300' : ''
             }`}
           >
             <div className="flex items-center justify-center w-full">

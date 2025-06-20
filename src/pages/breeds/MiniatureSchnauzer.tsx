@@ -20,7 +20,7 @@ const MiniatureSchnauzer = () => {
 
       <main className="pt-24 pb-16">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <Card className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 p-8 md:p-16 text-center rounded-3xl shadow-lg mb-16">
+          <div className="p-8 md:p-16 text-center mb-16">
             <div className="mb-8">
               <img 
                 src="https://images.unsplash.com/photo-1605568427561-40dd23c2acea?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
@@ -38,9 +38,9 @@ const MiniatureSchnauzer = () => {
               {t('miniatureSchnauzermDesc')}
             </p>
 
-            <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 md:p-8 mb-8 border border-gray-200 dark:border-gray-700">
-              <h2 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-4">{t('contactForAvailability')}</h2>
-              <p className="text-gray-700 dark:text-gray-200 mb-6">
+            <div className="bg-black rounded-2xl p-6 md:p-8 mb-8 shadow-lg shadow-blue-200/50 dark:shadow-blue-400/30 border border-blue-200/50 dark:border-blue-400/30">
+              <h2 className="text-xl md:text-2xl font-bold text-white mb-4">{t('contactForAvailability')}</h2>
+              <p className="text-gray-200 mb-6">
                 {t('breedProgramText1')} {t('miniatureSchnauzer')} {t('breedProgramText2')} {t('breedProgramText3')} {t('miniatureSchnauzer')} {t('breedProgramText4')}
               </p>
             </div>
@@ -58,7 +58,7 @@ const MiniatureSchnauzer = () => {
                 {t('contactUs')}
               </a>
             </div>
-          </Card>
+          </div>
         </div>
       </main>
 

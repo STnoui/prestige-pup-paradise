@@ -28,7 +28,7 @@ const HeroSection = () => {
         {/* Gradient Rectangle Behind Text - matching header transparency and blur */}
         <div className="relative">
           <div className="absolute inset-0 bg-gradient-to-r from-white/10 via-white/20 to-white/10 dark:from-black/10 dark:via-black/20 dark:to-black/10 rounded-3xl blur-xl transform scale-110" />
-          <div className="relative backdrop-blur-xl bg-white/60 dark:bg-black/60 rounded-3xl p-8 border border-gray-200/50 dark:border-gray-700/50 shadow-lg">
+          <div className="relative backdrop-blur-xl bg-white/30 dark:bg-black/30 rounded-3xl p-8 border border-gray-200/50 dark:border-gray-700/50 shadow-lg">
             <h1 
               className="text-5xl md:text-7xl lg:text-8xl font-bold mb-4 animate-fade-in"
               style={{ 
@@ -70,13 +70,6 @@ const HeroSection = () => {
               </Button>
             </div>
           </div>
-        </div>
-      </div>
-
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce z-20">
-        <div className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-white/70 rounded-full mt-2 animate-pulse"></div>
         </div>
       </div>
     </div>

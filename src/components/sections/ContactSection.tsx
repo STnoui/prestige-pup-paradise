@@ -1,4 +1,5 @@
 
+
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -11,8 +12,10 @@ const ContactSection = () => {
   return (
     <div className="max-w-4xl mx-auto px-6 lg:px-8">
       <div className="text-center mb-16">
-        <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
-          {t('contactTitle')}
+        <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-teal-600 dark:from-green-400 to-teal-400">
+            {t('contactTitle')}
+          </span>
         </h2>
         <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
           {t('contactDescription')}
@@ -50,3 +53,4 @@ const ContactSection = () => {
 };
 
 export default ContactSection;
+

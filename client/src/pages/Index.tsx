@@ -46,8 +46,8 @@ const Index = () => {
         </section>
         
         {/* Overlapping Content Sections */}
-        <main className="relative -mt-32 z-30">
-          <div className="bg-white dark:bg-black rounded-t-3xl shadow-2xl min-h-screen">
+        <main className="relative -mt-32 z-30 px-8 md:px-16 lg:px-32 xl:px-40">
+          <div className="bg-white dark:bg-black rounded-t-3xl shadow-2xl min-h-screen max-w-4xl mx-auto">
             <section ref={setSectionRef('about')} id="about" className="pt-32 pb-24 w-full">
               <AboutSection />
             </section>

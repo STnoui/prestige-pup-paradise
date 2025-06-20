@@ -24,7 +24,7 @@ const HeroSection = () => {
 
 
       {/* Content - narrower to show background on sides */}
-      <div className="relative z-20 text-center px-6 max-w-4xl mx-auto">
+      <div className="relative z-20 text-center px-6 max-w-3xl mx-auto">
         <div className="space-y-8">
           <div className="space-y-6">
             <h1 

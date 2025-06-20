@@ -110,6 +110,8 @@ Changelog:
   * Fixed mobile navigation to stay open when selecting options
   * Updated "Contact for Availability" sections to use pure white/black backgrounds
   * Applied consistent styling across all breed pages
+  * Added Playfair Display font for hero section headings
+  * Redesigned hero section with modern typography-focused layout and improved readability
 ```
 
 ## User Preferences

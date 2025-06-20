@@ -2,11 +2,11 @@
 @layer base {
   /* Clean button styles with blue accent and shadows */
   .btn-primary {
-    @apply bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-2xl font-semibold transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-105;
+    @apply bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-full font-semibold transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-105;
   }
 
   .btn-secondary {
-    @apply bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300 px-8 py-4 rounded-2xl font-semibold transition-all duration-200 hover:scale-105 shadow-md hover:shadow-lg;
+    @apply bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300 px-8 py-4 rounded-full font-semibold transition-all duration-200 hover:scale-105 shadow-md hover:shadow-lg;
   }
 
   /* Clean card style with shadows instead of borders */

@@ -21,31 +21,31 @@ const HeroSection = () => {
           backgroundImage: `url('https://images.unsplash.com/photo-1586671267731-da2cf3ceeb80?ixlib=rb-4.0.3&auto=format&fit=crop&w=2089&q=80')`
         }}
       />
-      <div className="absolute inset-0 z-10 bg-gradient-to-b from-white/20 via-white/40 to-white/60 dark:from-gray-900/40 dark:via-gray-900/60 dark:to-gray-900/80" />
+
 
       {/* Content - narrower to show background on sides */}
       <div className="relative z-20 text-center px-6 max-w-4xl mx-auto">
         <div className="space-y-8">
           <div className="space-y-6">
             <h1 
-              className="text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-black animate-fade-in tracking-tight font-playfair text-gray-900 dark:text-white"
+              className="text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-black animate-fade-in tracking-tight font-inter text-white"
               style={{ 
                 opacity: 1,
                 animationFillMode: 'forwards',
                 letterSpacing: '0.05em',
-                textShadow: '0 8px 32px rgba(0, 0, 0, 0.3)'
+                textShadow: '0 8px 32px rgba(0, 0, 0, 0.5)'
               }}
             >
               SHOLO
             </h1>
             
             <h2 
-              className="text-xl md:text-2xl lg:text-3xl xl:text-4xl font-medium animate-fade-in tracking-wide font-playfair text-blue-600 dark:text-blue-400" 
+              className="text-xl md:text-2xl lg:text-3xl xl:text-4xl font-medium animate-fade-in tracking-wide font-inter text-blue-100" 
               style={{ 
                 animationDelay: '0.2s',
                 opacity: 1,
                 animationFillMode: 'forwards',
-                textShadow: '0 4px 16px rgba(0, 0, 0, 0.2)'
+                textShadow: '0 4px 16px rgba(0, 0, 0, 0.4)'
               }}
             >
               Brave Dogs

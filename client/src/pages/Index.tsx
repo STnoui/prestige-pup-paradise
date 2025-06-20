@@ -59,27 +59,27 @@ const Index = () => {
         <main className="relative z-50 px-8 md:px-16 lg:px-32 xl:px-40 space-y-8 pt-32 pb-16">
           {/* About Us Card */}
           <section ref={setSectionRef('about')} id="about" className="w-full">
-            <div className="backdrop-blur-xl bg-white/30 dark:bg-black/30 shadow-lg border border-white/20 dark:border-gray-700/50 rounded-3xl max-w-4xl mx-auto p-8 md:p-12">
+            <div className="backdrop-blur-xl bg-white/40 dark:bg-black/40 shadow-lg border border-white/20 dark:border-gray-700/50 rounded-3xl max-w-4xl mx-auto p-8 md:p-12 text-black dark:text-white">
               <AboutSection />
             </div>
           </section>
           
           {/* Our Dogs Card */}
           <section ref={setSectionRef('our-dogs')} id="our-dogs" className="w-full">
-            <div className="backdrop-blur-xl bg-white/30 dark:bg-black/30 shadow-lg border border-white/20 dark:border-gray-700/50 rounded-3xl max-w-4xl mx-auto p-8 md:p-12">
+            <div className="backdrop-blur-xl bg-white/40 dark:bg-black/40 shadow-lg border border-white/20 dark:border-gray-700/50 rounded-3xl max-w-4xl mx-auto p-8 md:p-12 text-black dark:text-white">
               <OurDogsSection />
             </div>
           </section>
           
           {/* Contact Card */}
           <section ref={setSectionRef('contact')} id="contact" className="w-full">
-            <div className="backdrop-blur-xl bg-white/30 dark:bg-black/30 shadow-lg border border-white/20 dark:border-gray-700/50 rounded-3xl max-w-4xl mx-auto p-8 md:p-12">
+            <div className="backdrop-blur-xl bg-white/40 dark:bg-black/40 shadow-lg border border-white/20 dark:border-gray-700/50 rounded-3xl max-w-4xl mx-auto p-8 md:p-12 text-black dark:text-white">
               <ContactSection />
             </div>
           </section>
           
           {/* Footer Card */}
-          <div className="backdrop-blur-xl bg-white/30 dark:bg-black/30 shadow-lg border border-white/20 dark:border-gray-700/50 rounded-3xl max-w-4xl mx-auto p-8 md:p-12">
+          <div className="backdrop-blur-xl bg-white/40 dark:bg-black/40 shadow-lg border border-white/20 dark:border-gray-700/50 rounded-3xl max-w-4xl mx-auto p-8 md:p-12 text-black dark:text-white">
             <Footer onNavigateToSection={handleNavigateToSection} />
           </div>
         </main>

@@ -38,7 +38,7 @@ const MiniatureSchnauzer = () => {
               {t('miniatureSchnauzermDesc')}
             </p>
 
-            <div className="bg-white dark:bg-black rounded-2xl p-6 md:p-8 mb-8 shadow-lg shadow-blue-200/50 dark:shadow-blue-400/30 border border-blue-200/50 dark:border-blue-400/30">
+            <div className="backdrop-blur-xl bg-white/40 dark:bg-black/40 shadow-lg border border-white/20 dark:border-gray-700/50 rounded-2xl p-6 md:p-8 mb-8 text-black dark:text-white">
               <h2 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-4">{t('contactForAvailability')}</h2>
               <p className="text-gray-700 dark:text-gray-200 mb-6">
                 {t('breedProgramText1')} {t('miniatureSchnauzer')} {t('breedProgramText2')} {t('breedProgramText3')} {t('miniatureSchnauzer')} {t('breedProgramText4')}

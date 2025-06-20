@@ -50,7 +50,7 @@ const SettingsDropdown = () => {
       </DropdownMenuTrigger>
       <DropdownMenuContent 
         align="end" 
-        className="w-48 backdrop-blur-xl bg-white/30 dark:bg-black/30 shadow-xl z-[100] border-0"
+        className="w-48 backdrop-blur-xl bg-white/40 dark:bg-black/40 shadow-xl z-[100] border-0"
         sideOffset={8}
         alignOffset={-8}
         avoidCollisions={true}

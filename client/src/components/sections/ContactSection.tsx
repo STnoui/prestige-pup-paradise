@@ -22,8 +22,8 @@ const ContactSection = () => {
       </div>
 
       <div className="max-w-2xl mx-auto">
-        {/* Facebook Contact Card with Light Blue Shadow */}
-        <Card className="bg-white dark:bg-black rounded-3xl border border-gray-200/50 dark:border-gray-700/50 hover:shadow-lg transition-all duration-300 p-8 text-center shadow-lg shadow-blue-200/50 dark:shadow-blue-400/30">
+        {/* Facebook Contact Card with Glassmorphism */}
+        <div className="backdrop-blur-xl bg-white/40 dark:bg-black/40 shadow-lg border border-white/20 dark:border-gray-700/50 rounded-3xl p-8 text-center text-black dark:text-white">
           <div className="mb-6">
             <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
               <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
@@ -36,16 +36,18 @@ const ContactSection = () => {
             <p className="text-gray-600 dark:text-gray-200 mb-6">
               {t('facebookDescription')}
             </p>
-            <Button
-              asChild
-              className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-2xl font-semibold transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-105"
-            >
-              <a href={facebookUrl} target="_blank" rel="noopener noreferrer">
+            <div className="flex justify-center">
+              <a 
+                href={facebookUrl} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full font-semibold transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-105 inline-flex items-center justify-center"
+              >
                 {t('connectOnFacebook')}
               </a>
-            </Button>
+            </div>
           </div>
-        </Card>
+        </div>
       </div>
     </div>
   );

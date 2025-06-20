@@ -63,8 +63,8 @@ const Header = ({ onNavigateToSection }: HeaderProps) => {
       <div className="max-w-7xl mx-auto px-6 lg:px-8 pt-4">
         <div className={`transition-all duration-300 rounded-full ${
           scrolled 
-            ? 'backdrop-blur-xl bg-white/30 dark:bg-black/30 shadow-lg border border-white/20 dark:border-gray-700/50' 
-            : 'backdrop-blur-xl bg-white/30 dark:bg-black/30 shadow-lg border border-white/10 dark:border-gray-700/30'
+            ? 'backdrop-blur-xl bg-white/40 dark:bg-black/40 shadow-lg border border-white/20 dark:border-gray-700/50' 
+            : 'backdrop-blur-xl bg-white/40 dark:bg-black/40 shadow-lg border border-white/10 dark:border-gray-700/30'
         }`}>
           <div className="flex items-center justify-between h-16 px-4">
             {/* Logo */}

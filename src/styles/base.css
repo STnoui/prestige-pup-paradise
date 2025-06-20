@@ -92,14 +92,28 @@
     border-color: hsl(var(--border));
   }
   
+  html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    width: 100%;
+  }
+  
   body {
     @apply bg-white dark:bg-black text-foreground font-inter antialiased;
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
     overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
   }
 
-  html {
-    scroll-behavior: smooth;
+  #root {
     overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
+  }
+
+  /* Ensure all main containers don't overflow */
+  main, section, div {
+    max-width: 100%;
   }
 }

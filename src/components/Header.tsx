@@ -1,4 +1,3 @@
-
 import { useState, useEffect, useRef } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -43,13 +42,17 @@ const Header = ({ onNavigateToSection }: HeaderProps) => {
   const handleNavigation = (sectionId: string) => {
     if (location.pathname !== '/') {
       navigate('/');
+      // Keep menu open for mobile navigation
       setTimeout(() => {
         onNavigateToSection?.(sectionId);
+        // Close menu after navigation completes
+        setTimeout(() => setIsMenuOpen(false), 500);
       }, 100);
     } else {
       onNavigateToSection?.(sectionId);
+      // Close menu after navigation completes for same page
+      setTimeout(() => setIsMenuOpen(false), 500);
     }
-    setIsMenuOpen(false);
   };
 
   const navItems = [

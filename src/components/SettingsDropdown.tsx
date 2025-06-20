@@ -35,8 +35,11 @@ const SettingsDropdown = () => {
       </DropdownMenuTrigger>
       <DropdownMenuContent 
         align="end" 
-        className="w-48 bg-white dark:bg-gray-800 shadow-xl z-[100]"
+        className="w-48 bg-white dark:bg-gray-800 shadow-xl z-[100] border border-gray-200 dark:border-gray-700"
         sideOffset={8}
+        alignOffset={-8}
+        avoidCollisions={true}
+        collisionPadding={8}
       >
         <DropdownMenuLabel className="text-gray-900 dark:text-white text-center">{t('settings')}</DropdownMenuLabel>
         <DropdownMenuSeparator className="bg-gray-200 dark:bg-gray-700" />

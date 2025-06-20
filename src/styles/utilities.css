@@ -5,7 +5,7 @@
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-gray-100 dark:bg-black;
+  @apply bg-gray-100 dark:bg-gray-800;
   border-radius: 10px;
 }
 
@@ -29,32 +29,13 @@
   display: none !important;
 }
 
-/* Targeted yellow color removal - only for specific yellow classes */
-.bg-yellow-500,
-.bg-yellow-400,
-.bg-yellow-300,
-.bg-yellow-200,
-.bg-yellow-100,
-.text-yellow-500,
-.text-yellow-400,
-.text-yellow-300,
-.text-yellow-200,
-.text-yellow-100,
-.border-yellow-500,
-.border-yellow-400,
-.border-yellow-300,
-.border-yellow-200,
-.border-yellow-100 {
-  background-color: transparent !important;
-  color: inherit !important;
-  border-color: inherit !important;
+/* Hide horizontal scrollbar when not needed */
+html, body {
+  overflow-x: hidden;
 }
 
-/* Remove yellow from specific style attributes */
-[style*="background-color: yellow"],
-[style*="background: yellow"],
-[style*="color: yellow"] {
-  background-color: transparent !important;
-  background: transparent !important;
-  color: inherit !important;
+/* Ensure main content doesn't overflow */
+#root {
+  overflow-x: hidden;
+  max-width: 100vw;
 }

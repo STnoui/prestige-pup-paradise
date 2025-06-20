@@ -27,9 +27,9 @@ const HeroSection = () => {
         {/* Gradient Rectangle Behind Text - matching header transparency and blur */}
         <div className="relative">
           <div className="absolute inset-0 bg-gradient-to-r from-white/10 via-white/20 to-white/10 dark:from-black/10 dark:via-black/20 dark:to-black/10 rounded-3xl blur-xl transform scale-110" />
-          <div className="relative backdrop-blur-xl bg-white/30 dark:bg-black/30 rounded-3xl p-12 md:p-16 lg:p-20 border border-gray-200/50 dark:border-gray-700/50 shadow-lg font-normal text-[16px] ml-[0px] mr-[0px] mt-[0px] mb-[0px] pt-[21px] pb-[21px] pl-[21px] pr-[21px]">
+          <div className="relative backdrop-blur-xl bg-white/30 dark:bg-black/30 rounded-3xl p-12 md:p-16 lg:p-20 border border-gray-200/50 dark:border-gray-700/50 shadow-lg">
             <h1 
-              className="md:text-9xl lg:text-[12rem] animate-fade-in tracking-wider text-[#ffff] text-[72px] text-justify font-bold pl-[10px] pr-[10px] ml-[0px] mr-[0px] pt-[0px] pb-[0px] mt-[0px] mb-[0px]"
+              className="text-6xl md:text-9xl lg:text-[12rem] font-bold mb-6 animate-fade-in tracking-wider font-playfair"
               style={{ 
                 color: '#ffffff',
                 opacity: 1,
@@ -41,7 +41,7 @@ const HeroSection = () => {
             </h1>
             
             <h2 
-              className="text-3xl md:text-5xl lg:text-7xl font-medium mb-8 animate-fade-in tracking-wide" 
+              className="text-3xl md:text-5xl lg:text-7xl font-medium mb-8 animate-fade-in tracking-wide font-playfair" 
               style={{ 
                 animationDelay: '0.2s',
                 opacity: 1,
@@ -49,7 +49,7 @@ const HeroSection = () => {
                 letterSpacing: '0.1em'
               }}
             >
-              <span className="bg-clip-text bg-gradient-to-r from-blue-500 to-blue-600 text-[#ffff] font-semibold text-[32px] text-center">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-blue-600">
                 Brave Dogs
               </span>
             </h2>

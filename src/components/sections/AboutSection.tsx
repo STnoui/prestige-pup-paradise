@@ -8,7 +8,7 @@ const AboutSection = () => {
     <div className="max-w-7xl mx-auto px-6 lg:px-8">
       <div className="text-center mb-16">
         <h2 className="text-4xl md:text-5xl font-bold mb-6">
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600 dark:from-purple-400 to-pink-400">
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-purple-500 to-pink-500 dark:from-purple-300 dark:via-purple-400 dark:to-pink-400">
             {t('aboutUs')}
           </span>
         </h2>

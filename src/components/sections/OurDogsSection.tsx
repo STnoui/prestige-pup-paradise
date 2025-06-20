@@ -37,7 +37,7 @@ const OurDogsSection = () => {
     <div className="max-w-7xl mx-auto px-6 lg:px-8">
       <div className="text-center mb-16">
         <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
-          <span className="bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">{t('ourDogs')}</span>
+          <span className="bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 dark:from-blue-300 dark:via-blue-400 dark:to-blue-500 bg-clip-text text-transparent">{t('ourDogs')}</span>
         </h2>
         <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
           {t('breedsSectionDesc')}
@@ -47,7 +47,7 @@ const OurDogsSection = () => {
       <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
         {breeds.map((breed, index) => (
           <Link key={breed.name} to={breed.path}>
-            <Card className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 overflow-hidden group hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 hover:border-blue-500 dark:hover:border-blue-400 rounded-3xl">
+            <Card className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 overflow-hidden group hover:shadow-2xl hover:shadow-blue-200/50 dark:hover:shadow-blue-400/30 transition-all duration-500 hover:-translate-y-2 hover:border-blue-500 dark:hover:border-blue-400 rounded-3xl">
               <div className="relative overflow-hidden">
                 <img 
                   src={breed.image}

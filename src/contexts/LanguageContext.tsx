@@ -1,5 +1,4 @@
 
-
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 
 export type Language = 'en' | 'bg';
@@ -71,7 +70,11 @@ const translations = {
     // 404 Page
     pageNotFound: 'Page Not Found',
     pageNotFoundDesc: 'The page you are looking for does not exist.',
-    backToHome: 'Back to Home'
+    backToHome: 'Back to Home',
+    
+    // Additional
+    learnMore: 'Learn More',
+    breedsSectionDesc: 'Discover our carefully selected dog breeds, each chosen for their exceptional qualities and temperament.'
   },
   bg: {
     // Navigation
@@ -133,7 +136,11 @@ const translations = {
     // 404 Page
     pageNotFound: 'Страницата не е намерена',
     pageNotFoundDesc: 'Страницата, която търсите не съществува.',
-    backToHome: 'Обратно към началото'
+    backToHome: 'Обратно към началото',
+    
+    // Additional
+    learnMore: 'Научи повече',
+    breedsSectionDesc: 'Открийте нашите внимателно подбрани породи кучета, всяка избрана заради изключителните си качества и темперамент.'
   }
 };
 
@@ -147,7 +154,7 @@ export const useLanguage = () => {
   return context;
 };
 
-interface Language {
+interface LanguageProviderProps {
   children: ReactNode;
 }
 
@@ -167,7 +174,7 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
   };
 
   const t = (key: string): string => {
-    return translations[language][key] || key;
+    return translations[language][key as keyof typeof translations[typeof language]] || key;
   };
 
   return (
@@ -176,4 +183,3 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
     </LanguageContext.Provider>
   );
 };
-

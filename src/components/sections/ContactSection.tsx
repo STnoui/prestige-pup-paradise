@@ -1,5 +1,4 @@
 
-
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -13,7 +12,7 @@ const ContactSection = () => {
     <div className="max-w-4xl mx-auto px-6 lg:px-8">
       <div className="text-center mb-16">
         <h2 className="text-4xl md:text-5xl font-bold mb-6">
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-teal-600 dark:from-green-400 to-teal-400">
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 via-green-500 to-teal-500 dark:from-green-300 dark:via-green-400 dark:to-teal-400">
             {t('contactTitle')}
           </span>
         </h2>
@@ -23,8 +22,8 @@ const ContactSection = () => {
       </div>
 
       <div className="max-w-2xl mx-auto">
-        {/* Facebook Contact Card with Dark Gray Background only in Dark Mode */}
-        <Card className="bg-white dark:bg-gray-800 rounded-3xl border border-gray-200/50 dark:border-gray-700/50 hover:shadow-lg transition-all duration-300 p-8 text-center shadow-lg shadow-blue-200/50 dark:shadow-blue-900/20">
+        {/* Facebook Contact Card with Light Blue Shadow */}
+        <Card className="bg-white dark:bg-gray-800 rounded-3xl border border-gray-200/50 dark:border-gray-700/50 hover:shadow-lg transition-all duration-300 p-8 text-center shadow-lg shadow-blue-200/50 dark:shadow-blue-400/30">
           <div className="mb-6">
             <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
               <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
@@ -53,4 +52,3 @@ const ContactSection = () => {
 };
 
 export default ContactSection;
-

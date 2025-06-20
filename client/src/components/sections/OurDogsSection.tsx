@@ -44,7 +44,7 @@ const OurDogsSection = () => {
         </p>
       </div>
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
         {breeds.map((breed, index) => (
           <Link key={breed.name} to={breed.path}>
             <div className="backdrop-blur-xl bg-white/40 dark:bg-black/40 shadow-lg border border-white/20 dark:border-gray-700/50 overflow-hidden group hover:shadow-2xl hover:shadow-blue-200/50 dark:hover:shadow-blue-400/30 transition-all duration-500 hover:-translate-y-2 hover:border-blue-500 dark:hover:border-blue-400 rounded-3xl">

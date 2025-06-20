@@ -15,6 +15,7 @@ const Header = ({ onNavigateToSection }: HeaderProps) => {
   const location = useLocation();
   const { t } = useLanguage();
   const mobileMenuRef = useRef<HTMLDivElement>(null);
+  const mobileMenuButtonRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -26,7 +27,12 @@ const Header = ({ onNavigateToSection }: HeaderProps) => {
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (mobileMenuRef.current && !mobileMenuRef.current.contains(event.target as Node)) {
+      if (
+        mobileMenuRef.current && 
+        !mobileMenuRef.current.contains(event.target as Node) &&
+        mobileMenuButtonRef.current &&
+        !mobileMenuButtonRef.current.contains(event.target as Node)
+      ) {
         setIsMenuOpen(false);
       }
     };
@@ -98,7 +104,7 @@ const Header = ({ onNavigateToSection }: HeaderProps) => {
             </div>
 
             {/* Mobile Menu Button and Settings */}
-            <div className="md:hidden flex items-center space-x-2" ref={mobileMenuRef}>
+            <div className="md:hidden flex items-center space-x-2" ref={mobileMenuButtonRef}>
               <SettingsDropdown />
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -122,24 +128,30 @@ const Header = ({ onNavigateToSection }: HeaderProps) => {
               </button>
             </div>
           </div>
-
-          {/* Mobile Menu */}
-          {isMenuOpen && (
-            <div className="md:hidden backdrop-blur-xl bg-white/40 dark:bg-black/40 rounded-3xl shadow-lg border border-white/20 dark:border-gray-700/50 mt-4 mx-4">
-              <nav className="px-6 py-4 space-y-1">
-                {navItems.map((item) => (
-                  <button
-                    key={item.id}
-                    onClick={() => handleNavigation(item.id)}
-                    className="block w-full text-left px-4 py-3 rounded-full text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-100/50 dark:hover:bg-gray-800/50 transition-all duration-200"
-                  >
-                    {item.label}
-                  </button>
-                ))}
-              </nav>
-            </div>
-          )}
         </div>
+        
+        {/* Mobile Menu - Positioned outside main header container */}
+        {isMenuOpen && (
+          <div 
+            ref={mobileMenuRef}
+            className="md:hidden absolute top-20 left-6 right-6 backdrop-blur-xl bg-white/40 dark:bg-black/40 rounded-3xl shadow-lg border border-white/20 dark:border-gray-700/50 z-[110]"
+          >
+            <nav className="px-6 py-4 space-y-1">
+              {navItems.map((item) => (
+                <button
+                  key={item.id}
+                  onClick={() => {
+                    handleNavigation(item.id);
+                    setIsMenuOpen(false);
+                  }}
+                  className="block w-full text-left px-4 py-3 rounded-full text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-100/50 dark:hover:bg-gray-800/50 transition-all duration-200"
+                >
+                  {item.label}
+                </button>
+              ))}
+            </nav>
+          </div>
+        )}
       </div>
     </header>
   );

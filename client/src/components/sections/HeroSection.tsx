@@ -16,8 +16,8 @@ const HeroSection = () => {
     <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
 
 
-      {/* Content - narrower to show background on sides */}
-      <div className="relative z-20 text-center px-6 max-w-3xl mx-auto">
+      {/* Fixed Content - stays in place while content scrolls over */}
+      <div className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 text-center px-6 max-w-3xl mx-auto w-full">
         <div className="space-y-8">
           <div className="space-y-6">
             <h1 

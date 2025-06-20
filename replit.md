@@ -112,6 +112,14 @@ Changelog:
   * Applied consistent styling across all breed pages
   * Added Playfair Display font for hero section headings
   * Redesigned hero section with modern typography-focused layout and improved readability
+- June 20, 2025. Implemented advanced parallax scrolling and glassmorphism design:
+  * Created fixed background image that stays in place during scrolling
+  * Made SHOLO text and Meet Our Dogs button remain fixed while content scrolls over them
+  * Transformed sections into separate glassmorphism cards with backdrop blur effects
+  * Applied header's transparency styling (backdrop-blur-xl bg-white/30 dark:bg-black/30) to all content sections
+  * Updated header z-index to prevent content overlap during scrolling
+  * Maintained consistent rounded-full button styling across all pages
+  * Enhanced visual hierarchy with floating card design over fixed background
 ```
 
 ## User Preferences

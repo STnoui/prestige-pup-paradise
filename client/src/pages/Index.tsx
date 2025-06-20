@@ -55,21 +55,31 @@ const Index = () => {
           <HeroSection />
         </section>
         
-        {/* Overlapping Content Sections */}
-        <main className="relative -mt-32 z-50 px-8 md:px-16 lg:px-32 xl:px-40">
-          <div className="bg-white dark:bg-black rounded-t-3xl shadow-2xl min-h-screen max-w-4xl mx-auto">
-            <section ref={setSectionRef('about')} id="about" className="pt-32 pb-24 w-full">
+        {/* Separate Card Sections */}
+        <main className="relative z-50 px-8 md:px-16 lg:px-32 xl:px-40 space-y-8 pt-32 pb-16">
+          {/* About Us Card */}
+          <section ref={setSectionRef('about')} id="about" className="w-full">
+            <div className="backdrop-blur-xl bg-white/30 dark:bg-black/30 shadow-lg border border-white/20 dark:border-gray-700/50 rounded-3xl max-w-4xl mx-auto p-8 md:p-12">
               <AboutSection />
-            </section>
-            
-            <section ref={setSectionRef('our-dogs')} id="our-dogs" className="py-24 w-full">
+            </div>
+          </section>
+          
+          {/* Our Dogs Card */}
+          <section ref={setSectionRef('our-dogs')} id="our-dogs" className="w-full">
+            <div className="backdrop-blur-xl bg-white/30 dark:bg-black/30 shadow-lg border border-white/20 dark:border-gray-700/50 rounded-3xl max-w-4xl mx-auto p-8 md:p-12">
               <OurDogsSection />
-            </section>
-            
-            <section ref={setSectionRef('contact')} id="contact" className="py-24 w-full">
+            </div>
+          </section>
+          
+          {/* Contact Card */}
+          <section ref={setSectionRef('contact')} id="contact" className="w-full">
+            <div className="backdrop-blur-xl bg-white/30 dark:bg-black/30 shadow-lg border border-white/20 dark:border-gray-700/50 rounded-3xl max-w-4xl mx-auto p-8 md:p-12">
               <ContactSection />
-            </section>
-            
+            </div>
+          </section>
+          
+          {/* Footer Card */}
+          <div className="backdrop-blur-xl bg-white/30 dark:bg-black/30 shadow-lg border border-white/20 dark:border-gray-700/50 rounded-3xl max-w-4xl mx-auto p-8 md:p-12">
             <Footer onNavigateToSection={handleNavigateToSection} />
           </div>
         </main>

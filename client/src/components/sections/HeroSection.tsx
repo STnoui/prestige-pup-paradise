@@ -1,9 +1,23 @@
 
+import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const HeroSection = () => {
   const { t } = useLanguage();
+  const [isVisible, setIsVisible] = useState(true);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      const windowHeight = window.innerHeight;
+      // Hide SHOLO text when scrolled past 70% of viewport height
+      setIsVisible(scrollPosition < windowHeight * 0.7);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const handleScrollToBreeds = () => {
     const element = document.getElementById('our-dogs');
@@ -17,7 +31,11 @@ const HeroSection = () => {
 
 
       {/* Fixed Content - stays in place while content scrolls over */}
-      <div className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-[1] text-center px-6 max-w-3xl mx-auto w-full">
+      <div 
+        className={`fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-[1] text-center px-6 max-w-3xl mx-auto w-full transition-opacity duration-500 ${
+          isVisible ? 'opacity-100' : 'opacity-0 pointer-events-none'
+        }`}
+      >
         <div className="space-y-8">
           <div className="space-y-6">
             <h1 

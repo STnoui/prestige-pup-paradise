@@ -125,7 +125,7 @@ const Header = ({ onNavigateToSection }: HeaderProps) => {
 
           {/* Mobile Menu */}
           {isMenuOpen && (
-            <div className="md:hidden backdrop-blur-xl bg-white/30 dark:bg-black/30 rounded-2xl shadow-xl border border-gray-200/50 dark:border-gray-700/50 mb-4 animate-scale-in">
+            <div className="md:hidden backdrop-blur-xl bg-white/40 dark:bg-black/40 rounded-2xl shadow-xl border border-white/20 dark:border-gray-700/50 mb-4 animate-scale-in mt-4">
               <nav className="px-6 py-4 space-y-1">
                 {navItems.map((item) => (
                   <button

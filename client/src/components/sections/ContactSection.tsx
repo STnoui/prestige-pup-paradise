@@ -16,14 +16,14 @@ const ContactSection = () => {
             {t('contactTitle')}
           </span>
         </h2>
-        <p className="text-xl text-white dark:text-white max-w-2xl mx-auto">
+        <p className="text-xl text-black dark:text-white max-w-2xl mx-auto">
           {t('contactDescription')}
         </p>
       </div>
 
       <div className="max-w-2xl mx-auto">
         {/* Facebook Contact Card */}
-        <div className="bg-white dark:bg-black rounded-3xl border border-gray-200/50 dark:border-gray-700/50 hover:shadow-lg hover:shadow-blue-200/50 dark:hover:shadow-blue-400/30 transition-all duration-300 p-8 text-center">
+        <div className="backdrop-blur-xl bg-white/40 dark:bg-black/40 shadow-lg border border-white/20 dark:border-gray-700/50 rounded-3xl hover:shadow-lg hover:shadow-blue-200/50 dark:hover:shadow-blue-400/30 transition-all duration-300 p-8 text-center">
           <div className="mb-6">
             <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
               <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
@@ -43,7 +43,7 @@ const ContactSection = () => {
                 rel="noopener noreferrer"
                 className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full font-semibold transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-105 inline-flex items-center justify-center"
               >
-                {t('connectOnFacebook')}
+                Connect
               </a>
             </div>
           </div>

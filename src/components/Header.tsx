@@ -43,16 +43,13 @@ const Header = ({ onNavigateToSection }: HeaderProps) => {
   const handleNavigation = (sectionId: string) => {
     if (location.pathname !== '/') {
       navigate('/');
-      // Keep menu open for mobile navigation
       setTimeout(() => {
         onNavigateToSection?.(sectionId);
-        // Close menu after navigation completes
-        setTimeout(() => setIsMenuOpen(false), 500);
+        setIsMenuOpen(false);
       }, 100);
     } else {
       onNavigateToSection?.(sectionId);
-      // Close menu after navigation completes for same page
-      setTimeout(() => setIsMenuOpen(false), 500);
+      setIsMenuOpen(false);
     }
   };
 
@@ -67,7 +64,7 @@ const Header = ({ onNavigateToSection }: HeaderProps) => {
     <header 
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
         scrolled 
-          ? 'backdrop-blur-xl bg-white/30 dark:bg-black/30 border-b border-gray-200/50 dark:border-gray-700/50 shadow-lg' 
+          ? 'backdrop-blur-xl bg-white/30 dark:bg-black/30 shadow-lg' 
           : 'backdrop-blur-xl bg-white/30 dark:bg-black/30'
       }`}
     >
@@ -91,7 +88,7 @@ const Header = ({ onNavigateToSection }: HeaderProps) => {
               <button
                 key={item.id}
                 onClick={() => handleNavigation(item.id)}
-                className="px-4 py-2 rounded-xl text-sm font-medium text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-100/50 dark:hover:bg-gray-800/50 transition-all duration-200"
+                className="px-4 py-2 rounded-xl text-sm font-medium text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-100/50 dark:hover:bg-gray-800/50 transition-all duration-200 hover:scale-105"
               >
                 {item.label}
               </button>
@@ -108,7 +105,7 @@ const Header = ({ onNavigateToSection }: HeaderProps) => {
             <SettingsDropdown />
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className={`p-2 rounded-xl transition-all duration-200 hover:bg-gray-100/50 dark:hover:bg-gray-800/50 ${
+              className={`p-2 rounded-xl transition-all duration-200 hover:bg-gray-100/50 dark:hover:bg-gray-800/50 hover:scale-105 ${
                 isMenuOpen ? 'text-blue-600 dark:text-blue-400' : 'text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400'
               }`}
             >
@@ -131,13 +128,13 @@ const Header = ({ onNavigateToSection }: HeaderProps) => {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="md:hidden backdrop-blur-xl bg-white/30 dark:bg-black/30 rounded-2xl shadow-xl border border-gray-200/50 dark:border-gray-700/50 mb-4 animate-scale-in">
+          <div className="md:hidden backdrop-blur-xl bg-white/30 dark:bg-black/30 rounded-2xl shadow-xl mb-4 animate-scale-in">
             <nav className="px-6 py-4 space-y-1">
               {navItems.map((item) => (
                 <button
                   key={item.id}
                   onClick={() => handleNavigation(item.id)}
-                  className="block w-full text-left px-4 py-3 rounded-xl text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-100/50 dark:hover:bg-gray-800/50 transition-all duration-200"
+                  className="block w-full text-left px-4 py-3 rounded-xl text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-100/50 dark:hover:bg-gray-800/50 transition-all duration-200 hover:scale-105"
                 >
                   {item.label}
                 </button>

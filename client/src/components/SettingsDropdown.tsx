@@ -28,7 +28,7 @@ const SettingsDropdown = () => {
         <Button
           variant="ghost"
           size="sm"
-          className={`h-9 w-9 p-0 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-200 ${
+          className={`h-9 w-9 p-0 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-200 ${
             isOpen ? 'text-blue-600 dark:text-blue-400' : 'text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400'
           }`}
         >

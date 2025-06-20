@@ -61,12 +61,12 @@ const Header = ({ onNavigateToSection }: HeaderProps) => {
   return (
     <header className="fixed top-0 w-full z-50 transition-all duration-300">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 pt-4">
-        <div className={`transition-all duration-300 rounded-2xl ${
+        <div className={`transition-all duration-300 rounded-full ${
           scrolled 
-            ? 'backdrop-blur-xl bg-white/90 dark:bg-black/90 shadow-2xl border border-white/20 dark:border-gray-700/50' 
-            : 'backdrop-blur-xl bg-white/80 dark:bg-black/80 shadow-lg border border-white/10 dark:border-gray-700/30'
+            ? 'backdrop-blur-xl bg-white/30 dark:bg-black/30 shadow-lg border border-white/20 dark:border-gray-700/50' 
+            : 'backdrop-blur-xl bg-white/30 dark:bg-black/30 shadow-lg border border-white/10 dark:border-gray-700/30'
         }`}>
-          <div className="flex items-center justify-between h-20 px-6">
+          <div className="flex items-center justify-between h-16 px-4">
             {/* Logo */}
             <button
               onClick={() => handleNavigation('home')}
@@ -85,7 +85,7 @@ const Header = ({ onNavigateToSection }: HeaderProps) => {
                 <button
                   key={item.id}
                   onClick={() => handleNavigation(item.id)}
-                  className="px-4 py-2 rounded-xl text-sm font-medium text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-100/50 dark:hover:bg-gray-800/50 transition-all duration-200"
+                  className="px-4 py-2 rounded-full text-sm font-medium text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-100/50 dark:hover:bg-gray-800/50 transition-all duration-200"
                 >
                   {item.label}
                 </button>
@@ -102,7 +102,7 @@ const Header = ({ onNavigateToSection }: HeaderProps) => {
               <SettingsDropdown />
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className={`p-2 rounded-xl transition-all duration-200 hover:bg-gray-100/50 dark:hover:bg-gray-800/50 ${
+                className={`p-2 rounded-full transition-all duration-200 hover:bg-gray-100/50 dark:hover:bg-gray-800/50 ${
                   isMenuOpen ? 'text-blue-600 dark:text-blue-400' : 'text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400'
                 }`}
               >
@@ -131,7 +131,7 @@ const Header = ({ onNavigateToSection }: HeaderProps) => {
                   <button
                     key={item.id}
                     onClick={() => handleNavigation(item.id)}
-                    className="block w-full text-left px-4 py-3 rounded-xl text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-100/50 dark:hover:bg-gray-800/50 transition-all duration-200"
+                    className="block w-full text-left px-4 py-3 rounded-full text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-100/50 dark:hover:bg-gray-800/50 transition-all duration-200"
                   >
                     {item.label}
                   </button>

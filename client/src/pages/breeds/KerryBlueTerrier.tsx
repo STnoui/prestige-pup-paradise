@@ -38,9 +38,9 @@ const KerryBlueTerrier = () => {
               {t('kerryBlueTerrierDesc')}
             </p>
 
-            <div className="bg-black rounded-2xl p-6 md:p-8 mb-8 shadow-lg shadow-blue-200/50 dark:shadow-blue-400/30 border border-blue-200/50 dark:border-blue-400/30">
-              <h2 className="text-xl md:text-2xl font-bold text-white mb-4">{t('contactForAvailability')}</h2>
-              <p className="text-gray-200 mb-6">
+            <div className="bg-white dark:bg-black rounded-2xl p-6 md:p-8 mb-8 shadow-lg shadow-blue-200/50 dark:shadow-blue-400/30 border border-blue-200/50 dark:border-blue-400/30">
+              <h2 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-4">{t('contactForAvailability')}</h2>
+              <p className="text-gray-700 dark:text-gray-200 mb-6">
                 {t('breedProgramText1')} {t('kerryBlueTerrier')} {t('breedProgramText2')} {t('breedProgramText3')} {t('kerryBlueTerrier')} {t('breedProgramText4')}
               </p>
             </div>

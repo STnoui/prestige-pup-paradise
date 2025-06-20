@@ -101,6 +101,15 @@ The application follows a monorepo structure with a clear separation between cli
 ```
 Changelog:
 - June 20, 2025. Initial setup
+- June 20, 2025. Completed Lovable to Replit migration with styling improvements:
+  * Fixed missing dependencies (react-router-dom, sonner)
+  * Resolved Poppins font configuration in Tailwind
+  * Enhanced Hero section with larger SHOLO text and extended container
+  * Changed button text from "Meet Our Breeds" to "Meet Our Dogs"
+  * Removed header border bar in light/dark modes
+  * Fixed mobile navigation to stay open when selecting options
+  * Updated "Contact for Availability" sections to use pure white/black backgrounds
+  * Applied consistent styling across all breed pages
 ```
 
 ## User Preferences

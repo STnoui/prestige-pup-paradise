@@ -43,16 +43,11 @@ const Header = ({ onNavigateToSection }: HeaderProps) => {
   const handleNavigation = (sectionId: string) => {
     if (location.pathname !== '/') {
       navigate('/');
-      // Keep menu open for mobile navigation
       setTimeout(() => {
         onNavigateToSection?.(sectionId);
-        // Close menu after navigation completes
-        setTimeout(() => setIsMenuOpen(false), 500);
       }, 100);
     } else {
       onNavigateToSection?.(sectionId);
-      // Close menu after navigation completes for same page
-      setTimeout(() => setIsMenuOpen(false), 500);
     }
   };
 
@@ -67,7 +62,7 @@ const Header = ({ onNavigateToSection }: HeaderProps) => {
     <header 
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
         scrolled 
-          ? 'backdrop-blur-xl bg-white/30 dark:bg-black/30 border-b border-gray-200/50 dark:border-gray-700/50 shadow-lg' 
+          ? 'backdrop-blur-xl bg-white/30 dark:bg-black/30 shadow-lg' 
           : 'backdrop-blur-xl bg-white/30 dark:bg-black/30'
       }`}
     >

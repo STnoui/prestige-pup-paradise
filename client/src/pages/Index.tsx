@@ -41,12 +41,22 @@ const Index = () => {
       
       {/* Hero Background that extends behind content */}
       <div className="relative">
+        {/* Fixed Background Image for entire page */}
+        <div 
+          className="fixed inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: `url('https://images.unsplash.com/photo-1586671267731-da2cf3ceeb80?ixlib=rb-4.0.3&auto=format&fit=crop&w=2089&q=80')`,
+            backgroundAttachment: 'fixed',
+            zIndex: -10
+          }}
+        />
+        
         <section ref={setSectionRef('home')} id="home" className="w-full">
           <HeroSection />
         </section>
         
         {/* Overlapping Content Sections */}
-        <main className="relative -mt-32 z-30 px-8 md:px-16 lg:px-32 xl:px-40">
+        <main className="relative -mt-32 z-50 px-8 md:px-16 lg:px-32 xl:px-40">
           <div className="bg-white dark:bg-black rounded-t-3xl shadow-2xl min-h-screen max-w-4xl mx-auto">
             <section ref={setSectionRef('about')} id="about" className="pt-32 pb-24 w-full">
               <AboutSection />

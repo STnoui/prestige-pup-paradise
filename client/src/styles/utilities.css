@@ -10,8 +10,8 @@ html {
   scrollbar-width: none;
 }
 
-/* Override focus states to use shadows */
-*:focus-visible {
+/* Override focus states to use shadows - exclude cards */
+*:focus-visible:not([class*="backdrop-blur"]):not([class*="shadow-lg"]) {
   outline: none !important;
   box-shadow: 0 0 0 2px rgb(37 99 235) !important;
 }

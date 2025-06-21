@@ -23,7 +23,7 @@ const AmericanAkita = () => {
           <div className="p-8 md:p-16 text-center mb-16">
             <div className="mb-8">
               <img 
-                src="https://images.unsplash.com/photo-1605568427561-40dd23c2acea?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                src="/Akita1.jpg"
                 alt={t('americanAkita')}
                 className="w-full max-w-2xl mx-auto h-64 md:h-96 object-cover object-center rounded-2xl"
                 style={{ aspectRatio: '16/9' }}

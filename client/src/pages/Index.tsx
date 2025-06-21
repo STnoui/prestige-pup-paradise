@@ -118,7 +118,7 @@ const Index = () => {
         <div 
           className="fixed inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: `url('https://images.unsplash.com/photo-1586671267731-da2cf3ceeb80?ixlib=rb-4.0.3&auto=format&fit=crop&w=2089&q=80')`,
+            backgroundImage: `url('/main.jpg')`,
             backgroundAttachment: 'fixed',
             zIndex: -10
           }}

@@ -11,25 +11,25 @@ const OurDogsSection = () => {
     {
       name: t('americanAkita'),
       description: t('americanAkitaDesc'),
-      image: 'https://images.unsplash.com/photo-1605568427561-40dd23c2acea?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+      image: '/Akita1.jpg',
       path: '/breeds/american-akita',
     },
     {
       name: t('southAfricanBoerboel'), 
       description: t('southAfricanBoerboelDesc'),
-      image: 'https://images.unsplash.com/photo-1587300003388-59208cc962cb?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+      image: '/Boerboel1.jpg',
       path: '/breeds/south-african-boerboel',
     },
     {
       name: t('miniatureSchnauzer'),
       description: t('miniatureSchnauzermDesc'),
-      image: 'https://images.unsplash.com/photo-1605568427561-40dd23c2acea?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+      image: '/Shnauzer1.jpg',
       path: '/breeds/miniature-schnauzer',
     },
     {
       name: t('kerryBlueTerrier'),
       description: t('kerryBlueTerrierDesc'),
-      image: 'https://images.unsplash.com/photo-1583337130417-3346a1be7dee?ixlib=rb-4.0.3&auto=format&fit=crop&w=2064&q=80',
+      image: '/Terrier1.jpg',
       path: '/breeds/kerry-blue-terrier',
     }
   ], [t]);
@@ -63,15 +63,15 @@ const OurDogsSection = () => {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 md:gap-8" style={{ contentVisibility: 'auto', containIntrinsicSize: '300px' }}>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-12 md:gap-16 overflow-visible pt-8 px-8 pb-8" style={{ contentVisibility: 'auto', containIntrinsicSize: '300px' }}>
         {breeds.map((breed, index) => (
           <Link key={breed.name} to={breed.path}>
-            <div className="backdrop-blur-xl bg-white/40 dark:bg-black/40 shadow-lg border border-white/20 dark:border-gray-700/50 overflow-hidden group hover:shadow-lg hover:shadow-blue-200/50 dark:hover:shadow-blue-400/30 transition-all duration-300 hover:-translate-y-2 rounded-3xl w-full max-w-none mx-auto h-full flex flex-col will-change-transform contain-layout contain-style">
-              <div className="relative overflow-hidden">
+            <div className="backdrop-blur-xl bg-white/40 dark:bg-black/40 shadow-lg rounded-3xl hover:shadow-lg hover:shadow-blue-200/50 dark:hover:shadow-blue-400/30 transition-all duration-300 hover:-translate-y-2 hover:z-50 w-full max-w-none mx-auto h-full flex flex-col relative">
+              <div className="relative overflow-hidden rounded-t-3xl">
                 <img 
                   src={breed.image}
                   alt={breed.name}
-                  className="w-full h-48 object-cover object-center group-hover:scale-110 transition-transform duration-500"
+                  className="w-full h-64 object-cover object-center group-hover:scale-110 transition-transform duration-500"
                   style={{ aspectRatio: '16/9', contentVisibility: 'auto' }}
                   loading="lazy"
                   decoding="async"

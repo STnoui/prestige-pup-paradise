@@ -10,11 +10,18 @@ html {
   scrollbar-width: none;
 }
 
-/* Override focus states to use shadows - exclude cards */
-*:focus-visible:not([class*="backdrop-blur"]):not([class*="shadow-lg"]) {
+/* Override focus states - but exclude buttons, inputs, and dog cards */
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+[role="button"]:focus-visible,
+[tabindex]:focus-visible:not(.backdrop-blur-xl):not([class*="backdrop-blur"]) {
   outline: none !important;
   box-shadow: 0 0 0 2px rgb(37 99 235) !important;
 }
+
+/* Only remove focus effects from backdrop-blur elements, let Tailwind handle shadows */
 
 /* Remove all sidebar components completely */
 [data-sidebar] {

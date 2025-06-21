@@ -10,7 +10,7 @@ const ContactSection = () => {
   const facebookUrl = 'https://www.facebook.com/profile.php?id=61574415806779';
 
   return (
-    <div className="max-w-4xl mx-auto px-6 lg:px-8">
+    <div className="max-w-4xl mx-auto px-2 sm:px-6 lg:px-8">
       <div className="text-center mb-16">
         <h2 className="text-4xl md:text-5xl font-bold mb-6">
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 via-green-500 to-teal-500 dark:from-green-300 dark:via-green-400 dark:to-teal-400">

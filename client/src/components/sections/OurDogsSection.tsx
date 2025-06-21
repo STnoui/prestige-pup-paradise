@@ -63,7 +63,7 @@ const OurDogsSection = () => {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-12 md:gap-16 overflow-visible pt-8 px-8 pb-8" style={{ contentVisibility: 'auto', containIntrinsicSize: '300px' }}>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 sm:gap-12 md:gap-16 overflow-visible pt-8 px-2 sm:px-8 pb-8" style={{ contentVisibility: 'auto', containIntrinsicSize: '300px' }}>
         {breeds.map((breed, index) => (
           <Link key={breed.name} to={breed.path}>
             <div className="backdrop-blur-xl bg-white/40 dark:bg-black/40 shadow-lg rounded-3xl hover:shadow-lg hover:shadow-blue-200/50 dark:hover:shadow-blue-400/30 transition-all duration-300 hover:-translate-y-2 hover:z-50 w-full max-w-none mx-auto h-full flex flex-col relative">

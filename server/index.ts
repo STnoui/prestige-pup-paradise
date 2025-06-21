@@ -1,6 +1,7 @@
 import express, { type Request, Response, NextFunction } from "express";
 import { registerRoutes } from "./routes";
 import { setupVite, serveStatic, log } from "./vite";
+import { networkInterfaces } from "os";
 
 const app = express();
 app.use(express.json());
@@ -60,11 +61,30 @@ app.use((req, res, next) => {
   // this serves both the API and the client.
   // It is the only port that is not firewalled.
   const port = 5000;
+  
+  function getNetworkAddress() {
+    const interfaces = networkInterfaces();
+    for (const name of Object.keys(interfaces)) {
+      for (const iface of interfaces[name] || []) {
+        if (iface.family === 'IPv4' && !iface.internal) {
+          return iface.address;
+        }
+      }
+    }
+    return '0.0.0.0';
+  }
+  
   server.listen({
     port,
     host: "0.0.0.0",
     reusePort: true,
   }, () => {
-    log(`serving on port ${port}`);
+    const networkAddress = getNetworkAddress();
+    console.log();
+    log(`🚀 Server ready!`);
+    console.log();
+    console.log(`  ➜  Local:   http://localhost:${port}`);
+    console.log(`  ➜  Network: http://${networkAddress}:${port}`);
+    console.log();
   });
 })();

@@ -6,6 +6,8 @@ import { fileURLToPath, URL } from 'node:url';
 import runtimeErrorOverlay from "@replit/vite-plugin-runtime-error-modal";
 import { componentTagger } from "lovable-tagger";
 
+const __dirname = fileURLToPath(new URL(".", import.meta.url));
+
 export default defineConfig(async ({ mode }) => ({
   plugins: [
     react(),
@@ -21,8 +23,8 @@ export default defineConfig(async ({ mode }) => ({
       : []),
   ].filter(Boolean),
   server: {
-    host: "localhost",
-    port: 8080
+    host: "0.0.0.0",
+    port: 5000
   },
   resolve: {
     alias: {
@@ -31,7 +33,6 @@ export default defineConfig(async ({ mode }) => ({
       "@assets": fileURLToPath(new URL("./attached_assets", import.meta.url)),
     },
   },
-  root: fileURLToPath(new URL("./client", import.meta.url)),
   build: {
     outDir: fileURLToPath(new URL("./dist/public", import.meta.url)),
     emptyOutDir: true,

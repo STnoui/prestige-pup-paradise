@@ -33,6 +33,7 @@ export default defineConfig(async ({ mode }) => ({
       "@assets": fileURLToPath(new URL("./attached_assets", import.meta.url)),
     },
   },
+  root: fileURLToPath(new URL("./client", import.meta.url)),
   build: {
     outDir: fileURLToPath(new URL("./dist/public", import.meta.url)),
     emptyOutDir: true,

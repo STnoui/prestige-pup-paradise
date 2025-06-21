@@ -1,5 +1,6 @@
 
 import { useLanguage } from '@/contexts/LanguageContext';
+import { memo } from 'react';
 
 const AboutSection = () => {
   const { t } = useLanguage();
@@ -45,4 +46,4 @@ const AboutSection = () => {
   );
 };
 
-export default AboutSection;
+export default memo(AboutSection);

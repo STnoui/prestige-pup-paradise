@@ -6,6 +6,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
+        'honor-sans': ['HonorSans', 'sans-serif'],
+        'sans': ['HonorSans', 'Poppins', 'Inter', 'sans-serif'],
         poppins: ['Poppins', 'sans-serif'],
         inter: ['Inter', 'sans-serif'],
       },

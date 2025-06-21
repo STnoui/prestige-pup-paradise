@@ -1,5 +1,78 @@
 
 
+/* HonorSans Font Face Declarations */
+@font-face {
+  font-family: 'HonorSans';
+  src: url('file:///home/deyan/.local/share/fonts/HONORSans-Thin.ttf');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'HonorSans';
+  src: url('file:///home/deyan/.local/share/fonts/HONORSans-ExtraLight.ttf');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'HonorSans';
+  src: url('file:///home/deyan/.local/share/fonts/HONORSans-Light.ttf');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'HonorSans';
+  src: url('file:///home/deyan/.local/share/fonts/HONORSans-Regular.ttf');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'HonorSans';
+  src: url('file:///home/deyan/.local/share/fonts/HONORSans-Medium.ttf');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'HonorSans';
+  src: url('file:///home/deyan/.local/share/fonts/HONORSans-Demibold.ttf');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'HonorSans';
+  src: url('file:///home/deyan/.local/share/fonts/HONORSans-Bold.ttf');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'HonorSans';
+  src: url('file:///home/deyan/.local/share/fonts/HONORSans-ExtraBold.ttf');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'HonorSans';
+  src: url('file:///home/deyan/.local/share/fonts/HONORSans-Heavy.ttf');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
 
@@ -105,7 +178,7 @@
   }
   
   body {
-    @apply bg-white dark:bg-black text-foreground font-poppins antialiased;
+    @apply bg-white dark:bg-black text-foreground font-honor-sans antialiased;
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
     overflow-x: hidden;
     width: 100%;

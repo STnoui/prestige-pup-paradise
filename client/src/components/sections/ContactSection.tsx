@@ -2,6 +2,7 @@
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { memo } from 'react';
 
 const ContactSection = () => {
   const { t } = useLanguage();
@@ -53,4 +54,4 @@ const ContactSection = () => {
   );
 };
 
-export default ContactSection;
+export default memo(ContactSection);

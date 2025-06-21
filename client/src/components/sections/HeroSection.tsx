@@ -1,29 +1,60 @@
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, memo } from 'react';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
 
-const HeroSection = () => {
+interface HeroSectionProps {
+  onNavigateToSection?: (sectionId: string) => void;
+}
+
+const HeroSection = ({ onNavigateToSection }: HeroSectionProps) => {
   const { t } = useLanguage();
-  const [isVisible, setIsVisible] = useState(true);
+  const [fadeProgress, setFadeProgress] = useState(0);
+  
+  // Calculate individual element opacities for smooth bottom-to-top fade
+  const buttonOpacity = fadeProgress < 0.3 ? 1 : Math.max(0, 1 - ((fadeProgress - 0.3) / 0.4)); // Fades first (bottom)
+  const subtitleOpacity = fadeProgress < 0.5 ? 1 : Math.max(0, 1 - ((fadeProgress - 0.5) / 0.3)); // Fades second  
+  const titleOpacity = fadeProgress < 0.7 ? 1 : Math.max(0, 1 - ((fadeProgress - 0.7) / 0.3)); // Fades last (top)
+  
 
   useEffect(() => {
+    let ticking = false;
+    let lastScrollY = window.scrollY;
+    let lastProgress = 0;
+    
     const handleScroll = () => {
-      const scrollPosition = window.scrollY;
-      const windowHeight = window.innerHeight;
-      // Hide SHOLO text when scrolled past 70% of viewport height
-      setIsVisible(scrollPosition < windowHeight * 0.7);
+      const currentScrollY = window.scrollY;
+      
+      // Only update if scroll changed significantly to reduce calculations
+      if (Math.abs(currentScrollY - lastScrollY) < 3) return;
+      lastScrollY = currentScrollY;
+      
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          const scrollPosition = window.scrollY;
+          const windowHeight = window.innerHeight;
+          // Start fading only when content is extremely close to hero text
+          const fadeStartPoint = windowHeight * 0.35; // Start when content is close
+          const fadeEndPoint = windowHeight * 0.65; // Complete fade quickly after
+          const progress = Math.max(0, Math.min(1, (scrollPosition - fadeStartPoint) / (fadeEndPoint - fadeStartPoint)));
+          
+          // Only update state if progress changed significantly
+          if (Math.abs(progress - lastProgress) > 0.01) {
+            setFadeProgress(progress);
+            lastProgress = progress;
+          }
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const handleScrollToBreeds = () => {
-    const element = document.getElementById('our-dogs');
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
+    onNavigateToSection?.('our-dogs');
   };
 
   return (
@@ -32,31 +63,31 @@ const HeroSection = () => {
 
       {/* Fixed Content - stays in place while content scrolls over */}
       <div 
-        className={`fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-[1] text-center px-6 max-w-3xl mx-auto w-full transition-opacity duration-500 ${
-          isVisible ? 'opacity-100' : 'opacity-0 pointer-events-none'
-        }`}
+        className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-[1] text-center px-6 max-w-3xl mx-auto w-full"
+        style={{ 
+          pointerEvents: fadeProgress > 0.9 ? 'none' : 'auto'
+        }}
       >
         <div className="space-y-8">
           <div className="space-y-6">
             <h1 
-              className="text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-black animate-fade-in tracking-tight font-inter text-white"
+              className="text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-black tracking-tight font-inter text-white"
               style={{ 
-                opacity: 1,
-                animationFillMode: 'forwards',
+                opacity: titleOpacity,
                 letterSpacing: '0.05em',
-                textShadow: '0 8px 32px rgba(0, 0, 0, 0.5)'
+                textShadow: '0 8px 32px rgba(0, 0, 0, 0.5)',
+                transition: 'opacity 0.1s ease-out'
               }}
             >
               SHOLO
             </h1>
             
             <h2 
-              className="text-xl md:text-2xl lg:text-3xl xl:text-4xl font-medium animate-fade-in tracking-wide font-inter text-blue-100" 
+              className="text-xl md:text-2xl lg:text-3xl xl:text-4xl font-medium tracking-wide font-inter text-blue-100" 
               style={{ 
-                animationDelay: '0.2s',
-                opacity: 1,
-                animationFillMode: 'forwards',
-                textShadow: '0 4px 16px rgba(0, 0, 0, 0.4)'
+                opacity: subtitleOpacity,
+                textShadow: '0 4px 16px rgba(0, 0, 0, 0.4)',
+                transition: 'opacity 0.1s ease-out'
               }}
             >
               Brave Dogs
@@ -64,11 +95,10 @@ const HeroSection = () => {
           </div>
           
           <div 
-            className="flex justify-center animate-fade-in pt-6" 
+            className="flex justify-center pt-6" 
             style={{ 
-              animationDelay: '0.4s',
-              opacity: 1,
-              animationFillMode: 'forwards'
+              opacity: buttonOpacity,
+              transition: 'opacity 0.1s ease-out'
             }}
           >
             <Button 
@@ -84,4 +114,4 @@ const HeroSection = () => {
   );
 };
 
-export default HeroSection;
+export default memo(HeroSection);

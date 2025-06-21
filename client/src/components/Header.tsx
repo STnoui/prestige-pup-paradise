@@ -1,5 +1,5 @@
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useCallback, memo } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 import SettingsDropdown from '@/components/SettingsDropdown';
@@ -18,10 +18,17 @@ const Header = ({ onNavigateToSection }: HeaderProps) => {
   const mobileMenuButtonRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    let ticking = false;
     const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          setScrolled(window.scrollY > 20);
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -46,16 +53,23 @@ const Header = ({ onNavigateToSection }: HeaderProps) => {
     };
   }, [isMenuOpen]);
 
-  const handleNavigation = (sectionId: string) => {
+  const handleNavigation = useCallback((sectionId: string) => {
+    console.log('Header navigation clicked for:', sectionId);
+    console.log('Current pathname:', location.pathname);
+    console.log('onNavigateToSection function:', typeof onNavigateToSection);
+    
     if (location.pathname !== '/') {
+      console.log('Navigating to home first...');
       navigate('/');
       setTimeout(() => {
+        console.log('Calling onNavigateToSection after navigation...');
         onNavigateToSection?.(sectionId);
-      }, 100);
+      }, 500);
     } else {
+      console.log('Already on home, calling onNavigateToSection directly...');
       onNavigateToSection?.(sectionId);
     }
-  };
+  }, [location.pathname, navigate, onNavigateToSection]);
 
   const navItems = [
     { id: 'home', label: t('home') },
@@ -72,7 +86,7 @@ const Header = ({ onNavigateToSection }: HeaderProps) => {
             ? 'backdrop-blur-xl bg-white/40 dark:bg-black/40 shadow-lg border border-white/20 dark:border-gray-700/50' 
             : 'backdrop-blur-xl bg-white/40 dark:bg-black/40 shadow-lg border border-white/10 dark:border-gray-700/30'
         }`}>
-          <div className="flex items-center justify-between h-16 px-4">
+          <div className="flex items-center justify-between h-14 px-4">
             {/* Logo */}
             <button
               onClick={() => handleNavigation('home')}
@@ -81,7 +95,9 @@ const Header = ({ onNavigateToSection }: HeaderProps) => {
               <img 
                 src="/lovable-uploads/4fc6ff94-b7a7-4209-83d2-aa6063da5978.png" 
                 alt="SHOLO Logo" 
-                className="h-12 w-12 logo-circular group-hover:scale-105 transition-transform duration-200 object-cover"
+                className="h-11 w-11 logo-circular group-hover:scale-105 transition-transform duration-200 object-cover"
+                loading="eager"
+                decoding="async"
               />
             </button>
 
@@ -157,4 +173,4 @@ const Header = ({ onNavigateToSection }: HeaderProps) => {
   );
 };
 
-export default Header;
+export default memo(Header);

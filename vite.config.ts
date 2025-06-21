@@ -2,10 +2,11 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import path from "path";
+import { fileURLToPath, URL } from 'node:url';
 import runtimeErrorOverlay from "@replit/vite-plugin-runtime-error-modal";
 import { componentTagger } from "lovable-tagger";
 
-export default defineConfig(({ mode }) => ({
+export default defineConfig(async ({ mode }) => ({
   plugins: [
     react(),
     runtimeErrorOverlay(),
@@ -20,19 +21,19 @@ export default defineConfig(({ mode }) => ({
       : []),
   ].filter(Boolean),
   server: {
-    host: "::",
+    host: "localhost",
     port: 8080
   },
   resolve: {
     alias: {
-      "@": path.resolve(import.meta.dirname, "client", "src"),
-      "@shared": path.resolve(import.meta.dirname, "shared"),
-      "@assets": path.resolve(import.meta.dirname, "attached_assets"),
+      "@": fileURLToPath(new URL("./client/src", import.meta.url)),
+      "@shared": fileURLToPath(new URL("./shared", import.meta.url)),
+      "@assets": fileURLToPath(new URL("./attached_assets", import.meta.url)),
     },
   },
-  root: path.resolve(import.meta.dirname, "client"),
+  root: fileURLToPath(new URL("./client", import.meta.url)),
   build: {
-    outDir: path.resolve(import.meta.dirname, "dist/public"),
+    outDir: fileURLToPath(new URL("./dist/public", import.meta.url)),
     emptyOutDir: true,
   },
 }));

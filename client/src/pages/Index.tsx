@@ -1,5 +1,5 @@
 
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, useCallback } from 'react';
 import { useLocation } from 'react-router-dom';
 import Header from '@/components/Header';
 import HeroSection from '@/components/sections/HeroSection';
@@ -12,17 +12,90 @@ const Index = () => {
   const location = useLocation();
   const sectionsRef = useRef<{ [key: string]: HTMLElement | null }>({});
 
-  const handleNavigateToSection = (sectionId: string) => {
+  const handleNavigateToSection = useCallback((sectionId: string) => {
+    console.log('=== NAVIGATION DEBUG ===');
+    console.log('Requested section:', sectionId);
+    console.log('All refs:', Object.keys(sectionsRef.current));
+    console.log('Available elements:', Object.entries(sectionsRef.current).map(([key, el]) => [key, !!el]));
+    
     const element = sectionsRef.current[sectionId];
+    console.log('Target element:', element);
+    
     if (element) {
-      const offset = sectionId === 'home' ? 0 : 100;
-      const elementPosition = element.offsetTop - offset;
-      window.scrollTo({
-        top: elementPosition,
-        behavior: 'smooth'
-      });
+      // Try primary navigation method first
+      try {
+        // Get the header height dynamically
+        const header = document.querySelector('header');
+        const headerHeight = header ? header.offsetHeight : 80;
+        console.log('Header height:', headerHeight);
+        
+        // Different offsets for different sections
+        let offset = headerHeight + 20; // Base offset with some padding
+        
+        if (sectionId === 'home') {
+          offset = 0;
+        } else if (sectionId === 'about') {
+          offset = headerHeight + 40; // More space for the first card section
+        } else {
+          offset = headerHeight + 20; // Standard offset for other sections
+        }
+        
+        console.log('Calculated offset:', offset);
+        console.log('Element offsetTop:', element.offsetTop);
+        
+        const rect = element.getBoundingClientRect();
+        console.log('Element getBoundingClientRect:', rect);
+        
+        // Use getBoundingClientRect for more accurate positioning
+        const currentScrollY = window.pageYOffset;
+        const elementPosition = rect.top + currentScrollY - offset;
+        const scrollTarget = Math.max(0, elementPosition);
+        
+        console.log('Element position:', elementPosition);
+        console.log('Scroll target:', scrollTarget);
+        console.log('Current scroll position:', window.pageYOffset);
+        
+        window.scrollTo({
+          top: scrollTarget,
+          behavior: 'smooth'
+        });
+        
+        // Verify scroll worked and fallback if needed
+        setTimeout(() => {
+          const currentPos = window.pageYOffset;
+          console.log('After scroll - Current position:', currentPos);
+          
+          // If scroll didn't work, try fallback method
+          if (Math.abs(currentPos - scrollTarget) > 100) {
+            console.log('Primary scroll failed, trying fallback...');
+            element.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        }, 1000);
+      } catch (error) {
+        console.log('Navigation error, using fallback:', error);
+        // Fallback: use scrollIntoView
+        element.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    } else {
+      console.log('ERROR: Element not found for section:', sectionId);
+      // Fallback: try to find element by ID
+      const fallbackElement = document.getElementById(sectionId);
+      if (fallbackElement) {
+        console.log('Found fallback element by ID:', fallbackElement);
+        fallbackElement.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
     }
-  };
+    console.log('=== END DEBUG ===');
+  }, []);
 
   useEffect(() => {
     const hash = location.hash.replace('#', '');
@@ -31,9 +104,9 @@ const Index = () => {
     }
   }, [location]);
 
-  const setSectionRef = (sectionId: string) => (el: HTMLElement | null) => {
+  const setSectionRef = useCallback((sectionId: string) => (el: HTMLElement | null) => {
     sectionsRef.current[sectionId] = el;
-  };
+  }, []);
 
   return (
     <div className="min-h-screen overflow-x-hidden">
@@ -52,7 +125,7 @@ const Index = () => {
         />
         
         <section ref={setSectionRef('home')} id="home" className="w-full">
-          <HeroSection />
+          <HeroSection onNavigateToSection={handleNavigateToSection} />
         </section>
         
         {/* Separate Card Sections */}

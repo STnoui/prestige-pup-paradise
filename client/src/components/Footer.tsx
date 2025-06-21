@@ -1,5 +1,6 @@
 
 import { useLanguage } from '@/contexts/LanguageContext';
+import { memo } from 'react';
 
 interface FooterProps {
   onNavigateToSection?: (sectionId: string) => void;
@@ -23,4 +24,4 @@ const Footer = ({ onNavigateToSection }: FooterProps) => {
   );
 };
 
-export default Footer;
+export default memo(Footer);

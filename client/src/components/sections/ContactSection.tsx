@@ -42,9 +42,9 @@ const ContactSection = () => {
                 href={facebookUrl} 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full font-semibold transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-105 inline-flex items-center justify-center"
+                className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full font-semibold transition-all duration-500 shadow-lg hover:shadow-xl hover:scale-105 inline-flex items-center justify-center"
               >
-                Connect
+{t('connect')}
               </a>
             </div>
           </div>

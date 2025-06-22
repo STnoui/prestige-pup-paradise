@@ -87,45 +87,12 @@ const Header = ({ onNavigateToSection }: HeaderProps) => {
             : 'backdrop-blur-xl bg-white/40 dark:bg-black/40 shadow-lg border border-white/10 dark:border-gray-700/30'
         }`}>
           <div className="flex items-center justify-between h-14 px-4">
-            {/* Logo */}
-            <button
-              onClick={() => handleNavigation('home')}
-              className="flex items-center space-x-3 group"
-            >
-              <img 
-                src="/lovable-uploads/4fc6ff94-b7a7-4209-83d2-aa6063da5978.png" 
-                alt="SHOLO Logo" 
-                className="h-11 w-11 logo-circular group-hover:scale-105 transition-transform duration-200 object-cover"
-                loading="eager"
-                decoding="async"
-              />
-            </button>
-
-            {/* Desktop Navigation */}
-            <nav className="hidden md:flex items-center space-x-1">
-              {navItems.map((item) => (
-                <button
-                  key={item.id}
-                  onClick={() => handleNavigation(item.id)}
-                  className="px-4 py-2 rounded-full text-sm font-medium text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-100/50 dark:hover:bg-gray-800/50 transition-all duration-200"
-                >
-                  {item.label}
-                </button>
-              ))}
-            </nav>
-
-            {/* Settings */}
-            <div className="hidden md:flex items-center">
-              <SettingsDropdown />
-            </div>
-
-            {/* Mobile Menu Button and Settings */}
+            {/* Mobile Menu Button and Settings (Left side on mobile) */}
             <div className="md:hidden flex items-center space-x-2" ref={mobileMenuButtonRef}>
-              <SettingsDropdown />
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
                 className={`p-2 rounded-full transition-all duration-200 hover:bg-gray-100/50 dark:hover:bg-gray-800/50 focus:outline-none ${
-                  isMenuOpen ? 'text-blue-600 dark:text-blue-400' : 'text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400'
+                  isMenuOpen ? 'text-blue-600 dark:text-blue-400 bg-gray-100/50 dark:bg-gray-800/50' : 'text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400'
                 }`}
               >
                 <svg 
@@ -142,7 +109,46 @@ const Header = ({ onNavigateToSection }: HeaderProps) => {
                   />
                 </svg>
               </button>
+              <SettingsDropdown />
             </div>
+
+            {/* Logo (Always centered on mobile, left on desktop) */}
+            <button
+              onClick={() => handleNavigation('home')}
+              className="flex items-center space-x-3 group md:mr-auto"
+            >
+              <img 
+                src="/lovable-uploads/4fc6ff94-b7a7-4209-83d2-aa6063da5978.png" 
+                alt="SHOLO Logo" 
+                className="h-11 w-11 logo-circular group-hover:scale-105 transition-transform duration-300 object-cover"
+                loading="eager"
+                decoding="async"
+              />
+              <span className="text-lg font-medium text-gray-800 dark:text-gray-100 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-200 font-inter">
+                SHOLO
+              </span>
+            </button>
+
+            {/* Desktop Navigation - Centered */}
+            <nav className="hidden md:flex items-center space-x-1 flex-1 justify-center">
+              {navItems.map((item) => (
+                <button
+                  key={item.id}
+                  onClick={() => handleNavigation(item.id)}
+                  className="px-4 py-2 rounded-full text-sm font-medium text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-100/50 dark:hover:bg-gray-800/50 transition-all duration-200"
+                >
+                  {item.label}
+                </button>
+              ))}
+            </nav>
+
+            {/* Desktop Settings */}
+            <div className="hidden md:flex items-center">
+              <SettingsDropdown />
+            </div>
+
+            {/* Mobile spacer to center logo */}
+            <div className="md:hidden w-20"></div>
           </div>
         </div>
         
@@ -160,7 +166,7 @@ const Header = ({ onNavigateToSection }: HeaderProps) => {
                     handleNavigation(item.id);
                     setIsMenuOpen(false);
                   }}
-                  className="block w-full text-left px-4 py-3 rounded-full text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-100/50 dark:hover:bg-gray-800/50 transition-all duration-200"
+                  className="block w-full text-center px-4 py-3 rounded-full text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-100/50 dark:hover:bg-gray-800/50 transition-all duration-200"
                 >
                   {item.label}
                 </button>

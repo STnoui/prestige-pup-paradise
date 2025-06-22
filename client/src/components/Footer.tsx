@@ -11,11 +11,11 @@ const Footer = ({ onNavigateToSection }: FooterProps) => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-gray-900 text-white py-6">
+    <footer className="py-16 mt-24">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Bottom Bar */}
         <div className="text-center">
-          <p className="text-gray-400 text-sm">
+          <p className="text-white text-base font-medium drop-shadow-lg">
             © {currentYear} SHOLO. {t('allRightsReserved')}
           </p>
         </div>

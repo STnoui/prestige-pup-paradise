@@ -30,10 +30,8 @@ const translations = {
     // About Section
     aboutTitle: 'About SHOLO',
     aboutUs: 'About Us',
-    aboutDescription: 'Dedicated to breeding exceptional dogs with love, care, and the highest standards of quality.',
-    ourPhilosophy: 'Our Philosophy',
-    aboutText1: 'At SHOLO, we believe that every dog deserves to be loved, cared for, and treated with the utmost respect. Our breeding program is built on the foundation of health, temperament, and quality.',
-    aboutText2: 'We are committed to producing dogs that not only meet breed standards but also make wonderful family companions. Each puppy is raised with love and socialized from an early age.',
+    newAboutText1: 'We are a new breeding family based in beautiful Bulgaria, where our passion for dogs has grown into a commitment to excellence. We believe in the profound connection between humans and dogs - a bond built on trust, loyalty, and unconditional love.',
+    newAboutText2: 'Our breeding program focuses on quality over quantity. Each dog in our care receives individual attention, proper nutrition, and comprehensive health monitoring. We are dedicated to producing healthy, well-socialized puppies that will become beloved family members.',
     
     // Dogs Section
     ourDogsTitle: 'Our Breeds',
@@ -74,7 +72,24 @@ const translations = {
     
     // Additional
     learnMore: 'Learn More',
-    breedsSectionDesc: 'Discover our carefully selected dog breeds, each chosen for their exceptional qualities and temperament.'
+    breedsSectionDesc: 'Discover our carefully selected dog breeds, each chosen for their exceptional qualities and temperament.',
+    connect: 'Connect',
+    info: 'Info',
+    availabilityDescription: 'Contact us for current availability and breeding program information.',
+    pageNotFoundTitle: 'Oops! This pup ran away',
+    pageNotFoundDescription: 'The page you\'re looking for doesn\'t exist, but our amazing dogs are waiting for you at home!',
+    returnHome: 'Return Home',
+    english: 'English',
+    bulgarian: 'Bulgarian',
+    meetOurDogsButton: 'Meet Our Dogs',
+    themeLabel: 'Theme',
+    languageLabel: 'Language',
+    
+    // Breed Descriptions
+    americanAkitaDescription: 'The American Akita is a large, powerful, and dignified breed with a noble bearing. Originally developed in Japan, these loyal companions are known for their courage, independence, and deep devotion to their families. Their thick double coat and sturdy build make them well-suited for various climates. With proper training and socialization, American Akitas make excellent guardians and loving family pets.',
+    kerryBlueTerrierDescription: 'The Kerry Blue Terrier is a medium-sized Irish breed known for their distinctive blue-gray coat that develops as they mature. These versatile dogs were originally bred for farming, hunting, and guarding, making them adaptable and intelligent companions. With their spirited personality and strong-willed nature, Kerry Blues require consistent training and socialization. Their hypoallergenic coat and loyal temperament make them excellent family dogs for active households.',
+    miniatureSchnauzersDescription: 'The Miniature Schnauzer is a small, spirited terrier breed known for their distinctive beard and eyebrows. These intelligent and alert dogs are excellent companions, combining the courage of a terrier with a friendly, outgoing personality. Their hypoallergenic double coat and compact size make them ideal for various living situations. Miniature Schnauzers are highly trainable, loyal, and make wonderful family pets with proper socialization.',
+    southAfricanBoerboelDescription: 'The South African Boerboel is a large, powerful mastiff breed originally developed to protect homesteads in South Africa. These confident and calm dogs are known for their exceptional loyalty, intelligence, and natural protective instincts. With their muscular build and fearless nature, Boerboels are excellent guardians while remaining gentle and affectionate with their families. They require experienced handling and proper socialization to reach their full potential as devoted companions.'
   },
   bg: {
     // Navigation
@@ -96,10 +111,8 @@ const translations = {
     // About Section
     aboutTitle: 'За SHOLO',
     aboutUs: 'За нас',
-    aboutDescription: 'Посветени на отглеждането на изключителни кучета с любов, грижи и най-високи стандарти за качество.',
-    ourPhilosophy: 'Нашата философия',
-    aboutText1: 'В SHOLO вярваме, че всяко куче заслужава да бъде обичано, обгрижвано и третирано с най-голямо уважение. Нашата програма за развъждане е изградена върху основата на здраве, темперамент и качество.',
-    aboutText2: 'Ние сме ангажирани с производството на кучета, които не само отговарят на стандартите за породата, но също така правят прекрасни семейни спътници. Всяко кученце е отгледано с любов и социализирано от ранна възраст.',
+    newAboutText1: 'Ние сме ново семейство за развъждане, базирано в красивата България, където страстта ни към кучетата се превърна в ангажимент към съвършенството. Вярваме в дълбоката връзка между хората и кучетата - връзка, изградена на доверие, лоялност и безусловна любов.',
+    newAboutText2: 'Нашата програма за развъждане се фокусира върху качеството, а не количеството. Всяко куче под нашата грижа получава индивидуално внимание, правилно хранене и цялостно наблюдение на здравето. Ние сме посветени на производството на здрави, добре социализирани кученца, които ще станат обичани членове на семейството.',
     
     // Dogs Section
     ourDogsTitle: 'Нашите породи',
@@ -140,7 +153,24 @@ const translations = {
     
     // Additional
     learnMore: 'Научи повече',
-    breedsSectionDesc: 'Открийте нашите внимателно подбрани породи кучета, всяка избрана заради изключителните си качества и темперамент.'
+    breedsSectionDesc: 'Открийте нашите внимателно подбрани породи кучета, всяка избрана заради изключителните си качества и темперамент.',
+    connect: 'Свързване',
+    info: 'Информация',
+    availabilityDescription: 'Свържете се с нас за информация относно наличността и програмата ни за развъждане.',
+    pageNotFoundTitle: 'Ох! Това кученце избяга',
+    pageNotFoundDescription: 'Страницата, която търсите не съществува, но нашите невероятни кучета ви чакат у дома!',
+    returnHome: 'Връщане към началото',
+    english: 'Английски',
+    bulgarian: 'Български',
+    meetOurDogsButton: 'Запознайте се с кучетата',
+    themeLabel: 'Тема',
+    languageLabel: 'Език',
+    
+    // Breed Descriptions
+    americanAkitaDescription: 'Американската Акита е голяма, мощна и достойна порода с благородно държание. Първоначално развита в Япония, тези лоялни спътници са известни със своята смелост, независимост и дълбока преданост към семействата си. Тяхната гъста двойна козина и здрава конституция ги правят подходящи за различни климати. С правилна тренировка и социализация, американските акити са отлични пазители и обичащи домашни любимци.',
+    kerryBlueTerrierDescription: 'Кери Блу Териерът е средноголяма ирландска порода, известна със своята характерна синьо-сива козина, която се развива с възрастта. Тези универсални кучета първоначално са отгледани за земеделие, лов и охрана, което ги прави адаптивни и интелигентни спътници. С техния енергичен характер и силна воля, Кери Блуовете изискват последователна тренировка и социализация. Тяхната хипоалергенна козина и лоялен темперамент ги правят отлични семейни кучета за активни домакинства.',
+    miniatureSchnauzersDescription: 'Миниатюрният Шнауцер е малка, енергична териерска порода, известна със своята характерна брада и вежди. Тези интелигентни и будни кучета са отлични спътници, съчетавайки смелостта на териер с приятелски, общителен характер. Тяхната хипоалергенна двойна козина и компактен размер ги правят идеални за различни жилищни ситуации. Миниатюрните Шнауцери са много обучими, лоялни и правят прекрасни семейни любимци с правилна социализация.',
+    southAfricanBoerboelDescription: 'Южноафриканският Бурбул е голяма, мощна мастиф порода, първоначално развита за защита на имения в Южна Африка. Тези уверени и спокойни кучета са известни със своята изключителна лоялност, интелигентност и естествени защитни инстинкти. Със своята мускулеста конституция и безстрашна природа, Бурбулите са отлични пазители, оставайки същевременно нежни и обичащи със семействата си. Те изискват опитно боравене и правилна социализация, за да достигнат пълния си потенциал като преданни спътници.'
   }
 };
 

@@ -15,6 +15,7 @@ const HeroSection = ({ onNavigateToSection }: HeroSectionProps) => {
   const buttonOpacity = fadeProgress < 0.3 ? 1 : Math.max(0, 1 - ((fadeProgress - 0.3) / 0.4)); // Fades first (bottom)
   const subtitleOpacity = fadeProgress < 0.5 ? 1 : Math.max(0, 1 - ((fadeProgress - 0.5) / 0.3)); // Fades second  
   const titleOpacity = fadeProgress < 0.7 ? 1 : Math.max(0, 1 - ((fadeProgress - 0.7) / 0.3)); // Fades last (top)
+  const arrowOpacity = fadeProgress < 0.1 ? 1 : Math.max(0, 1 - ((fadeProgress - 0.1) / 0.2)); // Fades before title
   
 
   useEffect(() => {
@@ -103,10 +104,31 @@ const HeroSection = ({ onNavigateToSection }: HeroSectionProps) => {
           >
             <Button 
               onClick={handleScrollToBreeds}
-              className="bg-blue-600 hover:bg-blue-700 text-white text-lg px-10 py-4 h-auto rounded-full font-semibold transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-105"
+              className="bg-blue-600 hover:bg-blue-700 text-white text-lg px-10 py-4 h-auto rounded-full font-semibold transition-all duration-500 shadow-lg hover:shadow-xl hover:scale-105"
             >
-              Meet Our Dogs
+{t('meetOurDogsButton')}
             </Button>
+          </div>
+          
+          {/* Animated Down Arrow */}
+          <div 
+            className="flex justify-center pt-12" 
+            style={{ 
+              opacity: arrowOpacity,
+              transition: 'opacity 0.1s ease-out'
+            }}
+          >
+            <div className="animate-bounce cursor-pointer" onClick={handleScrollToBreeds}>
+              <svg 
+                className="w-8 h-8 text-white/70 hover:text-white transition-colors duration-300" 
+                fill="none" 
+                viewBox="0 0 24 24" 
+                stroke="currentColor"
+                strokeWidth={2}
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+              </svg>
+            </div>
           </div>
         </div>
       </div>

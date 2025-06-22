@@ -151,8 +151,8 @@ const Index = () => {
             </div>
           </section>
           
-          {/* Footer Card */}
-          <div className="backdrop-blur-xl bg-white/40 dark:bg-black/40 shadow-lg border border-white/20 dark:border-gray-700/50 rounded-3xl max-w-6xl mx-auto p-6 md:p-8 lg:p-12 text-black dark:text-white">
+          {/* Footer */}
+          <div className="mt-16">
             <Footer onNavigateToSection={handleNavigateToSection} />
           </div>
         </main>

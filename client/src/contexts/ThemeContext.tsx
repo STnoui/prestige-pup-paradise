@@ -24,11 +24,46 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
   const [isDark, setIsDark] = useState(false);
 
   useEffect(() => {
+    // Check if user has a saved preference
     const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'dark') {
-      setIsDark(true);
-      document.documentElement.classList.add('dark');
+    
+    let shouldUseDark = false;
+    
+    if (savedTheme) {
+      // Use saved preference if available
+      shouldUseDark = savedTheme === 'dark';
+    } else {
+      // No saved preference, use system preference
+      shouldUseDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     }
+    
+    setIsDark(shouldUseDark);
+    if (shouldUseDark) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+
+    // Listen for system theme changes
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    const handleSystemThemeChange = (e: MediaQueryListEvent) => {
+      // Only auto-switch if user hasn't set a manual preference
+      const currentSavedTheme = localStorage.getItem('theme');
+      if (!currentSavedTheme) {
+        setIsDark(e.matches);
+        if (e.matches) {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+        }
+      }
+    };
+
+    mediaQuery.addEventListener('change', handleSystemThemeChange);
+    
+    return () => {
+      mediaQuery.removeEventListener('change', handleSystemThemeChange);
+    };
   }, []);
 
   const toggleTheme = () => {

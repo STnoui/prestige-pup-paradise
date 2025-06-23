@@ -12,6 +12,13 @@ const Index = () => {
   const location = useLocation();
   const sectionsRef = useRef<{ [key: string]: HTMLElement | null }>({});
 
+  // Ensure page starts at top on initial load
+  useEffect(() => {
+    if (!location.hash) {
+      window.scrollTo(0, 0);
+    }
+  }, []);
+
   const handleNavigateToSection = useCallback((sectionId: string) => {
     console.log('=== NAVIGATION DEBUG ===');
     console.log('Requested section:', sectionId);

@@ -87,7 +87,7 @@ const MiniatureSchnauzer = () => {
               transition: 'opacity 0.1s ease-out'
             }}
           >
-            <div className="animate-bounce cursor-pointer" onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}>
+            <div className="animate-slow-bounce cursor-pointer" onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}>
               <svg 
                 className="w-8 h-8 text-white/70 hover:text-white transition-colors duration-300" 
                 fill="none" 

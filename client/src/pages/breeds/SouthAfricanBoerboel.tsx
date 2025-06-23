@@ -74,8 +74,27 @@ const SouthAfricanBoerboel = () => {
         {/* Hero Section */}
         <section className="relative min-h-screen flex items-center justify-center pt-24">
           <div className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-[1] text-center px-4 max-w-5xl mx-auto w-full" style={{ pointerEvents: fadeProgress > 0.9 ? 'none' : 'auto' }}>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black tracking-tight font-inter text-white break-words hyphens-auto" style={{ letterSpacing: '0.05em', textShadow: '0 8px 32px rgba(0, 0, 0, 0.5)', opacity: titleOpacity, transition: 'opacity 0.1s ease-out', lineHeight: '1.1' }}>
-              {t('southAfricanBoerboel').toUpperCase()}
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black tracking-tight font-inter text-white" style={{ letterSpacing: '0.05em', textShadow: '0 8px 32px rgba(0, 0, 0, 0.5)', opacity: titleOpacity, transition: 'opacity 0.1s ease-out', lineHeight: '1.1', wordBreak: 'keep-all', whiteSpace: 'nowrap' }}>
+              {(() => {
+                const breedName = t('southAfricanBoerboel').toUpperCase();
+                if (breedName.includes('ЮЖНОАФРИКАНСКИ')) {
+                  // Bulgarian: Split "ЮЖНОАФРИКАНСКИ БУРБУЛ" into two lines
+                  return (
+                    <div className="flex flex-col items-center">
+                      <div className="whitespace-nowrap">ЮЖНОАФРИКАНСКИ</div>
+                      <div className="whitespace-nowrap">БУРБУЛ</div>
+                    </div>
+                  );
+                } else {
+                  // English: Split "SOUTH AFRICAN BOERBOEL" into two lines
+                  return (
+                    <div className="flex flex-col items-center">
+                      <div className="whitespace-nowrap">SOUTH AFRICAN</div>
+                      <div className="whitespace-nowrap">BOERBOEL</div>
+                    </div>
+                  );
+                }
+              })()}
             </h1>
           </div>
           
@@ -87,7 +106,7 @@ const SouthAfricanBoerboel = () => {
               transition: 'opacity 0.1s ease-out'
             }}
           >
-            <div className="animate-bounce cursor-pointer" onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}>
+            <div className="animate-slow-bounce cursor-pointer" onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}>
               <svg 
                 className="w-8 h-8 text-white/70 hover:text-white transition-colors duration-300" 
                 fill="none" 

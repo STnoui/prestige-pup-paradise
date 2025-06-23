@@ -66,7 +66,7 @@ const OurDogsSection = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 sm:gap-12 md:gap-16 overflow-visible pt-8 px-2 sm:px-8 pb-8" style={{ contentVisibility: 'auto', containIntrinsicSize: '300px' }}>
         {breeds.map((breed, index) => (
           <Link key={breed.name} to={breed.path}>
-            <div className="backdrop-blur-xl bg-white/40 dark:bg-black/40 shadow-lg rounded-3xl hover:shadow-lg hover:shadow-blue-200/50 dark:hover:shadow-blue-400/30 transition-all duration-300 hover:-translate-y-2 hover:z-50 w-full max-w-none mx-auto h-full flex flex-col relative">
+            <div className="backdrop-blur-xl bg-white/40 dark:bg-black/40 shadow-lg rounded-3xl hover:shadow-lg hover:shadow-blue-200/50 dark:hover:shadow-blue-400/30 transition-all duration-300 hover:-translate-y-2 hover:z-50 w-full max-w-none mx-auto h-full flex flex-col relative group">
               <div className="relative overflow-hidden rounded-t-3xl">
                 <img 
                   src={breed.image}
@@ -79,8 +79,8 @@ const OurDogsSection = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 
-                {/* Floating badge */}
-                <div className="absolute top-4 right-4 bg-blue-600/80 backdrop-blur-md rounded-full p-2 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                {/* Top-left blue arrow */}
+                <div className="absolute top-4 left-4 bg-blue-600/90 backdrop-blur-md rounded-full p-2 opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-x-2 group-hover:translate-x-0">
                   <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>

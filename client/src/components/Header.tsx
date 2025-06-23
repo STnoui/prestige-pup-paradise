@@ -87,35 +87,10 @@ const Header = ({ onNavigateToSection }: HeaderProps) => {
             : 'backdrop-blur-xl bg-white/40 dark:bg-black/40 shadow-lg border border-white/10 dark:border-gray-700/30'
         }`}>
           <div className="flex items-center justify-between h-14 px-4">
-            {/* Mobile Menu Button and Settings (Left side on mobile) */}
-            <div className="md:hidden flex items-center space-x-2" ref={mobileMenuButtonRef}>
-              <button
-                onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className={`p-2 rounded-full transition-all duration-200 hover:bg-gray-100/50 dark:hover:bg-gray-800/50 focus:outline-none ${
-                  isMenuOpen ? 'text-blue-600 dark:text-blue-400 bg-gray-100/50 dark:bg-gray-800/50' : 'text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400'
-                }`}
-              >
-                <svg 
-                  className={`w-6 h-6 transition-transform duration-200 ${isMenuOpen ? 'rotate-90' : ''}`} 
-                  fill="none" 
-                  viewBox="0 0 24 24" 
-                  stroke="currentColor"
-                >
-                  <path 
-                    strokeLinecap="round" 
-                    strokeLinejoin="round" 
-                    strokeWidth={2} 
-                    d={isMenuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16m-7 6h7"} 
-                  />
-                </svg>
-              </button>
-              <SettingsDropdown />
-            </div>
-
-            {/* Logo (Always centered on mobile, left on desktop) */}
+            {/* Logo (Left side on mobile and desktop) */}
             <button
               onClick={() => handleNavigation('home')}
-              className="flex items-center space-x-3 group md:mr-auto"
+              className="flex items-center space-x-3 group"
             >
               <img 
                 src="/lovable-uploads/4fc6ff94-b7a7-4209-83d2-aa6063da5978.png" 
@@ -147,8 +122,30 @@ const Header = ({ onNavigateToSection }: HeaderProps) => {
               <SettingsDropdown />
             </div>
 
-            {/* Mobile spacer to center logo */}
-            <div className="md:hidden w-20"></div>
+            {/* Mobile Menu Button and Settings (Right side on mobile) */}
+            <div className="md:hidden flex items-center space-x-2" ref={mobileMenuButtonRef}>
+              <SettingsDropdown />
+              <button
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                className={`p-2 rounded-full transition-all duration-200 hover:bg-gray-100/50 dark:hover:bg-gray-800/50 focus:outline-none ${
+                  isMenuOpen ? 'text-blue-600 dark:text-blue-400 bg-gray-100/50 dark:bg-gray-800/50' : 'text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400'
+                }`}
+              >
+                <svg 
+                  className={`w-6 h-6 transition-transform duration-200 ${isMenuOpen ? 'rotate-90' : ''}`} 
+                  fill="none" 
+                  viewBox="0 0 24 24" 
+                  stroke="currentColor"
+                >
+                  <path 
+                    strokeLinecap="round" 
+                    strokeLinejoin="round" 
+                    strokeWidth={2} 
+                    d={isMenuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16m-7 6h7"} 
+                  />
+                </svg>
+              </button>
+            </div>
           </div>
         </div>
         

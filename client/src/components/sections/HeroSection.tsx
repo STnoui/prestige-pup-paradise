@@ -55,7 +55,11 @@ const HeroSection = ({ onNavigateToSection }: HeroSectionProps) => {
   }, []);
 
   const handleScrollToBreeds = () => {
-    onNavigateToSection?.('our-dogs');
+    onNavigateToSection?.('breeds');
+  };
+
+  const handleScrollToAbout = () => {
+    onNavigateToSection?.('about');
   };
 
   return (
@@ -118,7 +122,7 @@ const HeroSection = ({ onNavigateToSection }: HeroSectionProps) => {
               transition: 'opacity 0.1s ease-out'
             }}
           >
-            <div className="animate-slow-bounce cursor-pointer" onClick={handleScrollToBreeds}>
+            <div className="animate-slow-bounce cursor-pointer" onClick={handleScrollToAbout}>
               <svg 
                 className="w-8 h-8 text-white/70 hover:text-white transition-colors duration-300" 
                 fill="none" 

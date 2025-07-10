@@ -17,6 +17,14 @@ full stack web application featuring internationalization support theme switchin
 - component based architecture with reusable ui components and custom hooks
 - client side routing with react router dom for single page application navigation
 - state management using react context api for global application state
+- glass morphism design with backdrop blur effects and translucent cards throughout application
+- parallax scrolling backgrounds with hardware acceleration for smooth mobile performance
+- fade animations for hero sections with scroll based opacity transitions
+- universal theme switching animation with glass overlay transition effects
+- mobile dropdown menus with proper fade in and fade out animations
+- sliding footer with scroll based visibility and positioning control
+- consistent padding and margin patterns across all components and sections
+- optimized image loading with preloading and caching for better performance
 
 ## tech stack
 
@@ -205,6 +213,11 @@ prestige-pup-paradise/
 - gzip compression for static assets
 - service worker for offline functionality
 - critical css inlining for faster first paint
+- hardware accelerated background positioning with transform3d and will change properties
+- optimized scroll event handling with request animation frame and throttling
+- image preloading and canvas caching for breed gallery performance
+- glass morphism effects with backdrop filter optimization
+- smooth fade animations with css transitions and opacity calculations
 
 ## accessibility features
 

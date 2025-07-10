@@ -8,9 +8,9 @@ const KerryBlueTerrier = () => {
   const { t } = useLanguage();
   const [fadeProgress, setFadeProgress] = useState(0);
   
-  // Calculate opacity for fade effect like main page
-  const titleOpacity = fadeProgress < 0.7 ? 1 : Math.max(0, 1 - ((fadeProgress - 0.7) / 0.3));
-  const arrowOpacity = fadeProgress < 0.1 ? 1 : Math.max(0, 1 - ((fadeProgress - 0.1) / 0.2)); // Fades before title
+  // Calculate individual element opacities for earlier, smoother fade
+  const arrowOpacity = fadeProgress < 0.05 ? 1 : Math.max(0, 1 - ((fadeProgress - 0.05) / 0.15)); // Fades FIRST and earliest
+  const titleOpacity = fadeProgress < 0.4 ? 1 : Math.max(0, 1 - ((fadeProgress - 0.4) / 0.3)); // Fades last
   
   useEffect(() => {
     let ticking = false;
@@ -27,8 +27,9 @@ const KerryBlueTerrier = () => {
         requestAnimationFrame(() => {
           const scrollPosition = window.scrollY;
           const windowHeight = window.innerHeight;
-          const fadeStartPoint = windowHeight * 0.5;
-          const fadeEndPoint = windowHeight * 0.8;
+          // Start fading later for better timing
+          const fadeStartPoint = windowHeight * 0.4; // Start fading later
+          const fadeEndPoint = windowHeight * 0.7; // Complete fade later
           const progress = Math.max(0, Math.min(1, (scrollPosition - fadeStartPoint) / (fadeEndPoint - fadeStartPoint)));
           
           if (Math.abs(progress - lastProgress) > 0.01) {
@@ -63,20 +64,23 @@ const KerryBlueTerrier = () => {
       <div className="relative">
         {/* Full-screen Background Image */}
         <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          className="fixed inset-0"
           style={{
             backgroundImage: `url('/Terrier1.jpg')`,
             backgroundSize: 'cover',
             backgroundPosition: 'center center',
-            height: '100vh',
+            backgroundRepeat: 'no-repeat',
             width: '100vw',
-            zIndex: -10
+            height: '100vh',
+            zIndex: -10,
+            transform: 'translateZ(0)',
+            willChange: 'transform'
           }}
         />
         
         {/* Hero Section */}
         <section className="relative min-h-screen flex items-center justify-center pt-24">
-          <div className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-[1] text-center px-4 max-w-5xl mx-auto w-full" style={{ pointerEvents: fadeProgress > 0.9 ? 'none' : 'auto' }}>
+          <div className="fixed z-[1] text-center px-4 max-w-5xl mx-auto w-full" style={{ top: '50vh', left: '50vw', transform: 'translate(-50%, -50%)', pointerEvents: fadeProgress > 0.7 ? 'none' : 'auto' }}>
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black tracking-tight font-inter text-white break-words hyphens-auto" style={{ letterSpacing: '0.05em', textShadow: '0 8px 32px rgba(0, 0, 0, 0.5)', opacity: titleOpacity, transition: 'opacity 0.1s ease-out', lineHeight: '1.1' }}>
               {t('kerryBlueTerrier').toUpperCase()}
             </h1>
@@ -105,7 +109,7 @@ const KerryBlueTerrier = () => {
         </section>
         
         {/* Content Card */}
-        <main className="relative z-50 px-4 sm:px-6 md:px-12 lg:px-24 xl:px-32 pb-16 -mt-8 md:-mt-16 lg:-mt-24">
+        <main className="relative z-50 px-4 sm:px-6 md:px-12 lg:px-24 xl:px-32 pb-80 -mt-8 md:-mt-16 lg:-mt-24">
           <div className="backdrop-blur-xl bg-white/30 dark:bg-black/30 shadow-lg border border-white/20 dark:border-gray-700/50 rounded-3xl max-w-6xl mx-auto p-6 md:p-8 lg:p-12 text-black dark:text-white">
             <div className="text-center">
               <h2 className="text-4xl md:text-5xl font-bold mb-6">

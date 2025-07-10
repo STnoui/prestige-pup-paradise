@@ -59,8 +59,12 @@ const SettingsDropdown = ({ onOpenChange }: SettingsDropdownProps) => {
           }`}
         >
           <svg 
-            className={`h-4 w-4 transition-transform duration-300 ${isSpinning ? (spinDirection === 'reverse' ? 'animate-spin' : 'animate-spin') : ''}`}
-            style={{ animationDirection: spinDirection === 'reverse' ? 'reverse' : 'normal' }}
+            className={`h-4 w-4 transition-transform duration-300 ${isSpinning ? 'animate-spin' : ''}`}
+            style={{ 
+              animationDirection: spinDirection === 'reverse' ? 'reverse' : 'normal',
+              animationDuration: isSpinning ? '200ms' : undefined,
+              animationTimingFunction: 'ease-in-out'
+            }}
             fill="none" 
             viewBox="0 0 24 24" 
             stroke="currentColor"
@@ -77,11 +81,11 @@ const SettingsDropdown = ({ onOpenChange }: SettingsDropdownProps) => {
       </DropdownMenuTrigger>
       <DropdownMenuContent 
         align="end" 
-        className="w-44 backdrop-blur-xl bg-white/30 dark:bg-black/30 shadow-xl z-[100] border-0 focus:outline-none rounded-3xl border border-white/20 dark:border-gray-700/50"
-        sideOffset={16}
-        alignOffset={-8}
-        avoidCollisions={true}
-        collisionPadding={8}
+        className="w-44 backdrop-blur-xl bg-white/30 dark:bg-black/30 shadow-xl z-[120] border-0 focus:outline-none rounded-3xl border border-white/20 dark:border-gray-700/50"
+        sideOffset={20}
+        alignOffset={-50}
+        avoidCollisions={false}
+        collisionPadding={0}
       >
         <DropdownMenuLabel className="text-black dark:text-white text-center text-xs font-medium uppercase tracking-wide py-1">
           {t('themeLabel')}

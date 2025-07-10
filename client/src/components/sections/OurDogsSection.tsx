@@ -40,6 +40,14 @@ const OurDogsSection = () => {
       breeds.forEach((breed, index) => {
         const img = new Image();
         img.src = breed.image;
+        img.onload = () => {
+          // Force the image to be cached
+          const canvas = document.createElement('canvas');
+          const ctx = canvas.getContext('2d');
+          canvas.width = img.width;
+          canvas.height = img.height;
+          ctx?.drawImage(img, 0, 0);
+        };
         // Force decode to prevent stutter
         img.decode().catch(() => {
           // Fallback if decode fails
@@ -53,17 +61,17 @@ const OurDogsSection = () => {
   }, [breeds]);
 
   return (
-    <div className="max-w-5xl mx-auto px-2 sm:px-6 lg:px-8">
-      <div className="text-center mb-16">
-        <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
+    <div className="max-w-6xl mx-auto px-4 sm:px-6 md:px-12 lg:px-24 xl:px-32 space-y-8 pb-4">
+      <div className="text-center mb-10">
+        <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
           <span className="bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 dark:from-blue-300 dark:via-blue-400 dark:to-blue-500 bg-clip-text text-transparent">{t('ourDogs')}</span>
         </h2>
-        <p className="text-xl text-black dark:text-white max-w-4xl mx-auto leading-relaxed">
+        <p className="text-xl text-black dark:text-white max-w-4xl mx-auto leading-relaxed mb-4">
           {t('breedsSectionDesc')}
         </p>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8 md:gap-10 overflow-visible pt-8 px-8 pb-8" style={{ contentVisibility: 'auto', containIntrinsicSize: '300px' }}>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 mb-4">
         {breeds.map((breed, index) => (
           <Link key={breed.name} to={breed.path}>
             <div className="backdrop-blur-xl bg-white/30 dark:bg-black/30 shadow-lg rounded-3xl hover:shadow-lg hover:shadow-blue-200/50 dark:hover:shadow-blue-400/30 transition-all duration-300 hover:-translate-y-2 hover:z-50 w-full max-w-none mx-auto h-full flex flex-col relative group">
@@ -72,10 +80,7 @@ const OurDogsSection = () => {
                   src={breed.image}
                   alt={breed.name}
                   className="w-full h-64 object-cover object-center group-hover:scale-110 transition-transform duration-500"
-                  style={{ aspectRatio: '16/9', contentVisibility: 'auto' }}
-                  loading="lazy"
-                  decoding="async"
-                  fetchPriority="low"
+                  style={{ aspectRatio: '16/9' }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 

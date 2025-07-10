@@ -11,11 +11,11 @@ const HeroSection = ({ onNavigateToSection }: HeroSectionProps) => {
   const { t } = useLanguage();
   const [fadeProgress, setFadeProgress] = useState(0);
   
-  // Calculate individual element opacities for smooth bottom-to-top fade
-  const buttonOpacity = fadeProgress < 0.3 ? 1 : Math.max(0, 1 - ((fadeProgress - 0.3) / 0.4)); // Fades first (bottom)
-  const subtitleOpacity = fadeProgress < 0.5 ? 1 : Math.max(0, 1 - ((fadeProgress - 0.5) / 0.3)); // Fades second  
-  const titleOpacity = fadeProgress < 0.7 ? 1 : Math.max(0, 1 - ((fadeProgress - 0.7) / 0.3)); // Fades last (top)
-  const arrowOpacity = fadeProgress < 0.1 ? 1 : Math.max(0, 1 - ((fadeProgress - 0.1) / 0.2)); // Fades before title
+  // Calculate individual element opacities for earlier, smoother fade
+  const arrowOpacity = fadeProgress < 0.05 ? 1 : Math.max(0, 1 - ((fadeProgress - 0.05) / 0.15)); // Fades FIRST and earliest
+  const buttonOpacity = fadeProgress < 0.2 ? 1 : Math.max(0, 1 - ((fadeProgress - 0.2) / 0.3)); // Fades second
+  const subtitleOpacity = fadeProgress < 0.3 ? 1 : Math.max(0, 1 - ((fadeProgress - 0.3) / 0.3)); // Fades third
+  const titleOpacity = fadeProgress < 0.4 ? 1 : Math.max(0, 1 - ((fadeProgress - 0.4) / 0.3)); // Fades last
   
 
   useEffect(() => {
@@ -34,9 +34,9 @@ const HeroSection = ({ onNavigateToSection }: HeroSectionProps) => {
         requestAnimationFrame(() => {
           const scrollPosition = window.scrollY;
           const windowHeight = window.innerHeight;
-          // Start fading only when content is extremely close to hero text
-          const fadeStartPoint = windowHeight * 0.5; // Start when content is close
-          const fadeEndPoint = windowHeight * 0.8; // Complete fade quickly after
+          // Start fading later for better timing
+          const fadeStartPoint = windowHeight * 0.4; // Start fading later
+          const fadeEndPoint = windowHeight * 0.7; // Complete fade later
           const progress = Math.max(0, Math.min(1, (scrollPosition - fadeStartPoint) / (fadeEndPoint - fadeStartPoint)));
           
           // Only update state if progress changed significantly
@@ -64,13 +64,14 @@ const HeroSection = ({ onNavigateToSection }: HeroSectionProps) => {
 
   return (
     <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
-
-
-      {/* Fixed Content - stays in place while content scrolls over */}
+      {/* Fixed Content - stays BEHIND content as it scrolls over */}
       <div 
-        className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-[1] text-center px-4 sm:px-6 max-w-3xl mx-auto w-full"
+        className="fixed z-[1] text-center px-4 sm:px-6 max-w-3xl mx-auto w-full"
         style={{ 
-          pointerEvents: fadeProgress > 0.9 ? 'none' : 'auto'
+          top: '50vh',
+          left: '50vw',
+          transform: 'translate(-50%, -50%)',
+          pointerEvents: fadeProgress > 0.7 ? 'none' : 'auto'
         }}
       >
         <div className="space-y-6 sm:space-y-8">
@@ -117,10 +118,13 @@ const HeroSection = ({ onNavigateToSection }: HeroSectionProps) => {
         </div>
       </div>
       
-      {/* Animated Down Arrow - positioned at bottom like breeds pages */}
+      {/* Animated Down Arrow - positioned at bottom */}
       <div 
-        className="fixed bottom-16 left-1/2 transform -translate-x-1/2 z-[1]" 
+        className="fixed z-[1]" 
         style={{ 
+          bottom: '4rem',
+          left: '50vw',
+          transform: 'translateX(-50%)',
           opacity: arrowOpacity,
           transition: 'opacity 0.1s ease-out'
         }}

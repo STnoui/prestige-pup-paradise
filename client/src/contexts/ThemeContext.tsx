@@ -4,6 +4,7 @@ import React, { createContext, useContext, useState, useEffect, ReactNode } from
 interface ThemeContextType {
   isDark: boolean;
   toggleTheme: () => void;
+  isTransitioning: boolean;
 }
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
@@ -22,6 +23,7 @@ interface ThemeProviderProps {
 
 export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
   const [isDark, setIsDark] = useState(false);
+  const [isTransitioning, setIsTransitioning] = useState(false);
 
   useEffect(() => {
     // Check if user has a saved preference
@@ -67,18 +69,54 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
   }, []);
 
   const toggleTheme = () => {
-    setIsDark(!isDark);
-    if (!isDark) {
-      document.documentElement.classList.add('dark');
-      localStorage.setItem('theme', 'dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-      localStorage.setItem('theme', 'light');
-    }
+    setIsTransitioning(true);
+    
+    // Create glass overlay for transition
+    const overlay = document.createElement('div');
+    overlay.style.cssText = `
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: ${isDark ? 'rgba(255, 255, 255, 0.3)' : 'rgba(0, 0, 0, 0.3)'};
+      backdrop-filter: blur(10px);
+      z-index: 9999;
+      opacity: 0;
+      transition: opacity 800ms ease-in-out;
+      pointer-events: none;
+    `;
+    document.body.appendChild(overlay);
+    
+    // Trigger overlay animation
+    requestAnimationFrame(() => {
+      overlay.style.opacity = '1';
+    });
+    
+    // Change theme after overlay is visible
+    setTimeout(() => {
+      setIsDark(!isDark);
+      if (!isDark) {
+        document.documentElement.classList.add('dark');
+        localStorage.setItem('theme', 'dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+        localStorage.setItem('theme', 'light');
+      }
+      
+      // Fade out overlay
+      overlay.style.opacity = '0';
+      
+      // Remove overlay and reset state
+      setTimeout(() => {
+        document.body.removeChild(overlay);
+        setIsTransitioning(false);
+      }, 800);
+    }, 400);
   };
 
   return (
-    <ThemeContext.Provider value={{ isDark, toggleTheme }}>
+    <ThemeContext.Provider value={{ isDark, toggleTheme, isTransitioning }}>
       {children}
     </ThemeContext.Provider>
   );

@@ -10,6 +10,7 @@ interface HeaderProps {
 
 const Header = ({ onNavigateToSection }: HeaderProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMenuClosing, setIsMenuClosing] = useState(false);
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const navigate = useNavigate();
@@ -33,6 +34,14 @@ const Header = ({ onNavigateToSection }: HeaderProps) => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const closeMenu = useCallback(() => {
+    setIsMenuClosing(true);
+    setTimeout(() => {
+      setIsMenuOpen(false);
+      setIsMenuClosing(false);
+    }, 200);
+  }, []);
+
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (
@@ -41,7 +50,7 @@ const Header = ({ onNavigateToSection }: HeaderProps) => {
         mobileMenuButtonRef.current &&
         !mobileMenuButtonRef.current.contains(event.target as Node)
       ) {
-        setIsMenuOpen(false);
+        closeMenu();
       }
     };
 
@@ -52,14 +61,18 @@ const Header = ({ onNavigateToSection }: HeaderProps) => {
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
-  }, [isMenuOpen]);
+  }, [isMenuOpen, closeMenu]);
 
   // Close mobile menu when settings opens
   useEffect(() => {
-    if (isSettingsOpen) {
-      setIsMenuOpen(false);
+    if (isSettingsOpen && isMenuOpen) {
+      setIsMenuClosing(true);
+      setTimeout(() => {
+        setIsMenuOpen(false);
+        setIsMenuClosing(false);
+      }, 200);
     }
-  }, [isSettingsOpen]);
+  }, [isSettingsOpen, isMenuOpen]);
 
   const handleNavigation = useCallback((sectionId: string) => {
     console.log('Header navigation clicked for:', sectionId);
@@ -105,7 +118,7 @@ const Header = ({ onNavigateToSection }: HeaderProps) => {
                 alt="SHOLO Logo" 
                 className="h-9 w-9 sm:h-11 sm:w-11 logo-circular group-hover:scale-105 transition-transform duration-300 object-cover"
                 loading="eager"
-                decoding="async"
+                decoding="sync"
               />
               <span className="text-base sm:text-lg font-medium text-black dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-200 font-inter">
                 SHOLO
@@ -135,8 +148,12 @@ const Header = ({ onNavigateToSection }: HeaderProps) => {
               <SettingsDropdown onOpenChange={setIsSettingsOpen} />
               <button
                 onClick={() => {
-                  setIsMenuOpen(!isMenuOpen);
-                  if (!isMenuOpen) setIsSettingsOpen(false);
+                  if (isMenuOpen) {
+                    closeMenu();
+                  } else {
+                    setIsMenuOpen(true);
+                    setIsSettingsOpen(false);
+                  }
                 }}
                 className={`p-2 rounded-full transition-all duration-200 hover:bg-gray-100/50 dark:hover:bg-gray-800/50 focus:outline-none ${
                   isMenuOpen ? 'text-blue-600 dark:text-blue-400 bg-gray-100/50 dark:bg-gray-800/50' : 'text-black dark:text-white hover:text-blue-600 dark:hover:text-blue-400'
@@ -161,10 +178,14 @@ const Header = ({ onNavigateToSection }: HeaderProps) => {
         </div>
         
         {/* Mobile Menu - Positioned outside main header container */}
-        {isMenuOpen && (
+        {(isMenuOpen || isMenuClosing) && (
           <div 
             ref={mobileMenuRef}
-            className="md:hidden absolute top-20 left-6 right-6 backdrop-blur-xl bg-white/30 dark:bg-black/30 rounded-3xl shadow-lg border border-white/20 dark:border-gray-700/50 z-[110] animate-in fade-in-0 zoom-in-95 slide-in-from-top-2"
+            className={`md:hidden absolute top-20 left-6 right-6 backdrop-blur-xl bg-white/30 dark:bg-black/30 rounded-3xl shadow-lg border border-white/20 dark:border-gray-700/50 z-[110] transition-all duration-200 ${
+              isMenuClosing 
+                ? 'animate-out fade-out-0 zoom-out-95 slide-out-to-top-2' 
+                : 'animate-in fade-in-0 zoom-in-95 slide-in-from-top-2'
+            }`}
           >
             <nav className="px-6 py-4 space-y-1">
               {navItems.map((item) => (
@@ -172,7 +193,7 @@ const Header = ({ onNavigateToSection }: HeaderProps) => {
                   key={item.id}
                   onClick={() => {
                     handleNavigation(item.id);
-                    setIsMenuOpen(false);
+                    closeMenu();
                   }}
                   className="block w-full text-center px-4 py-3 rounded-full text-black dark:text-white hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-100/50 dark:hover:bg-gray-800/50 transition-all duration-200"
                 >

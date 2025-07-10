@@ -123,14 +123,17 @@ const Index = () => {
       <div className="relative">
         {/* Full-screen Background Image */}
         <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          className="fixed inset-0"
           style={{
             backgroundImage: `url('/main.jpg')`,
             backgroundSize: 'cover',
             backgroundPosition: 'center center',
-            height: '100vh',
+            backgroundRepeat: 'no-repeat',
             width: '100vw',
-            zIndex: -10
+            height: '100vh',
+            zIndex: -10,
+            transform: 'translateZ(0)',
+            willChange: 'transform'
           }}
         />
         
@@ -139,7 +142,7 @@ const Index = () => {
         </section>
         
         {/* Separate Card Sections */}
-        <main className="relative z-50 px-4 sm:px-6 md:px-12 lg:px-24 xl:px-32 space-y-8 pt-32 pb-16">
+        <main className="relative z-50 px-4 sm:px-6 md:px-12 lg:px-24 xl:px-32 space-y-8 pt-32 pb-80">
           {/* About Us Card */}
           <section ref={setSectionRef('about')} id="about" className="w-full">
             <div className="backdrop-blur-xl bg-white/30 dark:bg-black/30 shadow-lg border border-white/20 dark:border-gray-700/50 rounded-3xl max-w-6xl mx-auto p-6 md:p-8 lg:p-12 text-black dark:text-white">

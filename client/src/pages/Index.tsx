@@ -121,12 +121,15 @@ const Index = () => {
       
       {/* Hero Background that extends behind content */}
       <div className="relative">
-        {/* Fixed Background Image for entire page */}
+        {/* Full-screen Background Image */}
         <div 
-          className="fixed inset-0 bg-cover bg-center bg-no-repeat"
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
             backgroundImage: `url('/main.jpg')`,
-            backgroundAttachment: 'fixed',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center center',
+            height: '100vh',
+            width: '100vw',
             zIndex: -10
           }}
         />
@@ -139,27 +142,27 @@ const Index = () => {
         <main className="relative z-50 px-4 sm:px-6 md:px-12 lg:px-24 xl:px-32 space-y-8 pt-32 pb-16">
           {/* About Us Card */}
           <section ref={setSectionRef('about')} id="about" className="w-full">
-            <div className="backdrop-blur-xl bg-white/40 dark:bg-black/40 shadow-lg border border-white/20 dark:border-gray-700/50 rounded-3xl max-w-6xl mx-auto p-6 md:p-8 lg:p-12 text-black dark:text-white">
+            <div className="backdrop-blur-xl bg-white/30 dark:bg-black/30 shadow-lg border border-white/20 dark:border-gray-700/50 rounded-3xl max-w-6xl mx-auto p-6 md:p-8 lg:p-12 text-black dark:text-white">
               <AboutSection />
             </div>
           </section>
           
           {/* Our Dogs Card */}
           <section ref={setSectionRef('our-dogs')} id="our-dogs" className="w-full">
-            <div className="backdrop-blur-xl bg-white/40 dark:bg-black/40 shadow-lg border border-white/20 dark:border-gray-700/50 rounded-3xl max-w-6xl mx-auto p-6 md:p-8 lg:p-12 text-black dark:text-white">
+            <div className="backdrop-blur-xl bg-white/30 dark:bg-black/30 shadow-lg border border-white/20 dark:border-gray-700/50 rounded-3xl max-w-6xl mx-auto p-6 md:p-8 lg:p-12 text-black dark:text-white">
               <OurDogsSection />
             </div>
           </section>
           
           {/* Contact Card */}
           <section ref={setSectionRef('contact')} id="contact" className="w-full">
-            <div className="backdrop-blur-xl bg-white/40 dark:bg-black/40 shadow-lg border border-white/20 dark:border-gray-700/50 rounded-3xl max-w-6xl mx-auto p-6 md:p-8 lg:p-12 text-black dark:text-white">
+            <div className="backdrop-blur-xl bg-white/30 dark:bg-black/30 shadow-lg border border-white/20 dark:border-gray-700/50 rounded-3xl max-w-6xl mx-auto p-6 md:p-8 lg:p-12 text-black dark:text-white">
               <ContactSection />
             </div>
           </section>
           
           {/* Footer */}
-          <div className="mt-16">
+          <div className="mt-32">
             <Footer onNavigateToSection={handleNavigateToSection} />
           </div>
         </main>

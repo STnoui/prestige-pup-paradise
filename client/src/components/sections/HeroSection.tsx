@@ -35,8 +35,8 @@ const HeroSection = ({ onNavigateToSection }: HeroSectionProps) => {
           const scrollPosition = window.scrollY;
           const windowHeight = window.innerHeight;
           // Start fading only when content is extremely close to hero text
-          const fadeStartPoint = windowHeight * 0.35; // Start when content is close
-          const fadeEndPoint = windowHeight * 0.65; // Complete fade quickly after
+          const fadeStartPoint = windowHeight * 0.5; // Start when content is close
+          const fadeEndPoint = windowHeight * 0.8; // Complete fade quickly after
           const progress = Math.max(0, Math.min(1, (scrollPosition - fadeStartPoint) / (fadeEndPoint - fadeStartPoint)));
           
           // Only update state if progress changed significantly
@@ -55,7 +55,7 @@ const HeroSection = ({ onNavigateToSection }: HeroSectionProps) => {
   }, []);
 
   const handleScrollToBreeds = () => {
-    onNavigateToSection?.('breeds');
+    onNavigateToSection?.('our-dogs');
   };
 
   const handleScrollToAbout = () => {
@@ -68,15 +68,15 @@ const HeroSection = ({ onNavigateToSection }: HeroSectionProps) => {
 
       {/* Fixed Content - stays in place while content scrolls over */}
       <div 
-        className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-[1] text-center px-6 max-w-3xl mx-auto w-full"
+        className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-[1] text-center px-4 sm:px-6 max-w-3xl mx-auto w-full"
         style={{ 
           pointerEvents: fadeProgress > 0.9 ? 'none' : 'auto'
         }}
       >
-        <div className="space-y-8">
-          <div className="space-y-6">
+        <div className="space-y-6 sm:space-y-8">
+          <div className="space-y-4 sm:space-y-6">
             <h1 
-              className="text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-black tracking-tight font-inter text-white"
+              className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-black tracking-tight font-inter text-white"
               style={{ 
                 opacity: titleOpacity,
                 letterSpacing: '0.05em',
@@ -88,7 +88,7 @@ const HeroSection = ({ onNavigateToSection }: HeroSectionProps) => {
             </h1>
             
             <h2 
-              className="text-xl md:text-2xl lg:text-3xl xl:text-4xl font-medium tracking-wide font-inter text-blue-100" 
+              className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-medium tracking-wide font-inter text-blue-100" 
               style={{ 
                 opacity: subtitleOpacity,
                 textShadow: '0 4px 16px rgba(0, 0, 0, 0.4)',
@@ -100,7 +100,7 @@ const HeroSection = ({ onNavigateToSection }: HeroSectionProps) => {
           </div>
           
           <div 
-            className="flex justify-center pt-6" 
+            className="flex justify-center pt-4 sm:pt-6" 
             style={{ 
               opacity: buttonOpacity,
               transition: 'opacity 0.1s ease-out'
@@ -114,26 +114,27 @@ const HeroSection = ({ onNavigateToSection }: HeroSectionProps) => {
             </Button>
           </div>
           
-          {/* Animated Down Arrow */}
-          <div 
-            className="flex justify-center pt-12" 
-            style={{ 
-              opacity: arrowOpacity,
-              transition: 'opacity 0.1s ease-out'
-            }}
+        </div>
+      </div>
+      
+      {/* Animated Down Arrow - positioned at bottom like breeds pages */}
+      <div 
+        className="fixed bottom-16 left-1/2 transform -translate-x-1/2 z-[1]" 
+        style={{ 
+          opacity: arrowOpacity,
+          transition: 'opacity 0.1s ease-out'
+        }}
+      >
+        <div className="animate-slow-bounce cursor-pointer" onClick={handleScrollToAbout}>
+          <svg 
+            className="w-8 h-8 text-white/70 hover:text-white transition-colors duration-300" 
+            fill="none" 
+            viewBox="0 0 24 24" 
+            stroke="currentColor"
+            strokeWidth={2}
           >
-            <div className="animate-slow-bounce cursor-pointer" onClick={handleScrollToAbout}>
-              <svg 
-                className="w-8 h-8 text-white/70 hover:text-white transition-colors duration-300" 
-                fill="none" 
-                viewBox="0 0 24 24" 
-                stroke="currentColor"
-                strokeWidth={2}
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-              </svg>
-            </div>
-          </div>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+          </svg>
         </div>
       </div>
     </div>

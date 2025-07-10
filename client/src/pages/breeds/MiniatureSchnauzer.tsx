@@ -27,8 +27,8 @@ const MiniatureSchnauzer = () => {
         requestAnimationFrame(() => {
           const scrollPosition = window.scrollY;
           const windowHeight = window.innerHeight;
-          const fadeStartPoint = windowHeight * 0.35;
-          const fadeEndPoint = windowHeight * 0.65;
+          const fadeStartPoint = windowHeight * 0.5;
+          const fadeEndPoint = windowHeight * 0.8;
           const progress = Math.max(0, Math.min(1, (scrollPosition - fadeStartPoint) / (fadeEndPoint - fadeStartPoint)));
           
           if (Math.abs(progress - lastProgress) > 0.01) {
@@ -61,12 +61,15 @@ const MiniatureSchnauzer = () => {
       
       {/* Hero Background that extends behind content */}
       <div className="relative">
-        {/* Fixed Background Image for entire page */}
+        {/* Full-screen Background Image */}
         <div 
-          className="fixed inset-0 bg-cover bg-center bg-no-repeat"
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
             backgroundImage: `url('/Shnauzer1.jpg')`,
-            backgroundAttachment: 'fixed',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center center',
+            height: '100vh',
+            width: '100vw',
             zIndex: -10
           }}
         />
@@ -102,8 +105,8 @@ const MiniatureSchnauzer = () => {
         </section>
         
         {/* Content Card */}
-        <main className="relative z-50 px-4 sm:px-6 md:px-12 lg:px-24 xl:px-32 pb-16">
-          <div className="backdrop-blur-xl bg-white/40 dark:bg-black/40 shadow-lg border border-white/20 dark:border-gray-700/50 rounded-3xl max-w-6xl mx-auto p-6 md:p-8 lg:p-12 text-black dark:text-white">
+        <main className="relative z-50 px-4 sm:px-6 md:px-12 lg:px-24 xl:px-32 pb-16 -mt-8 md:-mt-16 lg:-mt-24">
+          <div className="backdrop-blur-xl bg-white/30 dark:bg-black/30 shadow-lg border border-white/20 dark:border-gray-700/50 rounded-3xl max-w-6xl mx-auto p-6 md:p-8 lg:p-12 text-black dark:text-white">
             <div className="text-center">
               <h2 className="text-4xl md:text-5xl font-bold mb-6">
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 dark:from-blue-300 dark:via-blue-400 dark:to-blue-500">
@@ -116,7 +119,7 @@ const MiniatureSchnauzer = () => {
               
               {/* Contact for Availability Section - Inside Info */}
               <div className="max-w-3xl mx-auto mt-8">
-                <div className="backdrop-blur-xl bg-white/40 dark:bg-black/40 shadow-lg border border-white/20 dark:border-gray-700/50 rounded-3xl hover:shadow-lg hover:shadow-blue-200/50 dark:hover:shadow-blue-400/30 transition-all duration-300 p-8 text-center">
+                <div className="backdrop-blur-xl bg-white/30 dark:bg-black/30 shadow-lg border border-white/20 dark:border-gray-700/50 rounded-3xl hover:shadow-lg hover:shadow-blue-200/50 dark:hover:shadow-blue-400/30 transition-all duration-300 p-8 text-center">
                   <div className="mb-6">
                     <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
                       <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
@@ -146,7 +149,7 @@ const MiniatureSchnauzer = () => {
           </div>
           
           {/* Footer */}
-          <div className="mt-16">
+          <div className="mt-32">
             <Footer onNavigateToSection={handleNavigateToSection} />
           </div>
         </main>

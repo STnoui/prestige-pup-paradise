@@ -10,6 +10,7 @@ interface HeaderProps {
 
 const Header = ({ onNavigateToSection }: HeaderProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isSettingsOpen, setIsSettingsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
@@ -53,6 +54,13 @@ const Header = ({ onNavigateToSection }: HeaderProps) => {
     };
   }, [isMenuOpen]);
 
+  // Close mobile menu when settings opens
+  useEffect(() => {
+    if (isSettingsOpen) {
+      setIsMenuOpen(false);
+    }
+  }, [isSettingsOpen]);
+
   const handleNavigation = useCallback((sectionId: string) => {
     console.log('Header navigation clicked for:', sectionId);
     console.log('Current pathname:', location.pathname);
@@ -83,10 +91,10 @@ const Header = ({ onNavigateToSection }: HeaderProps) => {
       <div className="max-w-7xl mx-auto px-6 lg:px-8 pt-4">
         <div className={`transition-all duration-300 rounded-full ${
           scrolled 
-            ? 'backdrop-blur-xl bg-white/40 dark:bg-black/40 shadow-lg border border-white/20 dark:border-gray-700/50' 
-            : 'backdrop-blur-xl bg-white/40 dark:bg-black/40 shadow-lg border border-white/10 dark:border-gray-700/30'
+            ? 'backdrop-blur-xl bg-white/30 dark:bg-black/30 shadow-lg border border-white/20 dark:border-gray-700/50' 
+            : 'backdrop-blur-xl bg-white/30 dark:bg-black/30 shadow-lg border border-white/10 dark:border-gray-700/30'
         }`}>
-          <div className="flex items-center justify-between h-14 px-4">
+          <div className="flex items-center justify-between h-12 sm:h-14 px-3 sm:px-4">
             {/* Logo (Left side on mobile and desktop) */}
             <button
               onClick={() => handleNavigation('home')}
@@ -95,11 +103,11 @@ const Header = ({ onNavigateToSection }: HeaderProps) => {
               <img 
                 src="/lovable-uploads/4fc6ff94-b7a7-4209-83d2-aa6063da5978.png" 
                 alt="SHOLO Logo" 
-                className="h-11 w-11 logo-circular group-hover:scale-105 transition-transform duration-300 object-cover"
+                className="h-9 w-9 sm:h-11 sm:w-11 logo-circular group-hover:scale-105 transition-transform duration-300 object-cover"
                 loading="eager"
                 decoding="async"
               />
-              <span className="text-lg font-medium text-gray-800 dark:text-gray-100 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-200 font-inter">
+              <span className="text-base sm:text-lg font-medium text-black dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-200 font-inter">
                 SHOLO
               </span>
             </button>
@@ -110,7 +118,7 @@ const Header = ({ onNavigateToSection }: HeaderProps) => {
                 <button
                   key={item.id}
                   onClick={() => handleNavigation(item.id)}
-                  className="px-4 py-2 rounded-full text-sm font-medium text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-100/50 dark:hover:bg-gray-800/50 transition-all duration-200"
+                  className="px-4 py-2 rounded-full text-sm font-medium text-black dark:text-white hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-100/50 dark:hover:bg-gray-800/50 transition-all duration-200"
                 >
                   {item.label}
                 </button>
@@ -119,16 +127,19 @@ const Header = ({ onNavigateToSection }: HeaderProps) => {
 
             {/* Desktop Settings */}
             <div className="hidden md:flex items-center">
-              <SettingsDropdown />
+              <SettingsDropdown onOpenChange={setIsSettingsOpen} />
             </div>
 
             {/* Mobile Menu Button and Settings (Right side on mobile) */}
             <div className="md:hidden flex items-center space-x-2" ref={mobileMenuButtonRef}>
-              <SettingsDropdown />
+              <SettingsDropdown onOpenChange={setIsSettingsOpen} />
               <button
-                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                onClick={() => {
+                  setIsMenuOpen(!isMenuOpen);
+                  if (!isMenuOpen) setIsSettingsOpen(false);
+                }}
                 className={`p-2 rounded-full transition-all duration-200 hover:bg-gray-100/50 dark:hover:bg-gray-800/50 focus:outline-none ${
-                  isMenuOpen ? 'text-blue-600 dark:text-blue-400 bg-gray-100/50 dark:bg-gray-800/50' : 'text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400'
+                  isMenuOpen ? 'text-blue-600 dark:text-blue-400 bg-gray-100/50 dark:bg-gray-800/50' : 'text-black dark:text-white hover:text-blue-600 dark:hover:text-blue-400'
                 }`}
               >
                 <svg 
@@ -153,7 +164,7 @@ const Header = ({ onNavigateToSection }: HeaderProps) => {
         {isMenuOpen && (
           <div 
             ref={mobileMenuRef}
-            className="md:hidden absolute top-20 left-6 right-6 backdrop-blur-xl bg-white/40 dark:bg-black/40 rounded-3xl shadow-lg border border-white/20 dark:border-gray-700/50 z-[110]"
+            className="md:hidden absolute top-20 left-6 right-6 backdrop-blur-xl bg-white/30 dark:bg-black/30 rounded-3xl shadow-lg border border-white/20 dark:border-gray-700/50 z-[110] animate-in fade-in-0 zoom-in-95 slide-in-from-top-2"
           >
             <nav className="px-6 py-4 space-y-1">
               {navItems.map((item) => (
@@ -163,7 +174,7 @@ const Header = ({ onNavigateToSection }: HeaderProps) => {
                     handleNavigation(item.id);
                     setIsMenuOpen(false);
                   }}
-                  className="block w-full text-center px-4 py-3 rounded-full text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-100/50 dark:hover:bg-gray-800/50 transition-all duration-200"
+                  className="block w-full text-center px-4 py-3 rounded-full text-black dark:text-white hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-100/50 dark:hover:bg-gray-800/50 transition-all duration-200"
                 >
                   {item.label}
                 </button>
